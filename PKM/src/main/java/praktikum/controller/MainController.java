@@ -19,4 +19,9 @@ public class MainController {
         model.addAttribute("message", this.message);
         return "welcome";
     }
+    @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
+    public String Test (){
+        return "/test";
+    }
+
 }
