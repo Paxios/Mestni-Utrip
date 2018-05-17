@@ -18,11 +18,10 @@ public class MainController {
     @Value("${welcome.message}")
     private String message = "Jebela cesta";
 
-
     @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("message", this.message);
-        return "welcome";
+        return "index";
     }
     @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
     public String Test (){
@@ -38,7 +37,6 @@ public class MainController {
         repository.save(new Customer("Peter", "Davis"));
         return "Done";
     }
-
 
     @RequestMapping("/findall")
     @ResponseBody
