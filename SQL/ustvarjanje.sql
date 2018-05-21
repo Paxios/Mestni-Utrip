@@ -29,9 +29,8 @@ MODIFY COLUMN Id_tip_uporabnika INTEGER AUTO_INCREMENT;
 CREATE TABLE Objekt(
 Id_objekt INTEGER NOT NULL,
 Naziv VARCHAR(45) NOT NULL,
-Odpiralni_cas TIME NOT NULL,
-Zapiralni_cas TIME NOT NULL,
-Fk_id_naslov INTEGER NOT NULL);
+Fk_id_naslov INTEGER NOT NULL default 0
+);
  
 ALTER TABLE Objekt
 ADD CONSTRAINT Pk_Objekt PRIMARY KEY (Id_objekt);
