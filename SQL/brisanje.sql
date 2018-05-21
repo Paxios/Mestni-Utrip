@@ -1,0 +1,13 @@
+/* Brisanje tabel */
+ 
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS Uporabnik;
+DROP TABLE IF EXISTS Objekt;
+DROP TABLE IF EXISTS Dogodek;
+DROP TABLE IF EXISTS Tip_uporabnika;
+DROP TABLE IF EXISTS Tip_dogodka;
+DROP TABLE IF EXISTS Datum_dogodka;
+DROP TABLE IF EXISTS Naslov;
+DROP TABLE IF EXISTS Kraj;
+DROP TABLE IF EXISTS odpiralni_cas;
+DROP TABLE IF EXISTS Tip_odpiralnega_casa;
