@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 C:\Users\Uroš\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\MestniUtripApplication.java
 C:\Users\Uroš\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\CustomerRepository.java
 C:\Users\Uroš\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\controller\MainController.java
 C:\Users\Uroš\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\controller\ZagoranskiController.java
 C:\Users\Uroš\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\Customer.java
+=======
+C:\Users\Aljoša\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\controller\MainController.java
+C:\Users\Aljoša\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\db\OsebaDao.java
+C:\Users\Aljoša\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\MestniUtripApplication.java
+C:\Users\Aljoša\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\CustomerRepository.java
+C:\Users\Aljoša\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\Entities\Oseba.java
+C:\Users\Aljoša\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\Customer.java
+C:\Users\Aljoša\Documents\GitHub\Mestni-Utrip\PKM\src\main\java\praktikum\controller\SikosekController.java
+>>>>>>> 986293016671c938a75961536526accc63d0d727
