@@ -30,7 +30,7 @@ public class SikosekController {
     @Autowired OsebaDao OsebaDao;
     @Autowired ObjektDao ObjektDao;
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.POST)
-    public String Prijava(Model model,@RequestParam(value="imeP", required = true) String imeP, @RequestParam(value="ime", required=true) String ime, @RequestParam(value="priimek", required=true) String priimek,
+    public String Registracija(Model model,@RequestParam(value="imeP", required = true) String imeP, @RequestParam(value="ime", required=true) String ime, @RequestParam(value="priimek", required=true) String priimek,
            @RequestParam(value="mail", required = true) String mail, @RequestParam(value="geslo", required=true) String geslo, @RequestParam(value="uporabniskoIme", required=false) String uporabniskoIme) {
 
         Oseba oseba = new Oseba(ime,priimek,mail, uporabniskoIme, geslo);
@@ -38,5 +38,23 @@ public class SikosekController {
         ObjektDao.addObjekt(imeP);
         return "redirect:/index";
 
+    }
+
+    @RequestMapping(value = {"/prijava"}, method = RequestMethod.POST)
+    public String Prijava(Model model, @RequestParam(value="uporabniskoime") String uporabniskoime, @RequestParam(value="geslo") String geslo){
+
+        Oseba o = OsebaDao.getOsebaByUsername(uporabniskoime);
+
+        if(o == null){
+            return "redirect:/index";
+        }
+        else{
+            if(geslo == o.getGeslo()){
+                return "redirect:/index2";
+            }
+            else{
+                return "redirect:/index";
+            }
+        }
     }
 }

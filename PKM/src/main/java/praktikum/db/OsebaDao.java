@@ -33,6 +33,17 @@ public class OsebaDao {
         return ret;
     }
 
+    public Oseba getOsebaByUsername(String uporabniskoIme) {
+        if(uporabniskoIme == null){
+            return null;
+        }
+        String sql = "SELECT * FROM Uporabnik WHERE uporabnisko_ime = uporabniskoIme";
+        Oseba o = (Oseba) jdbcTemplate.queryForList(sql, new Object[]{uporabniskoIme},
+                new BeanPropertyRowMapper(Oseba.class));
+        return o;
+    }
+
+
     public int addOseba(String ime, String priimek, String mail, String uporabniskoIme, String geslo){
 
         String sql = "INSERT into Uporabnik (ime, priimek, mail,uporabnisko_ime, geslo) values (ime,priimek,mail,uporabniskoIme,geslo)";

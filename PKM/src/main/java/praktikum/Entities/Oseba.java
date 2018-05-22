@@ -2,6 +2,7 @@ package praktikum.Entities;
 
 public class Oseba {
     private int id;
+
     private String ime;
     private String priimek;
     private String mail;
@@ -39,5 +40,13 @@ public class Oseba {
 
     public void setUporabniskoIme(String uporabniskoIme) {
         this.uporabniskoIme = uporabniskoIme;
+    }
+
+    public String getGeslo() {
+        return geslo;
+    }
+
+    public void setGeslo(String geslo) {
+        this.geslo = geslo;
     }
 }
