@@ -10,7 +10,7 @@ import praktikum.CustomerRepository;
 
 
 @Controller
-public class MainController {
+public class ZagoranskiController {
     @Autowired
     CustomerRepository repository;
 
