@@ -65,11 +65,12 @@
                 <section class="p-0" id="portfolio">
                     <div class="container-fluid">
                         <form method="post" action ="registracija">
-                            <p><input type="text" placeholder="Ime" name="ime"> </p>
-                            <p><input type="text" placeholder="Priimek" name="priimek"> </p>
-                            <p><input type="text" placeholder="Email" name="mail"> </p>
-                            <p><input type="text" placeholder="Geslo" name="geslo"> </p>
-                            <p><input type="submit" class="btn btn-primary btn-xl js-scroll-trigger"> </p>
+                            <p><input type="text" placeholder="Podjetje" name=imeP></p>
+                            <p><input type="text" placeholder="Ime" name=ime></p>
+                            <p><input type="text" placeholder="Priimek" name=priimek></p>
+                            <p><input type="text" placeholder="Email" name=mail></p>
+                            <p><input type="password" placeholder="Geslo" name=geslo></p>
+                            <p><input type="submit" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                         </form>
                     </div>
                 </section>
