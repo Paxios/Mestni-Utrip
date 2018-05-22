@@ -64,8 +64,7 @@
             <div class="col-lg-8 mx-auto">
                 <section class="p-0" id="portfolio">
                     <div class="container-fluid">
-                        <form method="post" action ="prijava">
-                            <p><input type="text" placeholder="Ime podjetja" name="imeP">  </p>
+                        <form method="post" action ="registracija">
                             <p><input type="text" placeholder="Ime" name="ime"> </p>
                             <p><input type="text" placeholder="Priimek" name="priimek"> </p>
                             <p><input type="text" placeholder="Email" name="mail"> </p>

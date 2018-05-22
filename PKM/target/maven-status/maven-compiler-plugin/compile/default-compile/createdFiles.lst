@@ -1,4 +1,7 @@
 praktikum\Customer.class
 praktikum\controller\MainController.class
 praktikum\CustomerRepository.class
+praktikum\Entities\Oseba.class
+praktikum\controller\SikosekController.class
 praktikum\MestniUtripApplication.class
+praktikum\db\OsebaDao.class

@@ -28,8 +28,6 @@ public class SikosekController {
 
         Oseba oseba = new Oseba(ime,priimek,mail, uporabniskoIme, geslo);
         OsebaDao.addOseba(ime,priimek,mail,oseba.getUporabniskoIme(), geslo);
-
-
         return "redirect:/index";
 
     }
