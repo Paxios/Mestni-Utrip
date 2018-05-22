@@ -74,7 +74,6 @@
                         </form>
                     </div>
                 </section>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Zanima me ve&ccaron;</a>
             </div>
         </div>
     </div>
