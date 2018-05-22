@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Restavracije</title>
+    <title>&Scaron;port</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -54,16 +54,16 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
-                    <strong>Seznam dogodkov v restavracijah</strong>
+                    <strong>Seznam &scaron;portnih dogodkov</strong>
                 </h1>
                 <hr>
             </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-faded mb-5">
                 <table class="table table-hover">
-                    <c:forEach items="${restavracije}" var="r">
+                    <c:forEach items="${sport}" var="s">
                         <tr>
-                            <td>${r}</td>
+                            <td>${s}</td>
                         </tr>
                     </c:forEach>
                 </table>

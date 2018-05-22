@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import praktikum.Customer;
 import praktikum.CustomerRepository;
 
-
 @Controller
 public class MainController {
     @Autowired
@@ -23,31 +22,11 @@ public class MainController {
         model.addAttribute("message", this.message);
         return "index";
     }
-    @RequestMapping(value = { "/klubi" }, method = RequestMethod.GET)
-    public String klubi(Model model) {
-        model.addAttribute("message", this.message);
-        return "klubi";
+    @RequestMapping(value = {"/test"}, method = RequestMethod.GET)
+    public String Test (){
+        return "/test";
     }
-    @RequestMapping(value = { "/kultura" }, method = RequestMethod.GET)
-    public String kultura(Model model) {
-        model.addAttribute("message", this.message);
-        return "kultura";
-    }
-    @RequestMapping(value = { "/narava" }, method = RequestMethod.GET)
-    public String narava(Model model) {
-        model.addAttribute("message", this.message);
-        return "narava";
-    }
-    @RequestMapping(value = { "/restavracije" }, method = RequestMethod.GET)
-    public String restavracije(Model model) {
-        model.addAttribute("message", this.message);
-        return "restavracije";
-    }
-    @RequestMapping(value = { "/znamenitosti" }, method = RequestMethod.GET)
-    public String znamenitosti(Model model) {
-        model.addAttribute("message", this.message);
-        return "znamenitosti";
-    }
+
 
     @RequestMapping("/save")
     public String process(){

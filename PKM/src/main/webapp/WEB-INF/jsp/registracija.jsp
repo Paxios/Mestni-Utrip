@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Restavracije</title>
+    <title>Prijava</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,16 +33,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#about">O nas</a>
+                    <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#services">Maribor</a>
+                    <a class="nav-link js-scroll-trigger" href="#services">Maribor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
+                    <a class="nav-link js-scroll-trigger" href="#portfolio">Lokacije</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#prijava">Prijava</a>
+                    <a class="nav-link js-scroll-trigger" href="#dogodki">Vsi dogodki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">Prijava</a>
                 </li>
             </ul>
         </div>
@@ -54,23 +57,29 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
-                    <strong>Seznam dogodkov v restavracijah</strong>
+                    <strong>Prijava podjetja</strong>
                 </h1>
                 <hr>
             </div>
             <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">
-                <table class="table table-hover">
-                    <c:forEach items="${restavracije}" var="r">
-                        <tr>
-                            <td>${r}</td>
-                        </tr>
-                    </c:forEach>
-                </table>
-                </p>
+                <section class="p-0" id="portfolio">
+                    <div class="container-fluid">
+                        <form method="post" action ="registracija">
+                            <p><input type="text" placeholder="Podjetje" name=imeP></p>
+                            <p><input type="text" placeholder="Ime" name=ime></p>
+                            <p><input type="text" placeholder="Priimek" name=priimek></p>
+                            <p><input type="text" placeholder="Email" name=mail></p>
+                            <p><input type="password" placeholder="Geslo" name=geslo></p>
+                            <p><input type="submit" class="btn btn-primary btn-xl js-scroll-trigger"></p>
+                        </form>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
 </header>
+
+
+
 </body>
 </html>

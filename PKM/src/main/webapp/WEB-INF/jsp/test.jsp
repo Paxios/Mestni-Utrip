@@ -3,7 +3,7 @@
 <html>
 
 <head>
-<title>OST SpringBoot JSP</title>
+    <title>OST SpringBoot JSP</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
@@ -17,12 +17,9 @@
 
 <body>
 
-    <div class="container">
-        <h1>My First Bootstrap Page</h1>
-        <p>This is some text.</p>
-        <h3>Jebela cesta</h3>
-        <h2>Welcome ${message} !!.</h2>
-    </div>
+<div class="container">
+    <p>asadhjashdkljashdkjlhasd</p>
+</div>
 
 </body>
 

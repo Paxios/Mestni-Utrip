@@ -1,3 +1,5 @@
+/* Ustvarjanje tabel */
+ 
 CREATE TABLE Uporabnik(
 Id_uporabnik INTEGER NOT NULL,
 Uporabnisko_ime VARCHAR(45) NOT NULL,
@@ -108,7 +110,7 @@ Fk_tip_odpiralnega_casa INTEGER NOT NULL,
 Fk_objekt INTEGER NOT NULL
 );
 ALTER TABLE Odpiralni_cas
-ADD CONSTRAINT Pk_Odpiralni_cas PRIMARY KEY (Id_odpiralniCas);
+ADD CONSTRAINT Pk_Odpiralni_cas PRIMARY KEY (Id_odpiralnicas);
 
 ALTER TABLE Odpiralni_cas
 MODIFY COLUMN Id_odpiralniCas INTEGER AUTO_INCREMENT;
@@ -131,7 +133,7 @@ MODIFY COLUMN Id_tip_oc INTEGER auto_increment;
 /* Uporabnik */
 ALTER TABLE Uporabnik
 ADD CONSTRAINT Fk_uporabnik_id_tip_uporabnika FOREIGN KEY
-(Fk_id_tip_uporabnika) REFERENCES Tip_uporabnika(Id_tip_uporabnika);
+(Fk_id_tip_uporabnika) REFERENCES Tip_prodajalca(Id_tip_prodajalca);
  
 ALTER TABLE Uporabnik
 ADD CONSTRAINT Fk_uporabnik_id_objekt FOREIGN KEY
