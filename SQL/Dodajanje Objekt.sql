@@ -136,7 +136,7 @@ values('Kavarna Rokaj');
 insert into objekt (naziv) 
 values('Stadion Ljudski vrt');
 
-insert into objekt (naaziv)
+insert into objekt (naziv)
 values ('Kopališče Pristan');
 
 insert into objekt (naziv) 
