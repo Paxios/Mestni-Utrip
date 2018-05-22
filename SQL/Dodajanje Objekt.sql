@@ -92,9 +92,6 @@ insert into objekt (naziv)
 values('Sodni stolp');
 
 insert into objekt (naziv) 
-values('Bazilika Matere Usmiljena');
-
-insert into objekt (naziv) 
 values('Slovensko narodno gledališče');
 
 insert into objekt (naziv) 
@@ -129,6 +126,30 @@ values('Umetnostna galerija');
 
 insert into objekt (naziv) 
 values('Lent');
+
+insert into objekt (naziv) 
+values('Pokrajinski muzej');
+
+insert into objekt (naziv) 
+values('Kavarna Rokaj');
+
+insert into objekt (naziv) 
+values('Stadion Ljudski vrt');
+
+insert into objekt (naziv) 
+values('Europark');
+
+insert into objekt (naziv) 
+values('Trg Leona Štuklja');
+
+insert into objekt (naziv) 
+values('Kopališče Fontana');
+
+insert into objekt (naziv) 
+values('Pokrajinski muzej');
+
+insert into objekt (naziv) 
+values('Mariborsko Pohorje');
 
 insert into objekt (naziv) 
 values('Pokrajinski muzej');
