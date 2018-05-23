@@ -42,7 +42,7 @@
                     <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#prijava">Prijava</a>
+                    <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
                 </li>
             </ul>
         </div>
