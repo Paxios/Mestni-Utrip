@@ -110,7 +110,7 @@ Fk_tip_odpiralnega_casa INTEGER NOT NULL,
 Fk_objekt INTEGER NOT NULL
 );
 ALTER TABLE Odpiralni_cas
-ADD CONSTRAINT Pk_Odpiralni_cas PRIMARY KEY (Id_odpiralnicas);
+ADD CONSTRAINT Pk_Odpiralni_cas PRIMARY KEY (Id_odpiralniCas);
 
 ALTER TABLE Odpiralni_cas
 MODIFY COLUMN Id_odpiralniCas INTEGER AUTO_INCREMENT;
