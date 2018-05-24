@@ -1,3 +1,5 @@
 praktikum\Customer.class
 praktikum\CustomerRepository.class
+praktikum\Entities\Dogodek.class
+praktikum\db\DogodekDao.class
 praktikum\MestniUtripApplication.class

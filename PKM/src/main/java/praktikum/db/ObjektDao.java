@@ -22,7 +22,6 @@ public class ObjektDao {
         List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);
         for(Map row: rows){
             String naziv = (String) row.get("naziv");
-
             ret.add(new Objekt(naziv));
         }
 
@@ -31,8 +30,28 @@ public class ObjektDao {
 
     public int addObjekt(String naziv){
 
-        String sql ="INSERT into Objekt(naziv) values(naziv)";
+        String sql ="INSERT into Objekt(naziv) values(?)";
 
         return jdbcTemplate.update(sql, new Object[]{naziv});
+    }
+
+    public Objekt getObjektByNaziv(String naziv){
+
+        if(naziv == null){
+            return null;
+        } else {
+            String sql = "SELECT * FROM Objekt WHERE naziv = naziv";
+            Objekt o = (Objekt) jdbcTemplate.queryForList(sql, naziv);
+                new BeanPropertyRowMapper(Objekt.class);
+                return o;
+        }
+    }
+
+    public Objekt getObjektById(int id) {
+
+        String sql = "SELECT * FROM Objekt WHERE idObjekt = id";
+        Objekt o = (Objekt) jdbcTemplate.queryForList(sql, id);
+        new BeanPropertyRowMapper(Objekt.class);
+        return o;
     }
 }

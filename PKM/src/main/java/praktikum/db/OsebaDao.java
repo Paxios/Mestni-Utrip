@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import praktikum.Entities.Objekt;
 import praktikum.Entities.Oseba;
 
 import java.util.ArrayList;
@@ -15,20 +16,22 @@ public class OsebaDao {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+    @Autowired
+    ObjektDao objektDao;
 
     public List<Oseba> getAllOsebe(){
         String sql = "SELECT * FROM Uporabnik";
         List<Oseba> ret = new ArrayList<Oseba>();
         List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);
         for(Map row: rows){
-            Integer id = (Integer)row.get("id");
-            String ime = (String)row.get("ime");
-            String priimek = (String)row.get("priimek");
+            String lastnik = (String)row.get("lastnik");
             String mail = (String)row.get("mail");
             String uporabniskoIme = (String)row.get("uporabnisko_ime");
             String geslo = (String)row.get("geslo");
+            int idObjekt = (int)row.get("fk_id_objekt");
+            Objekt objekt = objektDao.getObjektById(idObjekt);
 
-            ret.add(new Oseba(ime,priimek,mail,uporabniskoIme,geslo));
+            ret.add(new Oseba(lastnik,mail,uporabniskoIme,geslo,objekt.getNaziv()));
         }
         return ret;
     }
@@ -36,18 +39,19 @@ public class OsebaDao {
     public Oseba getOsebaByUsername(String uporabniskoIme) {
         if(uporabniskoIme == null){
             return null;
+        } else {
+            String sql = "SELECT * FROM Uporabnik WHERE uporabnisko_ime = uporabniskoIme";
+            Oseba o = (Oseba) jdbcTemplate.queryForList(sql, new Object[]{uporabniskoIme},
+                    new BeanPropertyRowMapper(Oseba.class));
+            return o;
         }
-        String sql = "SELECT * FROM Uporabnik WHERE uporabnisko_ime = uporabniskoIme";
-        Oseba o = (Oseba) jdbcTemplate.queryForList(sql, new Object[]{uporabniskoIme},
-                new BeanPropertyRowMapper(Oseba.class));
-        return o;
     }
 
 
-    public int addOseba(String ime, String priimek, String mail, String uporabniskoIme, String geslo){
+    public int addOseba(String lastnik, String mail, String uporabniskoIme, String geslo){
 
-        String sql = "INSERT into Uporabnik (ime, priimek, mail,uporabnisko_ime, geslo) values (ime,priimek,mail,uporabniskoIme,geslo)";
+        String sql = "INSERT into Uporabnik (lastnik,mail,uporabnisko_ime, geslo) values (?,?,?,?)";
 
-        return jdbcTemplate.update(sql, new Object[]{ime, priimek, mail, uporabniskoIme, geslo});
+        return jdbcTemplate.update(sql, new Object[]{lastnik, mail, uporabniskoIme, geslo});
     }
 }

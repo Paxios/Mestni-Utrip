@@ -1,6 +1,7 @@
 
 *.lst
-PKM/.idea/workspace.xml
-*.lst
+
+PKM/.idea
+
 *.class
-PKM/target/classes/application.properties
+PKM/src/main/resources/application.properties
