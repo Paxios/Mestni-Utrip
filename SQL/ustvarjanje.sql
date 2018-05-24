@@ -1,11 +1,25 @@
+/* Brisanje tabel */
+ 
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS Uporabnik;
+DROP TABLE IF EXISTS Objekt;
+DROP TABLE IF EXISTS Dogodek;
+DROP TABLE IF EXISTS Tip_dogodka;
+DROP TABLE IF EXISTS Datum_dogodka;
+DROP TABLE IF EXISTS Naslov;
+DROP TABLE IF EXISTS Kraj;
+DROP TABLE IF EXISTS odpiralni_cas;
+DROP TABLE IF EXISTS Tip_odpiralnega_casa;
+DROP TABLE IF EXISTS objekt_oc;
+DROP TABLE IF EXISTS veljavnost;
+
 /* Ustvarjanje tabel */
  
 CREATE TABLE Uporabnik(
 Id_uporabnik INTEGER NOT NULL,
 Uporabnisko_ime VARCHAR(45) NOT NULL,
 Geslo VARCHAR(45) NOT NULL,
-Ime VARCHAR(45) NOT NULL,
-Priimek VARCHAR(45) NOT NULL,
+Lastnik VARCHAR(45) DEFAULT 0,
 Mail VARCHAR(45) NOT NULL,
 Fk_id_objekt INTEGER NOT NULL);
  
@@ -36,7 +50,7 @@ Id_dogodek INTEGER NOT NULL,
 Naziv VARCHAR(45) NOT NULL,
 vstopnina DECIMAL,
 Kapaciteta INTEGER NOT NULL,
-Opis VARCHAR(500),
+Opis VARCHAR(1000),
 Fk_id_objekt INTEGER NOT NULL,
 Fk_id_tip_dogodka INTEGER NOT NULL,
 Fk_id_datum_dogodka INTEGER NOT NULL);
@@ -65,8 +79,10 @@ MODIFY COLUMN Id_tip_dogodka INTEGER AUTO_INCREMENT;
  
 CREATE TABLE Datum_dogodka(
 Id_datum_dogodka INTEGER NOT NULL,
-Datum_zacetka DATETIME NOT NULL,
-Datum_konca DATETIME NOT NULL);
+Datum_zacetka DATE NOT NULL,
+Datum_konca DATE NOT NULL,
+Ura_zac TIME NOT NULL
+);
  
 ALTER TABLE Datum_dogodka
 ADD CONSTRAINT Pk_Datum_dogodka PRIMARY KEY (Id_datum_dogodka);
@@ -74,13 +90,11 @@ ADD CONSTRAINT Pk_Datum_dogodka PRIMARY KEY (Id_datum_dogodka);
 ALTER TABLE Datum_dogodka
 MODIFY COLUMN Id_datum_dogodka INTEGER AUTO_INCREMENT;
  
- 
- 
- 
 CREATE TABLE Naslov(
 Id_naslov INTEGER NOT NULL,
-Ulica VARCHAR(45) NOT NULL,
-Hisna_stevilka VARCHAR(45) NOT NULL,
+Z_sirina DOUBLE NOT NULL,
+Z_dolzina DOUBLE NOT NULL,
+Opis VARCHAR (100) NOT NULL,
 Fk_id_kraj INTEGER NOT NULL);
  
 ALTER TABLE Naslov
@@ -222,6 +236,6 @@ alter table odpiralni_cas
 add constraint fk_veljavnost_oc foreign key
 (fk_veljavnost) references veljavnost(id_veljavnost);
 
-	alter table odpiralni_cas
+    alter table odpiralni_cas
 	add constraint fk_tip_oc foreign key
 	(fk_tip_odpiralnega_casa) references tip_odpiralnega_casa(Id_tip_oc);
