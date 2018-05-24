@@ -53,38 +53,38 @@ public class ZagoranskiController {
         return "aktualno";
     }
 
-    @RequestMapping("/save")
-    public String process(){
-        repository.save(new Customer("Jack", "Smith"));
-        repository.save(new Customer("Adam", "Johnson"));
-        repository.save(new Customer("Kim", "Smith"));
-        repository.save(new Customer("David", "Williams"));
-        repository.save(new Customer("Peter", "Davis"));
-        return "Done";
-    }
-
-    @RequestMapping("/findall")
-    @ResponseBody
-    public String findAll(){
-        String result = "<html>";
-
-        for(Customer cust : repository.findAll()){
-            result += "<div>" + cust.toString() + "</div>";
-        }
-
-        return result + "</html>";
-    }
-
-
-    @RequestMapping("/findbylastname")
-    @ResponseBody
-    public String fetchDataByLastName(@RequestParam("lastname") String lastName){
-        String result = "<html>";
-
-        for(Customer cust: repository.findByLastName(lastName)){
-            result += "<div>" + cust.toString() + "</div>";
-        }
-
-        return result + "</html>";
-    }
+//    @RequestMapping("/save")
+//    public String process(){
+//        repository.save(new Customer("Jack", "Smith"));
+//        repository.save(new Customer("Adam", "Johnson"));
+//        repository.save(new Customer("Kim", "Smith"));
+//        repository.save(new Customer("David", "Williams"));
+//        repository.save(new Customer("Peter", "Davis"));
+//        return "Done";
+//    }
+//
+//    @RequestMapping("/findall")
+//    @ResponseBody
+//    public String findAll(){
+//        String result = "<html>";
+//
+//        for(Customer cust : repository.findAll()){
+//            result += "<div>" + cust.toString() + "</div>";
+//        }
+//
+//        return result + "</html>";
+//    }
+//
+//
+//    @RequestMapping("/findbylastname")
+//    @ResponseBody
+//    public String fetchDataByLastName(@RequestParam("lastname") String lastName){
+//        String result = "<html>";
+//
+//        for(Customer cust: repository.findByLastName(lastName)){
+//            result += "<div>" + cust.toString() + "</div>";
+//        }
+//
+//        return result + "</html>";
+//    }
 }

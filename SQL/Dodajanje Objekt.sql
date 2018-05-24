@@ -46,13 +46,9 @@ values('Restavracija Ancora', 15);
 insert into objekt (naziv,fk_id_naslov) 
 values('Restavracija Azija', 16);
 
-<<<<<<< HEAD
 insert into objekt (naziv,fk_id_naslov) 
 values('Picerija Rožmarin', 17);
-=======
-insert into objekt (naziv) 
-values('La Pizzeria');
->>>>>>> 04ffecff0f2f6f34d6c2cf5cc88d65fba1608d7c
+
 
 insert into objekt (naziv,fk_id_naslov) 
 values('Gostilna Sarajevo', 18);
@@ -96,13 +92,8 @@ values('Vodni stolp', 30);
 insert into objekt (naziv,fk_id_naslov)  
 values('Sodni stolp', 31);
 
-<<<<<<< HEAD
 insert into objekt (naziv,fk_id_naslov) 
 values('Bazilika Matere Usmiljenja', 32);
-=======
-insert into objekt (naziv) 
-values('Bazilika Matere Usmiljena');
->>>>>>> 04ffecff0f2f6f34d6c2cf5cc88d65fba1608d7c
 
 insert into objekt (naziv,fk_id_naslov) 
 values('Slovensko narodno gledališče', 33);
@@ -125,18 +116,12 @@ values('Muzej narodne osvoboditve', 38);
 insert into objekt (naziv,fk_id_naslov) 
 values('Casino Joker', 39);
 
-<<<<<<< HEAD
 insert into objekt (naziv,fk_id_naslov) 
 values('Piramida', 40);
-=======
-insert into objekt (naziv) 
-values('Piramid');
->>>>>>> 04ffecff0f2f6f34d6c2cf5cc88d65fba1608d7c
 
 insert into objekt (naziv,fk_id_naslov) 
 values('Vinagova klet', 41);
 
-<<<<<<< HEAD
 insert into objekt (naziv,fk_id_naslov) 
 values('Umetnostna galerija', 42);
 
@@ -166,18 +151,3 @@ values('Kopališče Fontana', 50);
 
 insert into objekt (naziv,fk_id_naslov)  
 values('Mariborsko Pohorje', 51);
-
-
-=======
-insert into objekt (naziv) 
-values('Frančiškanska cerkev');
-
-insert into objekt (naziv) 
-values('Umetnostna galerija');
-
-insert into objekt (naziv) 
-values('Lent');
-
-insert into objekt (naziv) 
-values('Pokrajinski muzej');
->>>>>>> 04ffecff0f2f6f34d6c2cf5cc88d65fba1608d7c

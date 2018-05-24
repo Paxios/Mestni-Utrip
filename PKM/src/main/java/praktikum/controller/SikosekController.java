@@ -22,10 +22,10 @@ public class SikosekController {
         return "/registracija";
     }
 
-    @RequestMapping(value = {"/aktualno"}, method = RequestMethod.GET)
-    public String aktualno(){
-        return"/aktualno";
-    }
+//    @RequestMapping(value = {"/aktualno"}, method = RequestMethod.GET)
+//    public String aktualno(){
+//        return"/aktualno";
+//    }
 
     @Autowired OsebaDao OsebaDao;
     @Autowired ObjektDao ObjektDao;
