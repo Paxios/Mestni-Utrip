@@ -9,6 +9,8 @@ import praktikum.Customer;
 import praktikum.CustomerRepository;
 import praktikum.Entities.Oseba;
 import praktikum.Entities.Objekt;
+import praktikum.Entities.Dogodek;
+import praktikum.db.DogodekDao;
 import praktikum.db.OsebaDao;
 import praktikum.db.ObjektDao;
 import java.util.*;
@@ -21,6 +23,11 @@ public class SikosekController {
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.GET)
     public String Prijava(){
         return "/registracija";
+    }
+
+    @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.GET)
+    public String Dodaj(){
+        return "/dodajanjeDogodka";
     }
 
 
@@ -55,4 +62,25 @@ public class SikosekController {
             }
         }
     }
+
+    @Autowired
+    DogodekDao dogodekDao;
+
+    @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
+    public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
+             @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta) {
+
+            Objekt o = ObjektDao.getObjektByNaziv(imeObjekta);
+
+            if(o != null) {
+                Dogodek d = new Dogodek(naziv, vstopnina, kapaciteta, opis,o.getNaziv());
+                dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis);
+                return "redirect:/index";
+            } else {
+              return "redirect:/index";
+            }
+
+
+    }
+
 }

@@ -5,13 +5,15 @@ public class Dogodek {
     private double vstopnina;
     private int kapaciteta;
     private String opis;
+    private Objekt objekt;
 
 
-    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis){
+    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, String imeObjekta){
         this.naziv = naziv;
         this.vstopnina = vstopnina;
         this.kapaciteta = kapaciteta;
         this.opis = opis;
+        objekt = new Objekt(imeObjekta);
     }
 
     public String getNaziv() {

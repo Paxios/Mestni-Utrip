@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import praktikum.Entities.Dogodek;
+import praktikum.Entities.Objekt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class DogodekDao {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+    @Autowired ObjektDao objektDao;
 
     public List<Dogodek> getAllDogodki(){
         String sql = "SELECT * FROM Dogodek";
@@ -25,8 +27,10 @@ public class DogodekDao {
             double vstopnina = (double)row.get("vstopnina");
             int kapaciteta = (int)row.get("kapaciteta");
             String opis = (String)row.get("opis");
+            int idObjekt = (int)row.get("fk_id_objekt");
+            Objekt o = objektDao.getObjektById(idObjekt);
 
-            ret.add(new Dogodek(naziv, vstopnina, kapaciteta, opis));
+            ret.add(new Dogodek(naziv, vstopnina, kapaciteta, opis,o.getNaziv()));
         }
         return ret;
     }
