@@ -5,8 +5,22 @@ public class Objekt {
     private String naziv;
 
 
-    public Objekt(String naziv) {
+    public Objekt(int id, String naziv) {
+        this.id = id;
         this.naziv = naziv;
+    }
+
+    public Objekt(String naziv) {
+
+        this.naziv = naziv;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNaziv() {

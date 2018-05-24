@@ -1,38 +1,25 @@
 package praktikum.Entities;
 
 public class Oseba {
-    private int id;
 
-    private String ime;
-    private String priimek;
+    private String lastnik;
     private String mail;
     private String uporabniskoIme;
     private String geslo;
+    private Objekt objekt;
 
 
-    public Oseba(String ime, String priimek, String mail, String uporabniskoIme, String geslo){
-        this.ime = ime;
-        this.priimek = priimek;
+    public Oseba(String lastnik, String mail, String uporabniskoIme, String geslo, String imeObjekta){
+        this.lastnik = lastnik;
         this.mail = mail;
-        this.uporabniskoIme = (ime.toLowerCase() + priimek.toLowerCase() + "Mstni");
+        this.uporabniskoIme = (imeObjekta.toLowerCase() + "Mstni");
         this.geslo = geslo;
+        objekt = new Objekt(imeObjekta);
     }
 
-    public int getId() {
-        return id;
-    }
+    public String getLastnik() { return lastnik; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPriimek() {
-        return priimek;
-    }
-
-    public void setPriimek(String priimek) {
-        this.priimek = priimek;
-    }
+    public void setLastnik(String lastnik) { this.lastnik = lastnik; }
 
     public String getUporabniskoIme() {
         return uporabniskoIme;
