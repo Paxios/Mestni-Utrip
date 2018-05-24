@@ -3,3 +3,4 @@
 PKM/.idea/workspace.xml
 *.lst
 *.class
+PKM/target/classes/application.properties
