@@ -256,7 +256,7 @@
             <h3>Prijava v sistem</h3>
             <form method="post" action="prijava">
               <input class="form-control" type="text" name=uporabniskoime placeholder="Uporabni&scaron;ko ime"><br>
-              <input class="form-control" type="text" name=geslo placeholder="Geslo"> <br>
+              <input class="form-control" type="password" name=geslo placeholder="Geslo"> <br>
                 <input class="btn btn-primary btn-xl" type="submit" value="Prijava">
             </form>
           </div>

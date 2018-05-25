@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Prijava</title>
+    <title>Registracija</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,19 +33,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/index#about">O nas</a>
+                    <a class="nav-link js-scroll-trigger" href="index#about">O nas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/index#services">Maribor</a>
+                    <a class="nav-link js-scroll-trigger" href="index#services">Maribor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/index#portfolio">Lokacije</a>
+                    <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/index#dogodki">Vsi dogodki</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/index#contact">Prijava</a>
+                    <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
                 </li>
             </ul>
         </div>
@@ -57,7 +54,7 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
-                    <strong>Prijava podjetja</strong>
+                    <strong>Registracija podjetja</strong>
                 </h1>
                 <hr>
             </div>
@@ -65,12 +62,13 @@
                 <section class="p-0" id="portfolio">
                     <div class="container-fluid">
                         <form method="post" action ="registracija">
-                            <p><input type="text" placeholder="Podjetje(*)" name=imeP></p>
-                            <p><input type="text" placeholder="Email(*)" name=mail></p>
-                            <p><input type="password" placeholder="Geslo(*)" name=geslo></p>
-                            <p><input type="text" placeholder="Kontaktna oseba" name=lastnik></p>
-                            <p><input type="submit" class="btn btn-primary btn-xl js-scroll-trigger"></p>
-                            <p><i>Polja oznacena z (*) so obvezna</i></p>
+                            <p><i>Polja, ozna&ccaron;ena z * so obvezna!</i></p>
+                            <p><input class="form-control" type="text" placeholder="*Podjetje" name=imeP></p>
+                            <p><input class="form-control" type="text" placeholder="*Email" name=mail></p>
+                            <p><input class="form-control" type="password" placeholder="*Geslo" name=geslo></p>
+                            <p><input class="form-control" type="password" placeholder="*Ponovi geslo" name=istogeslo></p>
+                            <p><input class="form-control" type="text" placeholder="Kontaktna oseba" name=lastnik></p>
+                            <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                         </form>
                     </div>
                 </section>
@@ -78,8 +76,5 @@
         </div>
     </div>
 </header>
-
-
-
 </body>
 </html>
