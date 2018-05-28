@@ -24,10 +24,20 @@ public class ObjektDao {
         List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);
         for(Map row: rows){
             String naziv = (String) row.get("naziv");
+            int idTipObjekta = (int)row.get("fk_id_tip_objekta");
             ret.add(new Objekt(naziv));
+
         }
 
         return ret;
+    }
+
+    public List<Objekt> getObjektByTip(int fk_id_tip_objekta) {
+            String sql = "SELECT * FROM Objekt WHERE fk_id_tip_objekta = fk_id_tip_objekta";
+            Objekt o = (Objekt) jdbcTemplate.queryForList(sql, new Object[]{fk_id_tip_objekta},
+                    new BeanPropertyRowMapper(Objekt.class));
+            return o;
+        }
     }
 
     public int addObjekt(String naziv) {

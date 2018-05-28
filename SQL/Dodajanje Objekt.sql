@@ -1,153 +1,52 @@
-insert into objekt (naziv,fk_id_naslov) 
-values('La Cantina',1);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Mc Pekarna',2);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Klub mariborskih študentov',3);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Štuk', 4);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Takos lent', 5);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Bar Trust', 6);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Fuego - Latino Club', 7);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Niagara lounge bar',8);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Bar Kaos',9);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Ribičija', 10);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Papagayo lounge bar', 11);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Gostilna Maribor', 12);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Restavracija Mango',13);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Villa Rustica',14);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Restavracija Ancora', 15);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Restavracija Azija', 16);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Picerija Rožmarin', 17);
-
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Gostilna Sarajevo', 18);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Kavarna Q', 19);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Mc Donalds Europark', 20);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Pustolovski park Betnava', 21);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Trije ribniki', 22);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Mestni Park', 23);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('City Park', 24);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Magdalenski Park', 25);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Trg Borisa Kidriča', 26);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Mariborski grad', 27);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Glavni trg', 28);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Kužno znamenje', 29);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Vodni stolp', 30);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Sodni stolp', 31);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Bazilika Matere Usmiljenja', 32);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Slovensko narodno gledališče', 33);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Slomškov trg', 34);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Dvorec Betnava', 35);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Stara Trta', 36);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Akvarij - terarij', 37);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Muzej narodne osvoboditve', 38);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Casino Joker', 39);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Piramida', 40);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Vinagova klet', 41);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Umetnostna galerija', 42);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Lent', 43);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Pokrajinski muzej', 44);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Kavarna Rokaj', 45);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Stadion Ljudski vrt', 46);
-
-insert into objekt (naziv,fk_id_naslov) 
-values ('Kopališče Pristan', 47);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Europark', 48);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Trg Leona Štuklja', 49);
-
-insert into objekt (naziv,fk_id_naslov) 
-values('Kopališče Fontana', 50);
-
-insert into objekt (naziv,fk_id_naslov)  
-values('Mariborsko Pohorje', 51);
+insert into objekt values
+('La Cantina',1,2),
+('Mc Pekarna',2,1),
+('Klub mariborskih študentov',3),
+('Štuk', 4,1),
+('Takos lent', 5,2),
+('Bar Trust', 6,1),
+('Fuego - Latino Club', 7,1),
+('Niagara lounge bar',8,1),
+('Bar Kaos',9,1),
+('Ribičija', 10,1),
+('Papagayo lounge bar', 11,1),
+('Gostilna Maribor', 12,2), 
+('Restavracija Mango',13,2),
+('Villa Rustica',14,2), 
+('Restavracija Ancora', 15,2),
+('Restavracija Azija', 16,2),
+('Picerija Rožmarin', 17,2),
+('Gostilna Sarajevo', 18,2),
+('Kavarna Q', 19,2),
+('Mc Donalds Europark', 20,2),
+('Pustolovski park Betnava', 21,3),
+('Trije ribniki', 22,3),
+('Mestni Park', 23,3),
+('City Park', 24,3),
+('Magdalenski Park', 25, 3),
+('Trg Borisa Kidriča', 26,4),
+('Mariborski grad', 27,4),
+('Glavni trg', 28,4),
+('Kužno znamenje', 29,4),
+('Vodni stolp', 30,4),
+('Sodni stolp', 31,4),
+('Bazilika Matere Usmiljenja', 32, 4),
+('Slovensko narodno gledališče', 33, 4),
+('Slomškov trg', 34,4),
+('Dvorec Betnava', 35,4),
+('Stara Trta', 36,3),
+('Akvarij - terarij', 37,3),
+('Muzej narodne osvoboditve', 38,4),
+('Casino Joker', 39,1),
+('Piramida', 40,3),
+('Vinagova klet', 41,1),
+('Umetnostna galerija', 42,4),
+('Lent', 43,3),
+('Pokrajinski muzej', 44,4),
+('Kavarna Rokaj', 45,1),
+('Stadion Ljudski vrt', 46,5),
+('Kopališče Pristan', 47,5),
+('Europark', 48, 4),
+('Trg Leona Štuklja', 49,4),
+('Kopališče Fontana', 50,5),
+('Mariborsko Pohorje', 51, 5);
