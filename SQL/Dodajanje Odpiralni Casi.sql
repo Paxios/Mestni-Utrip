@@ -110,7 +110,6 @@ values ("06:00","22:00",1,2);
 /*Od 06-22, celo leto, petek*/
 insert into odpiralni_cas (Odpiralni_cas, Zapiralni_cas, Fk_tip_odpiralnega_casa, fk_veljavnost)
 values ("06:00","22:00",5,2);
-select * from objekt;
 /*Od 06-22, celo leto, sobota*/
 insert into odpiralni_cas (Odpiralni_cas, Zapiralni_cas, Fk_tip_odpiralnega_casa, fk_veljavnost)
 values ("06:00","22:00",2,2);

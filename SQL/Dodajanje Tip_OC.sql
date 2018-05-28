@@ -15,5 +15,3 @@ values ('Petek');
 
 INSERT INTO tip_odpiralnega_casa (Tip)
 Values ('Vedno odprto');
-
-select * from tip_odpiralnega_casa

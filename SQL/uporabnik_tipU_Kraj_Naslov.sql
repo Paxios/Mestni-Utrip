@@ -158,6 +158,3 @@ values (46.5660066,15.6209936, 'Koroška cesta 172', 1);
 /* Pohorje */
 insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
 values (46.533066, 15.599367, 'Mariborsko pohorje' , 1);
-
-
-select * from Naslov
