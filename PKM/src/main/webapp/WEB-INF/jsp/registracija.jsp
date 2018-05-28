@@ -19,6 +19,7 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -63,12 +64,15 @@
                     <div class="container-fluid">
                         <form method="post" action ="registracija">
                             <p><i>Polja, ozna&ccaron;ena z * so obvezna!</i></p>
+                            <p id="manjkajoPodatki"></p>
                             <p><input class="form-control" type="text" placeholder="*Podjetje" name=imeP></p>
                             <p><input class="form-control" type="text" placeholder="*Email" name=mail></p>
+                            <p id="napakaE"></p>
                             <p><input class="form-control" type="password" placeholder="*Geslo" name=geslo></p>
+                            <p id="napakaG"></p>
                             <p><input class="form-control" type="password" placeholder="*Ponovi geslo" name=istogeslo></p>
                             <p><input class="form-control" type="text" placeholder="Kontaktna oseba" name=lastnik></p>
-                            <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
+                            <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger" onclick="return preveriVnos()"></p>
                         </form>
                     </div>
                 </section>
@@ -76,5 +80,45 @@
         </div>
     </div>
 </header>
+<script>
+    function preveriVnos(){
+        var imeP = $("[name='imeP']");
+        var geslo = $("[name='geslo']");
+        var istogeslo = $("[name='istogeslo']");
+        var email = $("[name='mail']");
+        var napakaG = $("#napakaG");
+        var napakaE = $("#napakaE");
+        var manjkajoPodatki = $("#manjkajoPodatki");
+        email.css('background-color', 'white');
+        manjkajoPodatki.html("");
+        geslo.css('background-color', 'white');
+        istogeslo.css('background-color', 'white');
+        napakaE.html("");
+        napakaG.html("");
+
+        if(imeP.val()==""||geslo.val()==""||istogeslo.val()==""||email.val()==""){
+            manjkajoPodatki.html("Vnesite vse obvezne podatke.");
+            manjkajoPodatki.css("color","#ffa8a5");
+            return false;
+        }
+
+        else
+        if(email.val().indexOf("@")<0){
+            napakaE.html("Vnesite pravilen mail!");
+            email.css('background-color', '#ffa8a5');
+
+            manjkajoPodatki.html("");
+            return false
+        }
+        else if(!(geslo.val() == istogeslo.val())){
+            napakaG.html("Gesli se ne ujemata!");
+            geslo.css('background-color', '#ffa8a5');
+            istogeslo.css('background-color', '#ffa8a5');
+            return false;
+
+        }else return true;
+    }
+
+</script>
 </body>
 </html>
