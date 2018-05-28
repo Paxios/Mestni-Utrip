@@ -36,11 +36,10 @@ public class SikosekController {
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.POST)
     public String Registracija(Model model,@RequestParam(value="imeP", required = true) String imeP, @RequestParam(value="lastnik", required=true) String lastnik,
            @RequestParam(value="mail", required = true) String mail, @RequestParam(value="geslo", required=true) String geslo, @RequestParam(value="uporabniskoIme", required=false) String uporabniskoIme) {
-
-        Objekt objekt = new Objekt(imeP);
-        Oseba oseba = new Oseba(lastnik,mail, uporabniskoIme, geslo, objekt.getNaziv());
-        OsebaDao.addOseba(lastnik,mail,oseba.getUporabniskoIme(), geslo);
-        ObjektDao.addObjekt(imeP);
+         Oseba oseba = new Oseba(lastnik,mail, uporabniskoIme, geslo, ObjektDao.getObjektByNaziv(imeP).getNaziv());
+         OsebaDao.addOseba(lastnik,mail,oseba.getUporabniskoIme(), geslo, ObjektDao.getObjektByNaziv(imeP).getId());
+//       Objekt objekt = new Objekt(imeP);
+//       ObjektDao.addObjekt(imeP); Tega ni treba ker klube tak dodamo prej v bazo sami
         return "redirect:/index";
 
     }

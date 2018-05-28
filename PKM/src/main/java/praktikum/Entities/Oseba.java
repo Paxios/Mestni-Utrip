@@ -12,7 +12,7 @@ public class Oseba {
     public Oseba(String lastnik, String mail, String uporabniskoIme, String geslo, String imeObjekta){
         this.lastnik = lastnik;
         this.mail = mail;
-        this.uporabniskoIme = (imeObjekta.toLowerCase() + "Mstni");
+        this.uporabniskoIme = (imeObjekta.toLowerCase().replaceAll("\\s+","") + "Mstni");
         this.geslo = geslo;
         objekt = new Objekt(imeObjekta);
     }

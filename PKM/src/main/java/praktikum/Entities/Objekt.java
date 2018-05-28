@@ -1,9 +1,13 @@
 package praktikum.Entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import praktikum.db.ObjektDao;
+
 public class Objekt {
     private int id;
     private String naziv;
-
+    @Autowired
+    ObjektDao ObjektDao;
 
     public Objekt(int id, String naziv) {
         this.id = id;

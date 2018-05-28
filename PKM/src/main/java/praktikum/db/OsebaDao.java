@@ -48,10 +48,9 @@ public class OsebaDao {
     }
 
 
-    public int addOseba(String lastnik, String mail, String uporabniskoIme, String geslo){
+    public int addOseba(String uporabniskoIme, String geslo, String lastnik, String mail, int idObjekt){
+        String sql = "INSERT into Uporabnik (lastnik,mail,uporabnisko_ime, geslo, fk_id_objekt) values (?,?,?,?,?)";
 
-        String sql = "INSERT into Uporabnik (lastnik,mail,uporabnisko_ime, geslo) values (?,?,?,?)";
-
-        return jdbcTemplate.update(sql, new Object[]{lastnik, mail, uporabniskoIme, geslo});
+        return jdbcTemplate.update(sql, new Object[]{uporabniskoIme, geslo, lastnik, mail, idObjekt});
     }
 }
