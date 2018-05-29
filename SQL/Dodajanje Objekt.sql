@@ -1,4 +1,4 @@
-insert into objekt values
+insert into objekt (naziv,fk_id_naslov,fk_id_tip_objekta) values
 ('La Cantina',1,2),
 ('Mc Pekarna',2,1),
 ('Klub mariborskih študentov',3, 1),

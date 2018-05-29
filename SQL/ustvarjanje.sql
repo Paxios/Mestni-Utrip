@@ -1,8 +1,10 @@
 /* Brisanje tabel */
  
 SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS Uporabnik;
+DROP TABLE IF EXISTS uporabnik;
 DROP TABLE IF EXISTS Objekt;
+DROP TABLE IF EXISTS Objekt_oc;
+DROP TABLE IF EXISTS Veljavnost;
 DROP TABLE IF EXISTS Dogodek;
 DROP TABLE IF EXISTS Tip_objekta;
 DROP TABLE IF EXISTS Tip_dogodka;
@@ -18,10 +20,8 @@ CREATE TABLE Uporabnik(
 Id_uporabnik INTEGER NOT NULL,
 Uporabnisko_ime VARCHAR(45) NOT NULL,
 Geslo VARCHAR(45) NOT NULL,
-Ime VARCHAR(45) NOT NULL,
-Priimek VARCHAR(45) NOT NULL,
+Lastnik VARCHAR(45) DEFAULT 0,
 Mail VARCHAR(45) NOT NULL,
-Fk_id_tip_uporabnika INTEGER NOT NULL,
 Fk_id_objekt INTEGER NOT NULL);
  
 ALTER TABLE Uporabnik
@@ -77,7 +77,7 @@ ADD CONSTRAINT Pk_Tip_objekta PRIMARY KEY (Id_tip_objekta);
  
 ALTER TABLE Tip_objekta
 MODIFY COLUMN Id_tip_objekta INTEGER AUTO_INCREMENT;
-
+ 
 CREATE TABLE Tip_dogodka(
 Id_tip_dogodka INTEGER NOT NULL,
 Naziv VARCHAR(45) NOT NULL);
@@ -102,8 +102,9 @@ MODIFY COLUMN Id_datum_dogodka INTEGER AUTO_INCREMENT;
  
 CREATE TABLE Naslov(
 Id_naslov INTEGER NOT NULL,
-Ulica VARCHAR(45) NOT NULL,
-Hisna_stevilka VARCHAR(45) NOT NULL,
+Z_sirina DOUBLE NOT NULL,
+Z_dolzina DOUBLE NOT NULL,
+Opis VARCHAR (100) NOT NULL,
 Fk_id_kraj INTEGER NOT NULL);
  
 ALTER TABLE Naslov
@@ -122,23 +123,22 @@ ADD CONSTRAINT Pk_Kraj PRIMARY KEY (Id_kraj);
  
 ALTER TABLE Kraj
 MODIFY COLUMN Id_kraj INTEGER AUTO_INCREMENT;
-
+ 
 /* Odpiralni cas */
 
 CREATE TABLE Odpiralni_cas(
 Id_odpiralniCas INTEGER NOT NULL,
 Odpiralni_cas TIME NOT NULL,
 Zapiralni_cas TIME NOT NULL,
-Veljavnost_od TIME NOT NULL,
-Veljavnost_do TIME NOT NULL,
 Fk_tip_odpiralnega_casa INTEGER NOT NULL,
-Fk_objekt INTEGER NOT NULL
+fk_veljavnost integer not null
 );
 ALTER TABLE Odpiralni_cas
-ADD CONSTRAINT Pk_Odpiralni_cas PRIMARY KEY (Id_odpiralniCas);
+ADD CONSTRAINT Pk_Odpiralni_cas PRIMARY KEY (Id_odpiralnicas);
 
 ALTER TABLE Odpiralni_cas
 MODIFY COLUMN Id_odpiralniCas INTEGER AUTO_INCREMENT;
+
 
 /* Tip odpiralnega casa */
  
@@ -148,27 +148,38 @@ Tip VARCHAR(45) NOT NULL
 );
 ALTER TABLE Tip_odpiralnega_casa
 ADD CONSTRAINT Pk_odpiralni_cas PRIMARY KEY (Id_tip_oc);
-
+ 
 ALTER TABLE Tip_odpiralnega_casa
 MODIFY COLUMN Id_tip_oc INTEGER auto_increment;
+
+/* Veljavnost */
+
+create table veljavnost (
+id_veljavnost INTEGER NOT NULL,
+VeljavnostOd date,
+VeljavnostDo date 
+);
+alter table veljavnost
+add constraint pk_veljavnost primary key (id_veljavnost);
+
+alter table veljavnost
+modify column id_veljavnost integer auto_increment;
  
  
 /* Foreign keys */
  
 /* Uporabnik */
-ALTER TABLE Uporabnik
-ADD CONSTRAINT Fk_uporabnik_id_tip_uporabnika FOREIGN KEY
-(Fk_id_tip_uporabnika) REFERENCES Tip_prodajalca(Id_tip_prodajalca);
- 
+
 ALTER TABLE Uporabnik
 ADD CONSTRAINT Fk_uporabnik_id_objekt FOREIGN KEY
 (Fk_id_objekt) REFERENCES Objekt(Id_objekt);
- 
+
 /* Objekt */
+
 ALTER TABLE Objekt
 ADD CONSTRAINT Fk_objekt_id_naslov FOREIGN KEY
 (Fk_id_naslov) REFERENCES Naslov(Id_naslov);
-
+ 
 ALTER TABLE Objekt
 ADD CONSTRAINT Fk_objekt_id_tip_objekta FOREIGN KEY
 (Fk_id_tip_objekta) REFERENCES Tip_objekta(Id_tip_objekta);
@@ -190,13 +201,14 @@ ADD CONSTRAINT Fk_dogodek_id_tip_dogodka FOREIGN KEY
 ALTER TABLE Dogodek
 ADD CONSTRAINT Fk_dogodek_datum_dogodka FOREIGN KEY
 (Fk_id_datum_dogodka) REFERENCES Dogodek(Id_dogodek);
-
+ 
 /* Odpiralni cas */
 
 ALTER TABLE Odpiralni_cas
 ADD CONSTRAINT Fk_odpiralni_cas_tip FOREIGN KEY
 (Fk_tip_odpiralnega_casa) REFERENCES Tip_OdpiralnegaCasa(Id_tip_oc);
 
-ALTER TABLE Odpiralni_cas
-ADD CONSTRAINT Fk_odpiralni_cas_objekt FOREIGN KEY
-(Fk_objekt) REFERENCES Objekt(Id_objekt);
+ALTER TABLE odpiralni_cas
+ADD CONSTRAINT fk_odpiralni_cas_veljavnost FOREIGN KEY
+(fk_veljavnost) REFERENCES veljavnost(id_veljavnost);
+
