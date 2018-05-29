@@ -6,17 +6,12 @@ import praktikum.db.ObjektDao;
 public class Objekt {
     private int id;
     private String naziv;
-    private int idTipObjekta;
     @Autowired
     ObjektDao ObjektDao;
 
     public Objekt(int id, String naziv) {
         this.id = id;
         this.naziv = naziv;
-    }
-    public Objekt (String naziv, int idTipObjekta){
-        this.naziv =naziv;
-        this.idTipObjekta =idTipObjekta;
     }
 
     public Objekt(String naziv) {
@@ -40,3 +35,4 @@ public class Objekt {
         this.naziv = naziv;
     }
 }
+

@@ -171,9 +171,10 @@ header.masthead {
   padding-bottom: calc(10rem - 56px);
   background-image: url("../img/header.jpg");
   background-position: center center;
-    background-repeat: repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-    overflow: auto;
 }
 
 header.masthead hr {
@@ -197,7 +198,7 @@ header.masthead p {
 
 @media (min-width: 992px) {
   header.masthead {
-    height: auto;
+    height: 100vh;
     min-height: 650px;
     padding-top: 0;
     padding-bottom: 0;

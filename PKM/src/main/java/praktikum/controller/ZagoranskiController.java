@@ -25,32 +25,33 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/klubi" }, method = RequestMethod.GET)
     public String klubi(Model model) {
-        model.addAttribute("klu", dogodekDao.getDogodekByID(1));
+        model.addAttribute("klubi",objektDao.getAllObjekti());
         return "klubi";
-    }
-    @RequestMapping(value = { "/restavracije" }, method = RequestMethod.GET)
-    public String restavracije(Model model) {
-        model.addAttribute("res",dogodekDao.getDogodekByID(2));
-        return "restavracije";
-    }
-    @RequestMapping(value = { "/narava" }, method = RequestMethod.GET)
-    public String narava(Model model) {
-        model.addAttribute("nar",dogodekDao.getDogodekByID(3));
-        return "narava";
     }
     @RequestMapping(value = { "/kultura" }, method = RequestMethod.GET)
     public String kultura(Model model) {
-        model.addAttribute("kul",dogodekDao.getDogodekByID(4));
+        model.addAttribute("kultura",objektDao.getAllObjekti());
         return "kultura";
+    }
+    @RequestMapping(value = { "/narava" }, method = RequestMethod.GET)
+    public String narava(Model model) {
+        model.addAttribute("narava",objektDao.getAllObjekti());
+        return "narava";
+    }
+    @RequestMapping(value = { "/restavracije" }, method = RequestMethod.GET)
+    public String restavracije(Model model) {
+        model.addAttribute("restavracije",objektDao.getAllObjekti());
+        return "restavracije";
     }
     @RequestMapping(value = { "/sport" }, method = RequestMethod.GET)
     public String sport(Model model) {
-        model.addAttribute("spo",dogodekDao.getDogodekByID(5));
+        model.addAttribute("sport",objektDao.getAllObjekti());
         return "sport";
     }
     @RequestMapping(value = { "/aktualno" }, method = RequestMethod.GET)
     public String aktualno(Model model) {
-        model.addAttribute("akt",dogodekDao.getAllDogodki());
+        model.addAttribute("aktualno",objektDao.getAllObjekti());
         return "aktualno";
     }
+
 }

@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +53,6 @@
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <br><br><br>
                 <h1 class="text-uppercase">
                     <strong>Seznam dogodkov v klubih</strong>
                 </h1>
@@ -63,18 +61,9 @@
             <div class="col-lg-8 mx-auto">
                 <p class="text-faded mb-5">
                 <table class="table table-hover">
-                    <tr>
-                        <th>NAZIV</th>
-                        <th>VSTOPNINA</th>
-                        <th>KAPACITETA</th>
-                        <th>OPIS</th>
-                    </tr>
-                    <c:forEach items="${klu}" var="a">
+                    <c:forEach items="${klubi}" var="k">
                         <tr>
-                            <td>${a.naziv}</td>
-                            <td>${a.vstopnina}</td>
-                            <td>${a.kapaciteta}</td>
-                            <td>${a.opis}</td>
+                            <td>${k}</td>
                         </tr>
                     </c:forEach>
                 </table>
