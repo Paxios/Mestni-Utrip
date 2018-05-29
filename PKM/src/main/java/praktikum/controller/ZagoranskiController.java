@@ -25,33 +25,32 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/klubi" }, method = RequestMethod.GET)
     public String klubi(Model model) {
-        model.addAttribute("klubi",objektDao.getAllObjekti());
+        model.addAttribute("klu", dogodekDao.getDogodekByID(1));
         return "klubi";
-    }
-    @RequestMapping(value = { "/kultura" }, method = RequestMethod.GET)
-    public String kultura(Model model) {
-        model.addAttribute("kultura",objektDao.getAllObjekti());
-        return "kultura";
-    }
-    @RequestMapping(value = { "/narava" }, method = RequestMethod.GET)
-    public String narava(Model model) {
-        model.addAttribute("narava",objektDao.getAllObjekti());
-        return "narava";
     }
     @RequestMapping(value = { "/restavracije" }, method = RequestMethod.GET)
     public String restavracije(Model model) {
-        model.addAttribute("restavracije",objektDao.getAllObjekti());
+        model.addAttribute("res",dogodekDao.getDogodekByID(2));
         return "restavracije";
+    }
+    @RequestMapping(value = { "/narava" }, method = RequestMethod.GET)
+    public String narava(Model model) {
+        model.addAttribute("nar",dogodekDao.getDogodekByID(3));
+        return "narava";
+    }
+    @RequestMapping(value = { "/kultura" }, method = RequestMethod.GET)
+    public String kultura(Model model) {
+        model.addAttribute("kul",dogodekDao.getDogodekByID(4));
+        return "kultura";
     }
     @RequestMapping(value = { "/sport" }, method = RequestMethod.GET)
     public String sport(Model model) {
-        model.addAttribute("sport",objektDao.getAllObjekti());
+        model.addAttribute("spo",dogodekDao.getDogodekByID(5));
         return "sport";
     }
     @RequestMapping(value = { "/aktualno" }, method = RequestMethod.GET)
     public String aktualno(Model model) {
-        model.addAttribute("aktualno",objektDao.getAllObjekti());
+        model.addAttribute("akt",dogodekDao.getAllDogodki());
         return "aktualno";
     }
-
 }

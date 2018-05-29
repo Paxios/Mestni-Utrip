@@ -7,6 +7,12 @@ public class Dogodek {
     private String opis;
     private Objekt objekt;
 
+    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis){
+        this.naziv = naziv;
+        this.vstopnina = vstopnina;
+        this.kapaciteta = kapaciteta;
+        this.opis = opis;
+    }
 
     public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, String imeObjekta){
         this.naziv = naziv;
@@ -31,6 +37,10 @@ public class Dogodek {
     public void setVstopnina(double vstopnina) {
         this.vstopnina = vstopnina;
     }
+
+    public int getKapaciteta(){return kapaciteta;}
+
+    public void setKapaciteta(){this.kapaciteta=kapaciteta; }
 
     public String getOpis() {
         return opis;
