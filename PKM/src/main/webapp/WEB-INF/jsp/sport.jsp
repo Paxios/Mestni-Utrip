@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,26 +49,34 @@
         </div>
     </div>
 </nav>
-
-<header class="masthead text-center text-white d-flex">
+<header id="tabela" class="masthead text-center text-white d-flex" style="background-repeat: repeat">
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <h1 class="text-uppercase">
+                <br><br><br>
+                <h1 class="text-uppercase" style="">
                     <strong>Seznam &scaron;portnih dogodkov</strong>
                 </h1>
-                <hr>
-            </div>
-            <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">
-                <table class="table table-hover">
-                    <c:forEach items="${sport}" var="s">
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-faded mb-5">
+                    <table class="table table-hover">
                         <tr>
-                            <td>${s}</td>
+                            <th>NAZIV</th>
+                            <th>VSTOPNINA</th>
+                            <th>KAPACITETA</th>
+                            <th>OPIS</th>
                         </tr>
-                    </c:forEach>
-                </table>
-                </p>
+                        <c:forEach items="${spo}" var="a">
+                            <tr>
+                                <td>${a.naziv}</td>
+                                <td>${a.vstopnina}</td>
+                                <td>${a.kapaciteta}</td>
+                                <td>${a.opis}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
