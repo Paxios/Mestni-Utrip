@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import praktikum.Customer;
-import praktikum.CustomerRepository;
 import praktikum.Entities.Oseba;
 import praktikum.Entities.Objekt;
 import praktikum.Entities.Dogodek;
@@ -17,8 +15,6 @@ import java.util.*;
 
 @Controller
 public class SikosekController {
-    @Autowired
-    CustomerRepository repository;
 
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.GET)
     public String Prijava(){
