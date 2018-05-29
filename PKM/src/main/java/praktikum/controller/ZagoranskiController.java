@@ -5,15 +5,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import praktikum.Customer;
-import praktikum.CustomerRepository;
 import praktikum.db.DogodekDao;
 import praktikum.db.ObjektDao;
 
 @Controller
 public class ZagoranskiController {
-    @Autowired
-    CustomerRepository repository;
     @Autowired
     ObjektDao objektDao;
     @Autowired

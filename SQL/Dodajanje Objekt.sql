@@ -1,7 +1,7 @@
 insert into objekt values
 ('La Cantina',1,2),
 ('Mc Pekarna',2,1),
-('Klub mariborskih študentov',3),
+('Klub mariborskih študentov',3, 1),
 ('Štuk', 4,1),
 ('Takos lent', 5,2),
 ('Bar Trust', 6,1),

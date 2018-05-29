@@ -32,13 +32,23 @@ public class ObjektDao {
         return ret;
     }
 
-    public List<Objekt> getObjektByTip(int fk_id_tip_objekta) {
-            String sql = "SELECT * FROM Objekt WHERE fk_id_tip_objekta = fk_id_tip_objekta";
-            Objekt o = (Objekt) jdbcTemplate.queryForList(sql, new Object[]{fk_id_tip_objekta},
-                    new BeanPropertyRowMapper(Objekt.class));
-            return o;
+    public List<Objekt> getObjektByID(Integer fk_id_tip_objekta) {
+        if (fk_id_tip_objekta==null){
+            return getAllObjekti();
         }
+
+        String sql = "SELECT naziv FROM objekt WHERE fk_id_tip_objekta = ?";
+        List<Objekt> ret = new ArrayList<Objekt>();
+        List<Map<String,Object>> rows  = jdbcTemplate.queryForList(sql,
+                new Object[] { fk_id_tip_objekta });
+        for (Map row : rows) {
+            String naziv = (String) row.get("Naziv");
+
+            ret.add(new Objekt(naziv));
+        }
+        return ret;
     }
+
 
     public int addObjekt(String naziv) {
         String sql = "INSERT into objekt (naziv) values(?)";
