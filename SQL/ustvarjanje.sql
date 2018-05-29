@@ -55,7 +55,7 @@ MODIFY COLUMN Id_objekt INTEGER AUTO_INCREMENT;
 CREATE TABLE Dogodek(
 Id_dogodek INTEGER NOT NULL,
 Naziv VARCHAR(45) NOT NULL,
-vstopnina DECIMAL,
+vstopnina DOUBLE,
 Kapaciteta INTEGER NOT NULL,
 Opis VARCHAR(500),
 Fk_id_objekt INTEGER NOT NULL,
@@ -211,4 +211,3 @@ ADD CONSTRAINT Fk_odpiralni_cas_tip FOREIGN KEY
 ALTER TABLE odpiralni_cas
 ADD CONSTRAINT fk_odpiralni_cas_veljavnost FOREIGN KEY
 (fk_veljavnost) REFERENCES veljavnost(id_veljavnost);
-
