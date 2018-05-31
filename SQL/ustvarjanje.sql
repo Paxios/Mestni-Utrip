@@ -9,12 +9,23 @@ DROP TABLE IF EXISTS Dogodek;
 DROP TABLE IF EXISTS Tip_objekta;
 DROP TABLE IF EXISTS Tip_dogodka;
 DROP TABLE IF EXISTS Tip_uporabnika;
-DROP TABLE IF EXISTS Datum_dogodka;
 DROP TABLE IF EXISTS Naslov;
 DROP TABLE IF EXISTS Kraj;
-DROP TABLE IF EXISTS odpiralni_cas;
+DROP TABLE IF EXISTS Odpiralni_cas;
 DROP TABLE IF EXISTS Tip_odpiralnega_casa;
+DROP TABLE IF EXISTS Slika;
 /* Ustvarjanje tabel */
+
+CREATE TABLE Slika (
+Id_slika INTEGER NOT NULL,
+Slika BLOB,
+Fk_id_dogodek INTEGER NOT NULL);
+
+ALTER TABLE Slika
+ADD CONSTRAINT Pk_Slika PRIMARY KEY (Id_slika);
+
+ALTER TABLE Slika
+MODIFY COLUMN Id_slika INTEGER AUTO_INCREMENT;
  
 CREATE TABLE Uporabnik(
 Id_uporabnik INTEGER NOT NULL,
@@ -58,9 +69,10 @@ Naziv VARCHAR(45) NOT NULL,
 vstopnina DOUBLE,
 Kapaciteta INTEGER NOT NULL,
 Opis VARCHAR(500),
+Datum_zacetka DATETIME NOT NULL,
+Datum_konca DATETIME NOT NULL,
 Fk_id_objekt INTEGER NOT NULL,
-Fk_id_tip_dogodka INTEGER NOT NULL,
-Fk_id_datum_dogodka INTEGER NOT NULL);
+Fk_id_tip_dogodka INTEGER NOT NULL);
  
 ALTER TABLE Dogodek
 ADD CONSTRAINT Pk_Dogodek PRIMARY KEY (Id_dogodek);
@@ -88,17 +100,6 @@ ADD CONSTRAINT Pk_Tip_dogodka PRIMARY KEY (Id_tip_dogodka);
 ALTER TABLE Tip_dogodka
 MODIFY COLUMN Id_tip_dogodka INTEGER AUTO_INCREMENT;
  
-CREATE TABLE Datum_dogodka(
-Id_datum_dogodka INTEGER NOT NULL,
-Datum_zacetka DATETIME NOT NULL,
-Datum_konca DATETIME NOT NULL,
-Ura_zac TIME NOT NULL);
- 
-ALTER TABLE Datum_dogodka
-ADD CONSTRAINT Pk_Datum_dogodka PRIMARY KEY (Id_datum_dogodka);
- 
-ALTER TABLE Datum_dogodka
-MODIFY COLUMN Id_datum_dogodka INTEGER AUTO_INCREMENT;
  
 CREATE TABLE Naslov(
 Id_naslov INTEGER NOT NULL,
@@ -198,9 +199,11 @@ ALTER TABLE Dogodek
 ADD CONSTRAINT Fk_dogodek_id_tip_dogodka FOREIGN KEY
 (Fk_id_tip_dogodka) REFERENCES Tip_dogodka(Id_tip_dogodka);
  
-ALTER TABLE Dogodek
-ADD CONSTRAINT Fk_dogodek_datum_dogodka FOREIGN KEY
-(Fk_id_datum_dogodka) REFERENCES Dogodek(Id_dogodek);
+ 
+/* Slika */
+ ALTER TABLE Slika
+ ADD CONSTRAINT Fk_slika_id_dogodek FOREIGN KEY
+ (Fk_id_dogodek) REFERENCES Dogodek(Id_dogodek);
  
 /* Odpiralni cas */
 
