@@ -76,7 +76,6 @@ public class SikosekController {
     @Autowired
     DogodekDao dogodekDao;
 
-
     @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
     public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
                                    @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="tip") String tip, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta,
@@ -93,21 +92,3 @@ public class SikosekController {
 
 
     }
-
-//    @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
-//    public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
-//                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta) {
-//
-//        Objekt o = ObjektDao.getObjektByNaziv(imeObjekta);
-//
-//        if(o != null) {
-//            Dogodek d = new Dogodek(naziv, vstopnina, kapaciteta, opis,o.getNaziv());
-//            dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis);
-//            return "redirect:/index";
-//        } else {
-//            return "redirect:/index";
-//        }
-//
-//
-//    }
-

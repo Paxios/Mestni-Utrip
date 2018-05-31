@@ -6,12 +6,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import praktikum.Entities.Dogodek;
 import praktikum.Entities.Objekt;
+
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -63,6 +65,11 @@ public class DogodekDao {
     }
 
 
+
+
+
+
+
 //    public List<Dogodek> getDogodekByID(int fk_id_tip_objekta) {
 //
 //        String sql = "SELECT * FROM dogodek, objekt, tip_objekta WHERE dogodek.Fk_id_objekt =objekt.Id_objekt AND objekt.Fk_id_tip_objekta = ?;";
@@ -86,10 +93,7 @@ public class DogodekDao {
 //        }
 //        return ret;
 //    }
-
-
     public List<Dogodek> getDogodekByID(int fk) {
-
         String sql = "SELECT * FROM dogodek, objekt WHERE dogodek.Fk_id_objekt = objekt.Id_objekt AND objekt.Fk_id_tip_objekta = ?";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
