@@ -61,28 +61,32 @@
                 <hr>
             </div>
             <div class="col-lg-8 mx-auto">
-                <input class="btn btn-primary btn-xl" type="submit" value="Razvrsti po datumih">
-                <p class="text-faded mb-5">
-                <table class="table table-hover">
-                    <tr>
-                        <th>NAZIV</th>
-                        <th>VSTOPNINA</th>
-                        <th>KAPACITETA</th>
-                        <th>OPIS</th>
-                    </tr>
-                    <c:forEach items="${akt}" var="a">
+                <ins><em><h4>Razvr&scaron;&ccaron;anje:</h4></em></ins>
+                <input class="btn btn-primary btn-xl" type="submit" value="Po datumu">
+                <input class="btn btn-primary btn-xl" type="submit" value="Po objektu">
+                <hr>
+                    <p class="text-faded mb-5">
+                    <table class="table table-hover">
                         <tr>
-                            <td>${a.naziv}</td>
-                            <td>${a.vstopnina}</td>
-                            <td>${a.kapaciteta}</td>
-                            <td>${a.opis}</td>
+                            <th>NAZIV</th>
+                            <th>VSTOPNINA</th>
+                            <th>KAPACITETA</th>
+                            <th>OPIS</th>
                         </tr>
-                    </c:forEach>
-                </table>
-                </p>
+                        <c:forEach items="${akt}" var="a">
+                            <tr>
+                                <td>${a.naziv}</td>
+                                <td>${a.vstopnina}</td>
+                                <td>${a.kapaciteta}</td>
+                                <td>${a.opis}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                    </p>
             </div>
         </div>
     </div>
 </header>
+
 </body>
 </html>

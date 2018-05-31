@@ -63,14 +63,17 @@
                 <section class="p-0" id="portfolio">
                     <div class="container-fluid">
                         <form method="post" action ="dodajanjeDogodka">
-                            <p><i>Polja, ozna&ccaron;ena z * so obvezna!</i></p>
+                            <%--<p><i>Polja, ozna&ccaron;ena z * so obvezna!</i></p>--%>
                             <p id="manjkajoPodatki"></p>
                             <p><input class="form-control" type="text" placeholder="Naziv dogodka" name=naziv></p>
-                            <p><input class="form-control" type="text" placeholder="Vstopnina (€)" name=vstopnina></p>
+                            <p><input class="form-control" type="text" placeholder="Vstopnina (eur)" name=vstopnina></p>
                             <p id="napakaE"></p>
                             <p><input class="form-control" type="password" placeholder="Opis" name=opis></p>
                             <p id="napakaG"></p>
                             <p><input class="form-control" type="text" placeholder="Ime objekta" name=imeObjekta></p>
+                            <p><input class="form-control" type="text" placeholder="Datum začetka" name=datumZacetka></p>
+
+                            <p><input type="file" class="form-control" value="Dodaj slike" name=slike" multiple></p>
                             <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                         </form>
                     </div>

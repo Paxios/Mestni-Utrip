@@ -19,7 +19,7 @@ public class DogodekDao {
     @Autowired ObjektDao objektDao;
 
     public List<Dogodek> getAllDogodki(){
-        String sql = "SELECT * FROM Dogodek";
+        String sql = "SELECT dogodek.Naziv, dogodek.Vstopnina, dogodek.Kapaciteta, dogodek.Opis, datum_dogodka.Datum_zacetka, datum_dogodka.Ura_zac FROM dogodek, objekt, tip_objekta, datum_dogodka WHERE dogodek.Fk_id_objekt =objekt.Id_objekt AND dogodek.Fk_id_datum_dogodka = datum_dogodka.Id_datum_dogodka";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
         for(Map row: rows){
@@ -30,7 +30,7 @@ public class DogodekDao {
 //            int idObjekt = (int)row.get("fk_id_objekt");
 //            Objekt o = objektDao.getObjektById(idObjekt);
 
-            ret.add(new Dogodek(naziv, vstopnina, kapaciteta, opis/*o.getNaziv()*/));
+            ret.add(new Dogodek(naziv, vstopnina, kapaciteta, opis /*o.getNaziv()*/));
         }
         return ret;
     }
@@ -44,7 +44,7 @@ public class DogodekDao {
 
     public List<Dogodek> getDogodekByID(int fk_id_tip_objekta) {
 
-        String sql = "SELECT dogodek.Naziv, dogodek.Vstopnina, dogodek.Kapaciteta, dogodek.Opis FROM dogodek, objekt, tip_objekta WHERE dogodek.Fk_id_objekt = objekt.Id_objekt AND objekt.Fk_id_tip_objekta = tip_objekta.Id_tip_objekta AND Tip_objekta.Id_tip_objekta = ?";
+        String sql = "SELECT dogodek.Naziv, dogodek.Vstopnina, dogodek.Kapaciteta, dogodek.Opis, datum_dogodka.Datum_zacetka, datum_dogodka.Ura_zac FROM dogodek, objekt, tip_objekta, datum_dogodka WHERE dogodek.Fk_id_objekt =objekt.Id_objekt AND dogodek.Fk_id_datum_dogodka = datum_dogodka.Id_datum_dogodka AND objekt.Fk_id_tip_objekta = tip_objekta.Id_tip_objekta AND Tip_objekta.Id_tip_objekta = ?";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
                 new Object[]{fk_id_tip_objekta});

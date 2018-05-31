@@ -53,4 +53,9 @@ public class ZagoranskiController {
         model.addAttribute("akt",dogodekDao.getAllDogodki());
         return "aktualno";
     }
+    @RequestMapping(value ={ "/podrobnosti"}, method = RequestMethod.GET)
+    public String Prijava(Model model, @RequestParam(value="uporabniskoime") String uporabniskoime){
+
+        return "jaz";
+    }
 }
