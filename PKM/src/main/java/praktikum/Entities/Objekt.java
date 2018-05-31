@@ -7,8 +7,6 @@ public class Objekt {
     private int id;
     private String naziv;
     private int idTipObjekta;
-    @Autowired
-    ObjektDao ObjektDao;
 
     public Objekt(int id, String naziv) {
         this.id = id;
@@ -39,4 +37,5 @@ public class Objekt {
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
+    public int getIdTipObjekta(){return idTipObjekta;}
 }

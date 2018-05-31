@@ -62,19 +62,21 @@
             </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-faded mb-5">
-                <table class="table table-hover">
+                <table class="table ">
                     <tr>
+                        <th>DATUM IN URA ZA&Ccaron;ETKA</th>
                         <th>NAZIV</th>
+                        <%--<th>OBJEKT</th>--%>
                         <th>VSTOPNINA</th>
-                        <th>KAPACITETA</th>
-                        <th>OPIS</th>
+                        <th>DATUM IN URA KONCA </th>
                     </tr>
                     <c:forEach items="${klu}" var="a">
                         <tr>
+                            <td>${a.datumZacetka}</td>
                             <td>${a.naziv}</td>
+                            <%--<td>${a.nazivObjekta}</td>--%>
                             <td>${a.vstopnina}</td>
-                            <td>${a.kapaciteta}</td>
-                            <td>${a.opis}</td>
+                            <td>${a.datumKonca}</td>
                         </tr>
                     </c:forEach>
                 </table>

@@ -22,6 +22,13 @@ public class ObjektDao {
     @Autowired
     NaslovDao NaslovDao;
 
+    public Objekt getObjektByFK(int id) {
+        String sql = "SELECT * FROM Objekt WHERE Fk_id_tip_objekta = id";
+        Objekt o = (Objekt) jdbcTemplate.queryForList(sql, id);
+        new BeanPropertyRowMapper(Objekt.class);
+        return o;
+    }
+
     public List<Objekt> getAllObjekti(){
         String sql = "SELECT * FROM Objekt";
         List<Objekt> ret = new ArrayList<Objekt>();
@@ -30,29 +37,9 @@ public class ObjektDao {
             String naziv = (String) row.get("naziv");
             int idTipObjekta = (int)row.get("fk_id_tip_objekta");
             ret.add(new Objekt(naziv));
-
-        }
-
-        return ret;
-    }
-
-    public List<Objekt> getObjektByID(Integer fk_id_tip_objekta) {
-        if (fk_id_tip_objekta==null){
-            return getAllObjekti();
-        }
-
-        String sql = "SELECT naziv FROM objekt WHERE fk_id_tip_objekta = ?";
-        List<Objekt> ret = new ArrayList<Objekt>();
-        List<Map<String,Object>> rows  = jdbcTemplate.queryForList(sql,
-                new Object[] { fk_id_tip_objekta });
-        for (Map row : rows) {
-            String naziv = (String) row.get("Naziv");
-
-            ret.add(new Objekt(naziv));
         }
         return ret;
     }
-
 
     public int addObjekt(String naziv,String naslov, String tip_objekta ) {
         //DODAJ NASLOV

@@ -1,24 +1,33 @@
 package praktikum.Entities;
 
+import java.time.LocalDateTime;
+
 public class Dogodek {
     private String naziv;
     private double vstopnina;
     private int kapaciteta;
+    private LocalDateTime datumZacetka;
+    private LocalDateTime datumKonca;
     private String opis;
     private Objekt objekt;
 
-    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis){
+    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, LocalDateTime datumZacetka, LocalDateTime datumKonca){
         this.naziv = naziv;
         this.vstopnina = vstopnina;
         this.kapaciteta = kapaciteta;
         this.opis = opis;
+        this.datumZacetka=datumZacetka;
+        this.datumKonca =datumKonca;
     }
 
-    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, String imeObjekta){
+    public Dogodek(String naziv, double vstopnina, int kapaciteta,
+                   String opis, LocalDateTime datumZacetka, LocalDateTime datumKonca, String imeObjekta){
         this.naziv = naziv;
         this.vstopnina = vstopnina;
         this.kapaciteta = kapaciteta;
         this.opis = opis;
+        this.datumZacetka=datumZacetka;
+        this.datumKonca =datumKonca;
         objekt = new Objekt(imeObjekta);
     }
 
@@ -42,6 +51,14 @@ public class Dogodek {
 
     public void setKapaciteta(){this.kapaciteta=kapaciteta; }
 
+    public LocalDateTime getDatumZacetka(){ return datumZacetka; }
+
+    public void setDatumZacetka(){this.datumZacetka=datumZacetka;}
+
+    public LocalDateTime getDatumKonca(){return datumKonca;}
+
+    public void setDatumKonca(){this.datumKonca=datumKonca; }
+
     public String getOpis() {
         return opis;
     }
@@ -49,4 +66,5 @@ public class Dogodek {
     public void setOpis(String opis) {
         this.opis = opis;
     }
+
 }
