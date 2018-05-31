@@ -6,13 +6,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import praktikum.Entities.Dogodek;
 import praktikum.Entities.Objekt;
-
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,17 +32,18 @@ public class DogodekDao {
     @Autowired
     Tip_ObjektaDao tip_objektaDao;
 
-    public List<Dogodek> getAllDogodki() {
+
+    public List<Dogodek> getAllDogodki(){
         String sql = "SELECT*FROM Dogodek";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
-        for (Map row : rows) {
-            String naziv = (String) row.get("naziv");
-            double vstopnina = (double) row.get("vstopnina");
-            int kapaciteta = (int) row.get("kapaciteta");
-            String opis = (String) row.get("opis");
+        for(Map row: rows){
+            String naziv = (String)row.get("naziv");
+            double vstopnina = (double)row.get("vstopnina");
+            int kapaciteta = (int)row.get("kapaciteta");
+            String opis = (String)row.get("opis");
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
-            Timestamp konec = (Timestamp) row.get("datum_Konca");
+            Timestamp konec =(Timestamp)row.get("datum_Konca");
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
 //            int id = (int)row.get("fk_id_objekt");
@@ -60,7 +62,8 @@ public class DogodekDao {
         return jdbcTemplate.update(sql, new Object[]{naziv, vstopnina, kapaciteta, opis});
     }
 
-    //    public List<Dogodek> getDogodekByID(int fk_id_tip_objekta) {
+
+//    public List<Dogodek> getDogodekByID(int fk_id_tip_objekta) {
 //
 //        String sql = "SELECT * FROM dogodek, objekt, tip_objekta WHERE dogodek.Fk_id_objekt =objekt.Id_objekt AND objekt.Fk_id_tip_objekta = ?;";
 //        List<Dogodek> ret = new ArrayList<Dogodek>();
@@ -83,6 +86,7 @@ public class DogodekDao {
 //        }
 //        return ret;
 //    }
+
 
     public List<Dogodek> getDogodekByID(int fk) {
 

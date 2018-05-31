@@ -155,10 +155,11 @@
                 <p class="text-faded mb-5">
                 <div class="container">
                     <c:forEach items="${akt}" var="a">
-                        <a href="#" data-toggle="popover" title="Informacije o dogodku ${a.naziv}"
-                           data-content="${a.vstopnina}
+                            ${a.naziv}
+                            ${a.vstopnina}
                             ${a.kapaciteta}
-                            ${a.opis}">${a.naziv}</a>
+                            ${a.opis}"
+                            ${a.naziv}
                     </c:forEach>
                 </div>
                 <div class="container">

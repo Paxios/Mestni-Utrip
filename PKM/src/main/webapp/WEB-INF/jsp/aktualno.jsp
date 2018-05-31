@@ -66,22 +66,24 @@
                 <input class="btn btn-primary btn-xl" type="submit" value="Po objektu">
                 <hr>
                     <p class="text-faded mb-5">
-                    <table class="table table-hover">
+                <table class="table ">
+                    <tr>
+                        <th>DATUM IN URA ZA&Ccaron;ETKA</th>
+                        <th>NAZIV</th>
+                        <%--<th>OBJEKT</th>--%>
+                        <th>VSTOPNINA</th>
+                        <th>DATUM IN URA KONCA </th>
+                    </tr>
+                    <c:forEach items="${akt}" var="a">
                         <tr>
-                            <th>NAZIV</th>
-                            <th>VSTOPNINA</th>
-                            <th>KAPACITETA</th>
-                            <th>OPIS</th>
+                            <td>${a.datumZacetka}</td>
+                            <td>${a.naziv}</td>
+                            <%--<td>${a.nazivObjekta}</td>--%>
+                            <td>${a.vstopnina}</td>
+                            <td>${a.datumKonca}</td>
                         </tr>
-                        <c:forEach items="${akt}" var="a">
-                            <tr>
-                                <td>${a.naziv}</td>
-                                <td>${a.vstopnina}</td>
-                                <td>${a.kapaciteta}</td>
-                                <td>${a.opis}</td>
-                            </tr>
-                        </c:forEach>
-                    </table>
+                    </c:forEach>
+                </table>
                     </p>
             </div>
         </div>
