@@ -42,7 +42,6 @@ public class ObjektDao {
     }
 
     public int addObjekt(String naziv,String naslov, String tip_objekta ) {
-        //DODAJ NASLOV
         int fk_tip_objekta=0;
         String sqlTip_Objekta = "select * from tip_objekta where naziv = ?";
         List<Map<String,Object>> rows  = jdbcTemplate.queryForList(sqlTip_Objekta,
@@ -59,17 +58,17 @@ public class ObjektDao {
         return jdbcTemplate.update(sql, new Object[]{naziv,fk_id_naslov,fk_tip_objekta});
 
     }
-    public Objekt getObjektByNaziv(String naziv){
+    public Objekt getObjektByNaziv(String nazi){
         Objekt objekt = null;
-        if(naziv == null){
+        if(nazi == null){
             return null;
         } else {
             String sql = "SELECT * FROM objekt WHERE naziv = ?";
-            List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql,  new Object[] {naziv});
+            List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql,  new Object[] {nazi});
             for (Map row : rows){
-                String naz = (String) row.get("naziv");
+                String naziv = (String) row.get("naziv");
                 int id = (int) row.get("id_objekt");
-                objekt= new Objekt(id,naz);
+                objekt= new Objekt(id,naziv);
             }
             return objekt;
         }
