@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <title>Registracija</title>
 
     <!-- Bootstrap core CSS -->
@@ -65,7 +65,21 @@
                         <form method="post" action ="registracija">
                             <p><i>Polja, ozna&ccaron;ena z * so obvezna!</i></p>
                             <p id="manjkajoPodatki"></p>
+                                <%--<select class="form-control" placeholder="*Podjetje" name=imeP >--%>
+                                    <%--<option value="Izberite Podjetje">Izberite Podjetje</option>--%>
+                                <%--&lt;%&ndash;<c:forEach items="${objekti}" var="objektii">                    NEUPORABNO&ndash;%&gt;--%>
+                                    <%--&lt;%&ndash;<option value="${objektii.naziv}">${objektii.naziv}</option>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
+                                <%--</select>--%>
+                              <%--<br/>--%>
                             <p><input class="form-control" type="text" placeholder="*Podjetje" name=imeP></p>
+                            <p><select class="form-control" name=tip_Podjetja>
+                                <option value="tipObjekta">*Izberite tip objekta</option>
+                            <c:forEach items="${tip_objekta}" var="tip_objekta">
+                            <option value="${tip_objekta}">${tip_objekta}</option>
+                            </c:forEach>
+                            </select></p>
+                            <p><input class="form-control" type="text" placeholder="*Naslov" name=naslov></p>
                             <p><input class="form-control" type="text" placeholder="*Email" name=mail></p>
                             <p id="napakaE"></p>
                             <p><input class="form-control" type="password" placeholder="*Geslo" name=geslo></p>
@@ -82,10 +96,12 @@
 </header>
 <script>
     function preveriVnos(){
+        var naslov = $("[name='naslov']");
         var imeP = $("[name='imeP']");
         var geslo = $("[name='geslo']");
         var istogeslo = $("[name='istogeslo']");
         var email = $("[name='mail']");
+        var tip_podjetja=$("[name='tip_Podjetja']")
         var napakaG = $("#napakaG");
         var napakaE = $("#napakaE");
         var manjkajoPodatki = $("#manjkajoPodatki");
@@ -96,14 +112,21 @@
         napakaE.html("");
         napakaG.html("");
 
-        if(imeP.val()==""||geslo.val()==""||istogeslo.val()==""||email.val()==""){
+        if(tip_podjetja.val()=="tipObjekta"||imeP.val()==""||geslo.val()==""||istogeslo.val()==""||email.val()==""||naslov.val()==""){
             manjkajoPodatki.html("Vnesite vse obvezne podatke.");
             manjkajoPodatki.css("color","#ffa8a5");
             return false;
         }
 
         else
-        if(email.val().indexOf("@")<0){
+        if((email.val().indexOf("@")<0)){
+            napakaE.html("Vnesite pravilen mail!");
+            email.css('background-color', '#ffa8a5');
+
+            manjkajoPodatki.html("");
+            return false
+        }
+        else if((email.val().indexOf(".")<0)){
             napakaE.html("Vnesite pravilen mail!");
             email.css('background-color', '#ffa8a5');
 

@@ -1,5 +1,4 @@
 package praktikum.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -11,13 +10,19 @@ import praktikum.Entities.Dogodek;
 import praktikum.db.DogodekDao;
 import praktikum.db.OsebaDao;
 import praktikum.db.ObjektDao;
+import praktikum.db.Tip_ObjektaDao;
+
 import java.util.*;
 
 @Controller
 public class SikosekController {
 
+
+    @Autowired Tip_ObjektaDao Tip_ObjektaDao;
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.GET)
-    public String Prijava(){
+    public String Prijava(Model model){
+        List<String> tip_objekta = Tip_ObjektaDao.getAllTipObjekti();
+        model.addAttribute("tip_objekta",tip_objekta);
         return "/registracija";
     }
 
@@ -31,11 +36,12 @@ public class SikosekController {
     @Autowired ObjektDao ObjektDao;
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.POST)
     public String Registracija(Model model,@RequestParam(value="imeP", required = true) String imeP, @RequestParam(value="lastnik", required=true) String lastnik,
-           @RequestParam(value="mail", required = true) String mail, @RequestParam(value="geslo", required=true) String geslo, @RequestParam(value="uporabniskoIme", required=false) String uporabniskoIme) {
-         Oseba oseba = new Oseba(lastnik,mail, uporabniskoIme, geslo, ObjektDao.getObjektByNaziv(imeP).getNaziv());
-         OsebaDao.addOseba(lastnik,mail,oseba.getUporabniskoIme(), geslo, ObjektDao.getObjektByNaziv(imeP).getId());
-//       Objekt objekt = new Objekt(imeP);
-//       ObjektDao.addObjekt(imeP); Tega ni treba ker klube tak dodamo prej v bazo sami
+                               @RequestParam(value="mail", required = true) String mail, @RequestParam(value="geslo", required=true) String geslo, @RequestParam(value="uporabniskoIme", required=false) String uporabniskoIme,
+                               @RequestParam(value="naslov", required = true) String naslov,@RequestParam(value="tip_Podjetja") String tip_objekta) {
+        Objekt objekt = new Objekt(imeP);
+        ObjektDao.addObjekt(imeP,naslov,tip_objekta);
+        Oseba oseba = new Oseba(lastnik,mail, uporabniskoIme, geslo, ObjektDao.getObjektByNaziv(imeP).getNaziv());
+        OsebaDao.addOseba(lastnik,mail,oseba.getUporabniskoIme(), geslo, ObjektDao.getObjektByNaziv(imeP).getId());
         return "redirect:/index";
 
     }
@@ -63,17 +69,17 @@ public class SikosekController {
 
     @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
     public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
-             @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta) {
+                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta) {
 
-            Objekt o = ObjektDao.getObjektByNaziv(imeObjekta);
+        Objekt o = ObjektDao.getObjektByNaziv(imeObjekta);
 
-            if(o != null) {
-                Dogodek d = new Dogodek(naziv, vstopnina, kapaciteta, opis,o.getNaziv());
-                dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis);
-                return "redirect:/index";
-            } else {
-              return "redirect:/index";
-            }
+        if(o != null) {
+            Dogodek d = new Dogodek(naziv, vstopnina, kapaciteta, opis,o.getNaziv());
+            dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis);
+            return "redirect:/index";
+        } else {
+            return "redirect:/index";
+        }
 
 
     }
