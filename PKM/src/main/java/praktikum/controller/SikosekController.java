@@ -1,4 +1,7 @@
 package praktikum.controller;
+import org.apache.tomcat.jni.Local;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,12 @@ import praktikum.db.OsebaDao;
 import praktikum.db.ObjektDao;
 import praktikum.db.Tip_ObjektaDao;
 
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Controller
@@ -69,19 +78,19 @@ public class SikosekController {
 
     @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
     public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
-                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta) {
-
-        Objekt o = ObjektDao.getObjektByNaziv(imeObjekta);
-
-        if(o != null) {
-            Dogodek d = new Dogodek(naziv, vstopnina, kapaciteta, opis,o.getNaziv());
-            dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis);
-            return "redirect:/index";
-        } else {
+                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="tip") String tip, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta,
+                                   @RequestParam(value="datumZacetka") String datumZacetka, @RequestParam(value="uraZacetka") String uraZacetka, @RequestParam(value="datumKonca") String datumKonca,
+                                   @RequestParam(value="uraKonca") String uraKonca) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate datumZacetkaa = LocalDate.parse(datumZacetka,formatter);
+            LocalDate datumKoncaa = LocalDate.parse(datumKonca,formatter);
+            LocalTime uraZac = LocalTime.parse(uraZacetka);
+            LocalTime uraKon = LocalTime.parse(uraKonca);
+            dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis,datumZacetkaa,uraZac,datumKoncaa,uraKon,tip,imeObjekta);
             return "redirect:/index";
         }
 
 
     }
 
-}
+
