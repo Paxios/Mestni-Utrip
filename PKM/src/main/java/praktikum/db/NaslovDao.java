@@ -3,7 +3,6 @@ package praktikum.db;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import praktikum.Entities.Naslov;
 
 import java.util.List;
 import java.util.Map;

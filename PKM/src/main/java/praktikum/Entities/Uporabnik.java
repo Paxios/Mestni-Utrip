@@ -1,8 +1,5 @@
 package praktikum.Entities;
 
-import javax.persistence.*;
-import java.util.*;
-
 
 public class Uporabnik {
     private Long id;

@@ -65,19 +65,19 @@
                         <form method="post" action ="registracija">
                             <p><i>Polja, ozna&ccaron;ena z * so obvezna!</i></p>
                             <p id="manjkajoPodatki"></p>
-                                <%--<select class="form-control" placeholder="*Podjetje" name=imeP >--%>
-                                    <%--<option value="Izberite Podjetje">Izberite Podjetje</option>--%>
-                                <%--&lt;%&ndash;<c:forEach items="${objekti}" var="objektii">                    NEUPORABNO&ndash;%&gt;--%>
-                                    <%--&lt;%&ndash;<option value="${objektii.naziv}">${objektii.naziv}</option>&ndash;%&gt;--%>
+                            <%--<select class="form-control" placeholder="*Podjetje" name=imeP >--%>
+                            <%--<option value="Izberite Podjetje">Izberite Podjetje</option>--%>
+                            <%--&lt;%&ndash;<c:forEach items="${objekti}" var="objektii">                    NEUPORABNO&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<option value="${objektii.naziv}">${objektii.naziv}</option>&ndash;%&gt;--%>
                             <%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
-                                <%--</select>--%>
-                              <%--<br/>--%>
+                            <%--</select>--%>
+                            <%--<br/>--%>
                             <p><input class="form-control" type="text" placeholder="*Podjetje" name=imeP></p>
                             <p><select class="form-control" name=tip_Podjetja>
                                 <option value="tipObjekta">*Izberite tip objekta</option>
-                            <c:forEach items="${tip_objekta}" var="tip_objekta">
-                            <option value="${tip_objekta}">${tip_objekta}</option>
-                            </c:forEach>
+                                <c:forEach items="${tip_objekta}" var="tip_objekta">
+                                    <option value="${tip_objekta}">${tip_objekta}</option>
+                                </c:forEach>
                             </select></p>
                             <p><input class="form-control" type="text" placeholder="*Naslov" name=naslov></p>
                             <p><input class="form-control" type="text" placeholder="*Email" name=mail></p>
