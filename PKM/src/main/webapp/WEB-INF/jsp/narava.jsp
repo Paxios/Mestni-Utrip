@@ -3,6 +3,13 @@
 <html lang="en">
 
 <head>
+    <style>
+        table tbody tr td a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -61,20 +68,29 @@
                 <hr>
             </div>
             <div class="col-lg-8 mx-auto">
+                <h6>RAZVR&Scaron;&Ccaron;ANJE:</h6>
+                <form method="post">
+                    <input class="btn btn-primary btn-xl" type="submit" value="Po datumu" name="preveri">
+                    <input class="btn btn-primary btn-xl" type="submit" value="Po objektu" name="preveri">
+                </form>
+                <hr>
                 <p class="text-faded mb-5">
-                <table class="table table-hover">
+                <table class="table">
                     <tr>
+                        <th>DATUM IN URA ZA&Ccaron;ETKA</th>
+                        <th>OBJEKT</th>
                         <th>NAZIV</th>
                         <th>VSTOPNINA</th>
-                        <th>KAPACITETA</th>
-                        <th>OPIS</th>
+                        <th>DATUM IN URA KONCA </th>
                     </tr>
                     <c:forEach items="${nar}" var="a">
+                        <%--<a href="/podrobnosti?id=${a.id}">--%>
                         <tr>
-                            <td>${a.naziv}</td>
-                            <td>${a.vstopnina}</td>
-                            <td>${a.kapaciteta}</td>
-                            <td>${a.opis}</td>
+                            <td><a href="/podrobnosti?id=${a.id}">${a.datumZacetka}</a></td>
+                            <td><a href="/podrobnosti?id=${a.id}">${a.objekt.naziv}</a></td>
+                            <td><a href="/podrobnosti?id=${a.id}">${a.naziv}</a></td>
+                            <td><a href="/podrobnosti?id=${a.id}">${a.vstopnina}</a></td>
+                            <td><a href="/podrobnosti?id=${a.id}">${a.datumKonca}</a></td>
                         </tr>
                     </c:forEach>
                 </table>

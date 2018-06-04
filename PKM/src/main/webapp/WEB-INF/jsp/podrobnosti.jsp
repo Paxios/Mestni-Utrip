@@ -110,6 +110,55 @@
         @media only screen and (max-width: 300px) {
             .prev, .next,.text {font-size: 11px}
         }
+
+        input {
+            font-size: 2.4em;
+            background-color: transparent;
+            text-align: center;
+            border-width: 0;
+            width: 100%;
+            margin: 0 0 .1em 0;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            font-size: .8em;
+        }
+
+        button {
+            /* basics */
+            color: #444;
+            background-color: #B5B198;
+            /* rounded corners */
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+            font-weight: bold;
+
+        }
+
+        button:hover, button:active, button:focus {
+            background-color: #CBC7AE;
+        }
+
+        .box {
+            /* basics */
+            background-color: #444;
+            color: #C4BE92;
+            text-align: center;
+
+            /* rounded corners */
+            -webkit-border-radius: 12px;
+            border-radius: 12px;
+            -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+            padding: .8em .8em 1em;
+            width: 8em;
+            margin: 0 auto;
+            -webkit-box-shadow: 0px 0px 12px 0px #000;
+            box-shadow: 0px 0px 12px 0px #000;
+
+        }
     </style>
 </head>
 
@@ -144,44 +193,42 @@
 <header class="masthead text-center text-white d-flex">
     <div class="container my-auto">
         <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <br><br><br>
-                <h1 class="text-uppercase">
-                    <strong>Podrobnosti dogodka</strong>
-                </h1>
-                <hr>
-            </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-faded mb-5">
                 <div class="container">
-                    <c:forEach items="${akt}" var="a">
-                            ${a.naziv}
-                            ${a.vstopnina}
-                            ${a.kapaciteta}
-                            ${a.opis}"
-                            ${a.naziv}
+                    <c:forEach items="${pod}" var="a">
+                        <h1 class="text-uppercase"> ${a.naziv}</h1>
+                        <h3>Naziv objekta: ${a.objekt.naziv}</h3>
+                        <p>Datum in ura za&ccaron;etka: ${a.datumZacetka} </p>
+                        <p>Datum in ura konca: ${a.datumKonca} </p>
+                        <p>Cena za karto (eur): ${a.vstopnina}</p>
+                        <p>Kapaciteta objekta: ${a.kapaciteta}</p>
+                        <p>Opis dogodka: ${a.opis}</p>
                     </c:forEach>
                 </div>
                 <div class="container">
                     <h4>Prijava na dogodek</h4>
-                    <input class="form-control" type="text" placeholder="Va&scaron; mail"/>
-                    <input class="btn btn-primary btn-xl" type="submit" value="Prijava">
+                    <div class="box">
+                        <label for="qty"><abbr title="Quantity">&Scaron;tevilo prijavljenih na dogodek</abbr></label>
+                        <input id="qty" value="0" />
+                        <button class="btn btn-primary btn-xl" id="up" onclick="modify_qty(1)">Udele&zcaron;il se bom dogodka</button>
+                    </div>
                 </div>
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <img src="${a.slika}" style="width:100%">
+                        <%--<img src="${a.slika}" style="width:100%">--%>
                     </div>
                 </div>
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Spletna stran</a> nalaga komentarje...</div>
+            <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16662&num=10&ts=1528132971455");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+            <!-- end www.htmlcommentbox.com -->
                 </p>
             </div>
         </div>
     </div>
 </header>
-<script>
-    $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
-    });
-</script>
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -208,6 +255,68 @@
         }
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
+    }
+</script>
+
+<script>
+    hcb_user = {
+        /* L10N */
+        comments_header : 'Komentarji',
+        name_label : 'Ime',
+        content_label: 'Vnesite svoj komentar',
+        submit : 'Objavi',
+        no_comments_msg: 'Trenutno ni nobenega komentarja. Komentirajte prvi!',
+        add:'Dodaj svoj komentar',
+        again: 'Dodaj nov komentar',
+        said:'Je objavil:',
+        prev_page:'<img src="//www.htmlcommentbox.com/static/images/arrow_left.png" class="hcb-icon" title="prejsnja stran" alt="[prev]"/>',
+        next_page:'<img src="//www.htmlcommentbox.com/static/images/arrow_right.png" class="hcb-icon" title="naslednja stran" alt="[next]"/>',
+        showing:'Prikazujemo',
+        to:'za',
+        website_label:'website (optional)',
+        email_label:'email',
+        anonymous:'Anonimni uporabnik',
+        subscribe:'Prijavljam se na obvestila',
+        are_you_sure:'Je ta komentar neprimeren?',
+
+        reply:'<img src="//www.htmlcommentbox.com/static/images/reply.png"/> odgovor',
+        flag:'<img src="//www.htmlcommentbox.com/static/images/flag.png"/> zastavica',
+        like:'<img src="//www.htmlcommentbox.com/static/images/like.png"/> like',
+
+        /* dates */
+        days_ago:'dni nazaj',
+        hours_ago:'ur nazaj',
+        minutes_ago:'minut nazaj',
+        within_the_last_minute:'v zadnji minuti',
+
+        msg_thankyou:'Hvala za komentar!',
+        msg_approval:'(komentar ne bo objavljen, dokler to ne bo dovoljeno)',
+        msg_approval_required:'Hvala za komentar! Objavljen bo, ko bo ga odobril administrator.',
+
+        err_bad_html:'Objavili ste komentar z nepravilnim html-jem.',
+        err_bad_email:'Vnesite veljaven email.',
+        err_too_frequent:'Komentirate lahko 1x na minuto',
+        err_comment_empty:'Prazen komentar! S tem si ne moremo pomagati',
+        err_denied:'Komentar ni bil sprejet.',
+
+        /* SETTINGS */
+        MAX_CHARS: 8192,
+        PAGE:'', /* ID of the webpage to show comments for. defaults to the webpage the user is currently visiting. */
+        ON_COMMENT: function(){}, /* Function to call after commenting. */
+        RELATIVE_DATES:true /* show dates in the form "X hours ago." etc. */
+    };
+</script>
+<script>
+    function modify_qty(val) {
+        var qty = document.getElementById('qty').value;
+        var new_qty = parseInt(qty,10) + val;
+
+        if (new_qty < 0) {
+            new_qty = 0;
+        }
+
+        document.getElementById('qty').value = new_qty;
+        return new_qty;
     }
 </script>
 </body>

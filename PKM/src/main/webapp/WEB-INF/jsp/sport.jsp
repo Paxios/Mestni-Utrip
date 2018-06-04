@@ -58,20 +58,28 @@
                     <strong>Seznam &scaron;portnih dogodkov</strong>
                 </h1>
                 <div class="col-lg-8 mx-auto">
+                    <h6>RAZVR&Scaron;&Ccaron;ANJE:</h6>
+                    <form method="post">
+                        <input class="btn btn-primary btn-xl" type="submit" value="Po datumu" name="preveri">
+                        <input class="btn btn-primary btn-xl" type="submit" value="Po objektu" name="preveri">
+                    </form>
+                    <hr>
                     <p class="text-faded mb-5">
-                    <table class="table table-hover">
+                    <table class="table">
                         <tr>
+                            <th>DATUM IN URA ZA&Ccaron;ETKA</th>
+                            <th>OBJEKT</th>
                             <th>NAZIV</th>
                             <th>VSTOPNINA</th>
-                            <th>KAPACITETA</th>
-                            <th>OPIS</th>
+                            <th>DATUM IN URA KONCA </th>
                         </tr>
                         <c:forEach items="${spo}" var="a">
                             <tr>
+                                <td>${a.datumZacetka}</td>
+                                <td>${a.objekt.naziv}</td>
                                 <td>${a.naziv}</td>
                                 <td>${a.vstopnina}</td>
-                                <td>${a.kapaciteta}</td>
-                                <td>${a.opis}</td>
+                                <td>${a.datumKonca}</td>
                             </tr>
                         </c:forEach>
                     </table>

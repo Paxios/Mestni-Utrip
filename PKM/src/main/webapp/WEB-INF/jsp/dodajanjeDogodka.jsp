@@ -72,11 +72,11 @@
                             <p><input class="form-control" type="text" placeholder="Tip dogodka" name="tip"></p>
                             <p><textarea class="form-control" type="textarea" rows="3" placeholder="Opis" name=opis></textarea></p>
                             <p><input class="form-control" type="text" placeholder="Ime objekta" name=imeObjekta></p>
-                            <p class="text-left">Datum za&ccaron;etka: <input type="date"  name=datumZacetka></p>
-                            <p class="text-left">Ura za&ccaron;etka: <input type="time"  name="uraZacetka"></p>
-                            <p class="text-left">Datum konca: <input  type="date" placeholder="Datum konca (dd/mm//yyyy)" name=datumKonca></p>
-                            <p class="text-left">Ura konca: <input  type="time" placeholder="Ura konca" name=uraKonca></p>
-                            <p><input type="file" class="form-control" value="Dodaj slike" name=slike" multiple></p>
+                            <p class="text-left">Datum za&ccaron;etka: <input class="form-control" type="date"  name=datumZacetka></p>
+                            <p class="text-left">Ura za&ccaron;etka: <input class="form-control" type="time"  name="uraZacetka"></p>
+                            <p class="text-left">Datum konca: <input class="form-control" type="date" placeholder="Datum konca (dd/mm//yyyy)" name=datumKonca></p>
+                            <p class="text-left">Ura konca: <input class="form-control" type="time" placeholder="Ura konca" name=uraKonca></p>
+                            <p class="text-left">Dodaj fotografije: <input type="file" class="form-control" value="Dodaj slike" name=slike" multiple></p>
                             <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                         </form>
                     </div>

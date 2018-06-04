@@ -34,5 +34,6 @@ public class Objekt {
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
+
     public int getIdTipObjekta(){return idTipObjekta;}
 }

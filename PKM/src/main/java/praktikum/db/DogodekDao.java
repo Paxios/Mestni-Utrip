@@ -27,23 +27,44 @@ public class DogodekDao {
 
 
     public List<Dogodek> getAllDogodki(){
-        String sql = "SELECT*FROM Dogodek";
+        String sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt;";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
         for(Map row: rows){
-            String naziv = (String)row.get("naziv");
+            String naziv_dogodka = (String) row.get("naziv_dogodka");
+            String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double)row.get("vstopnina");
-            int kapaciteta = (int)row.get("kapaciteta");
-            String opis = (String)row.get("opis");
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
-//            int id = (int)row.get("fk_id_objekt");
-//            Objekt o = objektDao.getObjektById(id);
-//            String nazivObjekta = o.getNaziv();
 
-            ret.add(new Dogodek(naziv, vstopnina, kapaciteta, opis, datumZacetka, datumKonca));
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, datumZacetka, datumKonca, naziv_objekta));
+        }
+        return ret;
+    }
+
+    public List<Dogodek> getAllDogodkiOrdered(String preveri){
+        String sql;
+        if (preveri != null && preveri.endsWith ("Po datumu")){
+            sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt ORDER BY dogodek.datum_zacetka;";
+
+        } else {
+            sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt ORDER BY objekt.naziv;";
+
+        }
+        List<Dogodek> ret = new ArrayList<Dogodek>();
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
+        for(Map row: rows){
+            String naziv_dogodka = (String) row.get("naziv_dogodka");
+            String naziv_objekta = (String) row.get("naziv_objekta");
+            double vstopnina = (double)row.get("vstopnina");
+            Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            Timestamp konec =(Timestamp)row.get("datum_Konca");
+            LocalDateTime datumZacetka = zacetek.toLocalDateTime();
+            LocalDateTime datumKonca = konec.toLocalDateTime();
+
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, datumZacetka, datumKonca, naziv_objekta));
         }
         return ret;
     }
@@ -55,42 +76,57 @@ public class DogodekDao {
         return jdbcTemplate.update(sql, new Object[]{naziv, vstopnina, kapaciteta, opis});
     }
 
-
-
-
-
-
-
-//    public List<Dogodek> getDogodekByID(int fk_id_tip_objekta) {
-//
-//        String sql = "SELECT * FROM dogodek, objekt, tip_objekta WHERE dogodek.Fk_id_objekt =objekt.Id_objekt AND objekt.Fk_id_tip_objekta = ?;";
-//        List<Dogodek> ret = new ArrayList<Dogodek>();
-//        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
-//                new Object[]{fk_id_tip_objekta});
-//        for (Map row : rows) {
-//            String naziv = (String) row.get("naziv");
-//            double vstopnina = (double) row.get("vstopnina");
-//            int kapaciteta = (int) row.get("kapaciteta");
-//            String opis = (String) row.get("opis");
-//            Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
-//            Timestamp konec =(Timestamp)row.get("datum_Konca");
-//            LocalDateTime datumZacetka = zacetek.toLocalDateTime();
-//            LocalDateTime datumKonca = konec.toLocalDateTime();
-//            //int idObjekt = (int)row.get("Fk_id_objekt");
-////            Objekt o = objektDao.getObjektByFK(fk_id_tip_objekta);
-////            String imeObjekta = o.getNaziv();
-//
-//            ret.add(new Dogodek(naziv, vstopnina, kapaciteta, opis, datumZacetka,datumKonca /*imeObjekta*/));
-//        }
-//        return ret;
-//    }
-    public List<Dogodek> getDogodekByID(int fk) {
-        String sql = "SELECT * FROM dogodek, objekt WHERE dogodek.Fk_id_objekt = objekt.Id_objekt AND objekt.Fk_id_tip_objekta = ?";
+    public List<Dogodek> getDogodekByFK(int fk) {
+        String sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=?;";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
                 new Object[]{fk});
         for (Map row : rows) {
-            String naziv = (String) row.get("naziv");
+            String naziv_dogodka = (String) row.get("naziv_dogodka");
+            String naziv_objekta = (String) row.get("naziv_objekta");
+            double vstopnina = (double) row.get("vstopnina");
+            Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            Timestamp konec =(Timestamp)row.get("datum_Konca");
+            LocalDateTime datumZacetka = zacetek.toLocalDateTime();
+            LocalDateTime datumKonca = konec.toLocalDateTime();
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, datumZacetka, datumKonca, naziv_objekta));
+        }
+        return ret;
+    }
+
+    public List<Dogodek> getDogodekByFKOrdered(int fk, String preveri) {
+        String sql;
+        if (preveri != null && preveri.endsWith ("Po datumu")){
+            sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=? ORDER BY dogodek.datum_zacetka;";
+
+        } else {
+            sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=? ORDER BY objekt.naziv;";
+
+        }
+        List<Dogodek> ret = new ArrayList<Dogodek>();
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
+                new Object[]{fk});
+        for (Map row : rows) {
+            String naziv_dogodka = (String) row.get("naziv_dogodka");
+            String naziv_objekta = (String) row.get("naziv_objekta");
+            double vstopnina = (double) row.get("vstopnina");
+            Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            Timestamp konec =(Timestamp)row.get("datum_Konca");
+            LocalDateTime datumZacetka = zacetek.toLocalDateTime();
+            LocalDateTime datumKonca = konec.toLocalDateTime();
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, datumZacetka, datumKonca, naziv_objekta));
+        }
+        return ret;
+    }
+
+    public List<Dogodek> getDogodekByID(int id) {
+        String sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina, kapaciteta, opis FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE dogodek.id_dogodek=?;";
+        List<Dogodek> ret = new ArrayList<Dogodek>();
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
+                new Object[]{id});
+        for (Map row : rows) {
+            String naziv_dogodka = (String) row.get("naziv_dogodka");
+            String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double) row.get("vstopnina");
             int kapaciteta = (int) row.get("kapaciteta");
             String opis = (String) row.get("opis");
@@ -98,15 +134,10 @@ public class DogodekDao {
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
-//            Objekt o = objektDao.getObjektByFK(fk);
-//            String nazivObjekta = o.getNaziv();
-            ret.add(new Dogodek(naziv, vstopnina, kapaciteta, opis, datumZacetka, datumKonca));
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, kapaciteta, opis, datumZacetka, datumKonca, naziv_objekta));
         }
         return ret;
     }
-
-
-
 
     public int addDogodek(String naziv, double vstopnina, int kapaciteta, String opis, LocalDate datum_zac, LocalTime ura_zac, LocalDate datum_konc, LocalTime ura_konc, String tip_objetka, String objekt) {
         int fk_id_objekt = 0;

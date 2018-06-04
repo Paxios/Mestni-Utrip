@@ -3,6 +3,7 @@ package praktikum.Entities;
 import java.time.LocalDateTime;
 
 public class Dogodek {
+    private int id;
     private String naziv;
     private double vstopnina;
     private int kapaciteta;
@@ -20,8 +21,15 @@ public class Dogodek {
         this.datumKonca =datumKonca;
     }
 
-    public Dogodek(String naziv, double vstopnina, int kapaciteta,
-                   String opis, LocalDateTime datumZacetka, LocalDateTime datumKonca, String imeObjekta){
+    public Dogodek(String naziv, double vstopnina, LocalDateTime datumZacetka, LocalDateTime datumKonca, String imeObjekta){
+        this.naziv = naziv;
+        this.vstopnina = vstopnina;
+        this.datumZacetka=datumZacetka;
+        this.datumKonca =datumKonca;
+        objekt = new Objekt(imeObjekta);
+    }
+
+    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, LocalDateTime datumZacetka, LocalDateTime datumKonca, String imeObjekta){
         this.naziv = naziv;
         this.vstopnina = vstopnina;
         this.kapaciteta = kapaciteta;
@@ -67,4 +75,23 @@ public class Dogodek {
         this.opis = opis;
     }
 
+    public Objekt getObjekt() {
+        return objekt;
+    }
+
+    public void setObjekt(Objekt objekt) {
+        this.objekt = objekt;
+    }
+
+    public String getImeObjekta() {
+        return objekt.getNaziv();
+    }
+
+    public void setImeObjekta(String imeObjekta) {
+        objekt.setNaziv(imeObjekta);
+    }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 }
