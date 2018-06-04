@@ -19,6 +19,7 @@ praktikum\service\impl\EmployeeServiceImpl.class
 praktikum\db\OsebaDao.class
 praktikum\dao\EmployeeDao.class
 praktikum\service\EmployeeService.class
+praktikum\db\UserDao.class
 praktikum\dao\impl\EmployeeDaoImpl.class
 praktikum\db\NaslovDao.class
 praktikum\Entities\Objekt.class

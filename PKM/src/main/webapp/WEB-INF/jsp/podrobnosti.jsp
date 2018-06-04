@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Podrobnost dogodka</title>
+    <title>Podrobnosti dogodka</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -209,9 +209,9 @@
                 <div class="container">
                     <h4>Prijava na dogodek</h4>
                     <div class="box">
-                        <label for="qty"><abbr title="Quantity">&Scaron;tevilo prijavljenih na dogodek</abbr></label>
+                        <label for="qty"><abbr title="Aktivne prijave">&Scaron;tevilo prijavljenih na dogodek</abbr></label>
                         <input id="qty" value="0" />
-                        <button class="btn btn-primary btn-xl" id="up" onclick="modify_qty(1)">Udele&zcaron;il se bom dogodka</button>
+                        <button id="up" onclick="modify_qty(1)">Prijava</button>
                     </div>
                 </div>
                 <div class="slideshow-container">
@@ -318,6 +318,7 @@
         document.getElementById('qty').value = new_qty;
         return new_qty;
     }
+
 </script>
 </body>
 </html>

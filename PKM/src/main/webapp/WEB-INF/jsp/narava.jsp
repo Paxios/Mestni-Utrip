@@ -4,10 +4,9 @@
 
 <head>
     <style>
-        table tbody tr td a {
-            display: block;
-            width: 100%;
-            height: 100%;
+        .vrstica tr:hover{
+            cursor: pointer;
+            background-color: rgba(202, 202, 202, 0.5);
         }
     </style>
     <meta charset="utf-8">
@@ -75,7 +74,7 @@
                 </form>
                 <hr>
                 <p class="text-faded mb-5">
-                <table class="table">
+                <table class="table table-hover">
                     <tr>
                         <th>DATUM IN URA ZA&Ccaron;ETKA</th>
                         <th>OBJEKT</th>
@@ -84,13 +83,12 @@
                         <th>DATUM IN URA KONCA </th>
                     </tr>
                     <c:forEach items="${nar}" var="a">
-                        <%--<a href="/podrobnosti?id=${a.id}">--%>
-                        <tr>
-                            <td><a href="/podrobnosti?id=${a.id}">${a.datumZacetka}</a></td>
-                            <td><a href="/podrobnosti?id=${a.id}">${a.objekt.naziv}</a></td>
-                            <td><a href="/podrobnosti?id=${a.id}">${a.naziv}</a></td>
-                            <td><a href="/podrobnosti?id=${a.id}">${a.vstopnina}</a></td>
-                            <td><a href="/podrobnosti?id=${a.id}">${a.datumKonca}</a></td>
+                        <tr class ="vrstica" onclick="document.location='/podrobnosti?id=${a.id_dogodek}'" style="cursor:pointer">
+                            <td>${a.datumZacetka}</td>
+                            <td>${a.objekt.naziv}</td>
+                            <td>${a.naziv}</td>
+                            <td>${a.vstopnina}</td>
+                            <td>${a.datumKonca}</td>
                         </tr>
                     </c:forEach>
                 </table>

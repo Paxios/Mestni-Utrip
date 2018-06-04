@@ -3,6 +3,12 @@
 <html lang="en">
 
 <head>
+    <style>
+        .vrstica tr:hover{
+            cursor: pointer;
+            background-color: rgba(202, 202, 202, 0.5);
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -65,7 +71,7 @@
                     </form>
                     <hr>
                     <p class="text-faded mb-5">
-                    <table class="table">
+                    <table class="table table-hover">
                         <tr>
                             <th>DATUM IN URA ZA&Ccaron;ETKA</th>
                             <th>OBJEKT</th>
@@ -74,7 +80,7 @@
                             <th>DATUM IN URA KONCA </th>
                         </tr>
                         <c:forEach items="${spo}" var="a">
-                            <tr>
+                            <tr class ="vrstica" onclick="document.location='/podrobnosti?id=${a.id_dogodek}'" style="cursor:pointer">
                                 <td>${a.datumZacetka}</td>
                                 <td>${a.objekt.naziv}</td>
                                 <td>${a.naziv}</td>
