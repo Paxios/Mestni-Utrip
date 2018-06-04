@@ -53,4 +53,13 @@ public class OsebaDao {
 
         return jdbcTemplate.update(sql, new Object[]{uporabniskoIme, geslo, lastnik, mail, idObjekt});
     }
+
+    public int addUsers(String username, String password){
+        String sql = "insert into users (username,password) values (?,?)";
+        return jdbcTemplate.update(sql, new Object[]{username,password});
+    }
+    public int addAuthority(String username){
+        String sql= "insert into authorities (username) values (?)";
+                return jdbcTemplate.update(sql, new Object[]{username});
+    }
 }

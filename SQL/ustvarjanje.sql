@@ -14,6 +14,8 @@ DROP TABLE IF EXISTS Kraj;
 DROP TABLE IF EXISTS Odpiralni_cas;
 DROP TABLE IF EXISTS Tip_odpiralnega_casa;
 DROP TABLE IF EXISTS Slika;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS authorities;
 /* Ustvarjanje tabel */
 
 CREATE TABLE Slika (
@@ -70,7 +72,7 @@ vstopnina DOUBLE,
 Kapaciteta INTEGER NOT NULL,
 Opis VARCHAR(500),
 Datum_zacetka DATETIME NOT NULL,
-Datum_konca DATETIME NOT NULL,
+Datum_konca DATETIME default 0,
 Fk_id_objekt INTEGER NOT NULL,
 Fk_id_tip_dogodka INTEGER NOT NULL);
  
@@ -167,6 +169,25 @@ alter table veljavnost
 modify column id_veljavnost integer auto_increment;
  
  
+ /* Users*/
+create table users (
+username varchar(50) not null,
+password varchar(50) not null,
+enabled boolean not null default true,
+primary key (username) );
+ 
+/*authorities*/
+ create table authorities (
+ username varchar(50) not null,
+ authority varchar(50) not null default 'ROLE_ADMIN'
+ );
+
+ 
+ 
+ 
+ 
+ 
+ 
 /* Foreign keys */
  
 /* Uporabnik */
@@ -214,3 +235,9 @@ ADD CONSTRAINT Fk_odpiralni_cas_tip FOREIGN KEY
 ALTER TABLE odpiralni_cas
 ADD CONSTRAINT fk_odpiralni_cas_veljavnost FOREIGN KEY
 (fk_veljavnost) REFERENCES veljavnost(id_veljavnost);
+
+
+
+/*Authories*/
+ALTER TABLE authorities add constraint user_role 
+foreign key  (username) references users(username);

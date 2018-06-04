@@ -50,6 +50,8 @@ public class SikosekController {
         ObjektDao.addObjekt(imeP,naslov,tip_objekta);
         Oseba oseba = new Oseba(lastnik,mail, uporabniskoIme, geslo, ObjektDao.getObjektByNaziv(imeP).getNaziv());
         OsebaDao.addOseba(lastnik,mail,oseba.getUporabniskoIme(), geslo, ObjektDao.getObjektByNaziv(imeP).getId());
+        OsebaDao.addUsers(oseba.getUporabniskoIme(),geslo);
+        OsebaDao.addAuthority(oseba.getUporabniskoIme());
         return "redirect:/index";
 
     }
