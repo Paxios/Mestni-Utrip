@@ -193,39 +193,53 @@
 <header class="masthead text-center text-white d-flex">
     <div class="container my-auto">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <p class="col-lg-8 mx-auto">
                 <p class="text-faded mb-5">
                 <div class="container">
-                    <c:forEach items="${pod}" var="a">
-                        <h1 class="text-uppercase"> ${a.naziv}</h1>
-                        <h3>Naziv objekta: ${a.objekt.naziv}</h3>
-                        <p>Datum in ura za&ccaron;etka: ${a.datumZacetka} </p>
-                        <p>Datum in ura konca: ${a.datumKonca} </p>
-                        <p>Cena za karto (eur): ${a.vstopnina}</p>
-                        <p>Kapaciteta objekta: ${a.kapaciteta}</p>
-                        <p>Opis dogodka: ${a.opis}</p>
-                    </c:forEach>
-                </div>
-                <div class="container">
-                    <h4>Prijava na dogodek</h4>
-                    <div class="box">
-                        <label for="qty"><abbr title="Aktivne prijave">Zanimanje za dogodke</abbr></label>
-                        <input id="qty" value="0" />
-                        <button id="up" onclick="modify_qty(1)">Zanima me</button>
+                    <c:forEach items="${pod}" var="a"><br>
+                    <h1 class="text-uppercase"> ${a.naziv}</h1>
+                    <div class="row">
+                        <div class="col-sm">
+                            <hr>
+                            <h4>OPIS:</h4>
+                            <p style="color:#9c9c9c"> ${a.opis}</p>
+                            <hr>
+                        </div>
+                        <div class="col-sm">
+                            <hr>
+                            <h4>LOKACIJA:</h4>  <p style="color:#9c9c9c" class="text-uppercase"> ${a.objekt.naziv}</p>
+                            <h4>DATUM:</h4> <p style="color:#9c9c9c"> ${a.datumZacetka} - ${a.datumKonca}</p>
+                            <h4>VSTOPNINA:</h4> <p style="color:#9c9c9c"> ${a.vstopnina}&euro;</p>
+                            <h4>KAPACITETA:</h4> <p style="color:#9c9c9c"> ${a.kapaciteta} ljudi</p>
+                            <hr>
+                        </div>
+                        <div class="col-sm">
+                            <hr>
+                            <h4>ZANIMANJE ZA DOGODEK </h4><br>
+                            <div class="box">
+                                <label for="qty"><abbr title="Aktivne prijave">&Scaron;tevilo ljudi, ki jih dogodek zanima:</abbr></label>
+                                <input id="qty" value="0" />
+                                <button id="up" onclick="modify_qty(1)">Zanima me</button>
+                            </div>
+                            <hr>
+                        </div>
                     </div>
-                </div>
+                    </c:forEach>
                 <div class="slideshow-container">
                     <div class="mySlides fade">
+                        <hr>
+                        <h3>FOTOGRAFIJE:</h3>
                         <%--<img src="${a.datoteka}" style="width:100%">--%>
+                        <hr>
                     </div>
                 </div>
-            <hr>
-            <!-- begin wwww.htmlcommentbox.com -->
-            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
-            <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-            <!-- end www.htmlcommentbox.com -->
-                </p>
+                <hr>
+                <!-- begin wwww.htmlcommentbox.com -->
+                <div class="container-fluid" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+                <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+                <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+                <!-- end www.htmlcommentbox.com -->
+                <hr>
             </div>
         </div>
     </div>
@@ -265,8 +279,8 @@
         comments_header : 'Komentarji',
         name_label : 'Ime',
         content_label: 'Vnesite svoj komentar',
-        submit : 'Objavi',
-        no_comments_msg: 'Trenutno ni nobenega komentarja. Komentirajte prvi!',
+        submit : 'Komentiraj',
+        no_comments_msg: 'Trenutno ni nobenega komentarja. Bodite prvi, ki bo napisal svoje mnenje!',
         add:'Dodaj svoj komentar',
         again: 'Dodaj nov komentar',
         said:'Je objavil:',
@@ -282,7 +296,7 @@
 
         reply:'<img src="//www.htmlcommentbox.com/static/images/reply.png"/> odgovor',
         flag:'<img src="//www.htmlcommentbox.com/static/images/flag.png"/> zastavica',
-        like:'<img src="//www.htmlcommentbox.com/static/images/like.png"/> like',
+        like:'<img src="//www.htmlcommentbox.com/static/images/like.png"/> v&scaron;e&ccaron;ek',
 
         /* dates */
         days_ago:'dni nazaj',
