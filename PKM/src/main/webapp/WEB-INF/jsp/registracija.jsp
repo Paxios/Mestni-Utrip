@@ -54,6 +54,7 @@
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
+                <br><br><br>
                 <h1 class="text-uppercase">
                     <strong>Registracija podjetja</strong>
                 </h1>

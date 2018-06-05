@@ -244,6 +244,7 @@
         </div>
     </div>
 </header>
+<%--javascript za galerijo slik--%>
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -272,7 +273,7 @@
         dots[slideIndex-1].className += " active";
     }
 </script>
-
+<%--javascript za komentarje--%>
 <script>
     hcb_user = {
         /* L10N */
@@ -321,6 +322,7 @@
         RELATIVE_DATES:true /* show dates in the form "X hours ago." etc. */
     };
 </script>
+<%--javascript za pregled zanimanja za dogodek--%>
 <script>
     function modify_qty(val) {
         var qty = document.getElementById('qty').value;

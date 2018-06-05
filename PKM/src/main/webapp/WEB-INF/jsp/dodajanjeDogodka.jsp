@@ -55,7 +55,7 @@
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <br><br>
+                <br><br><br>
                 <h1 class="text-uppercase">
                     <strong>Dodajanje dogodka</strong>
                 </h1>
@@ -80,8 +80,6 @@
                             <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                         </form>
                     </div>
-
-
                 </section>
             </div>
         </div>
