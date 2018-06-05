@@ -1,18 +1,17 @@
 package praktikum.Entities;
 
-import java.time.LocalDateTime;
 
 public class Dogodek {
     private int id_dogodek;
     private String naziv;
     private double vstopnina;
     private int kapaciteta;
-    private LocalDateTime datumZacetka;
-    private LocalDateTime datumKonca;
+    private String datumZacetka;
+    private String datumKonca;
     private String opis;
     private Objekt objekt;
 
-    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, LocalDateTime datumZacetka, LocalDateTime datumKonca){
+    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, String datumZacetka, String datumKonca){
         this.naziv = naziv;
         this.vstopnina = vstopnina;
         this.kapaciteta = kapaciteta;
@@ -21,7 +20,7 @@ public class Dogodek {
         this.datumKonca =datumKonca;
     }
 
-    public Dogodek(String naziv, double vstopnina, LocalDateTime datumZacetka, LocalDateTime datumKonca, String imeObjekta){
+    public Dogodek(String naziv, double vstopnina, String datumZacetka, String datumKonca, String imeObjekta){
         this.naziv = naziv;
         this.vstopnina = vstopnina;
         this.datumZacetka=datumZacetka;
@@ -29,7 +28,7 @@ public class Dogodek {
         objekt = new Objekt(imeObjekta);
     }
 
-    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, LocalDateTime datumZacetka, LocalDateTime datumKonca, String imeObjekta){
+    public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, String datumZacetka, String datumKonca, String imeObjekta){
         this.naziv = naziv;
         this.vstopnina = vstopnina;
         this.kapaciteta = kapaciteta;
@@ -39,7 +38,7 @@ public class Dogodek {
         objekt = new Objekt(imeObjekta);
     }
 
-    public Dogodek(int id_dogodek, String naziv, double vstopnina, int kapaciteta, String opis, LocalDateTime datumZacetka, LocalDateTime datumKonca, String imeObjekta){
+    public Dogodek(int id_dogodek, String naziv, double vstopnina, int kapaciteta, String opis, String datumZacetka, String datumKonca, String imeObjekta){
         this.id_dogodek=id_dogodek;
         this.naziv = naziv;
         this.vstopnina = vstopnina;
@@ -70,11 +69,11 @@ public class Dogodek {
 
     public void setKapaciteta(){this.kapaciteta=kapaciteta; }
 
-    public LocalDateTime getDatumZacetka(){ return datumZacetka; }
+    public String getDatumZacetka(){ return datumZacetka; }
 
     public void setDatumZacetka(){this.datumZacetka=datumZacetka;}
 
-    public LocalDateTime getDatumKonca(){return datumKonca;}
+    public String getDatumKonca(){return datumKonca;}
 
     public void setDatumKonca(){this.datumKonca=datumKonca; }
 

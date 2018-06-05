@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import praktikum.Entities.Dogodek;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -34,12 +35,14 @@ public class DogodekDao {
             String naziv_dogodka = (String) row.get("naziv_dogodka");
             String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double)row.get("vstopnina");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy HH:mm");
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
+            String konecc = DATE_FORMAT.format(konec);
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
-
-            ret.add(new Dogodek(naziv_dogodka, vstopnina, datumZacetka, datumKonca, naziv_objekta));
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -59,12 +62,14 @@ public class DogodekDao {
             String naziv_dogodka = (String) row.get("naziv_dogodka");
             String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double)row.get("vstopnina");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy HH:mm");
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
+            String konecc = DATE_FORMAT.format(konec);
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
-
-            ret.add(new Dogodek(naziv_dogodka, vstopnina, datumZacetka, datumKonca, naziv_objekta));
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -85,11 +90,12 @@ public class DogodekDao {
             String naziv_dogodka = (String) row.get("naziv_dogodka");
             String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double) row.get("vstopnina");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy HH:mm");
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
-            LocalDateTime datumZacetka = zacetek.toLocalDateTime();
-            LocalDateTime datumKonca = konec.toLocalDateTime();
-            ret.add(new Dogodek(naziv_dogodka, vstopnina, datumZacetka, datumKonca, naziv_objekta));
+            String konecc = DATE_FORMAT.format(konec);
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -110,11 +116,12 @@ public class DogodekDao {
             String naziv_dogodka = (String) row.get("naziv_dogodka");
             String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double) row.get("vstopnina");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy HH:mm");
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
-            LocalDateTime datumZacetka = zacetek.toLocalDateTime();
-            LocalDateTime datumKonca = konec.toLocalDateTime();
-            ret.add(new Dogodek(naziv_dogodka, vstopnina, datumZacetka, datumKonca, naziv_objekta));
+            String konecc = DATE_FORMAT.format(konec);
+            ret.add(new Dogodek(naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -132,10 +139,11 @@ public class DogodekDao {
             int kapaciteta = (int) row.get("kapaciteta");
             String opis = (String) row.get("opis");
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+            String zacetekk= DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
-            LocalDateTime datumZacetka = zacetek.toLocalDateTime();
-            LocalDateTime datumKonca = konec.toLocalDateTime();
-            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, kapaciteta, opis, datumZacetka, datumKonca, naziv_objekta));
+            String konecc= DATE_FORMAT.format(konec);
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, kapaciteta, opis, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
