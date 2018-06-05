@@ -28,10 +28,11 @@ public class DogodekDao {
 
 
     public List<Dogodek> getAllDogodki(){
-        String sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt;";
+        String sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt;";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
         for(Map row: rows){
+            int id_dogodek = (int) row.get("id_dogodek");
             String naziv_dogodka = (String) row.get("naziv_dogodka");
             String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double)row.get("vstopnina");
@@ -42,7 +43,7 @@ public class DogodekDao {
             String konecc = DATE_FORMAT.format(konec);
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
-            ret.add(new Dogodek(naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -59,6 +60,7 @@ public class DogodekDao {
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
         for(Map row: rows){
+            int id_dogodek = (int) row.get("id_dogodek");
             String naziv_dogodka = (String) row.get("naziv_dogodka");
             String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double)row.get("vstopnina");
@@ -69,7 +71,7 @@ public class DogodekDao {
             String konecc = DATE_FORMAT.format(konec);
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
-            ret.add(new Dogodek(naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -82,11 +84,12 @@ public class DogodekDao {
     }
 
     public List<Dogodek> getDogodekByFK(int fk) {
-        String sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=?;";
+        String sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=?;";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
                 new Object[]{fk});
         for (Map row : rows) {
+            int id_dogodek = (int) row.get("id_dogodek");
             String naziv_dogodka = (String) row.get("naziv_dogodka");
             String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double) row.get("vstopnina");
@@ -95,7 +98,7 @@ public class DogodekDao {
             String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             String konecc = DATE_FORMAT.format(konec);
-            ret.add(new Dogodek(naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -103,7 +106,7 @@ public class DogodekDao {
     public List<Dogodek> getDogodekByFKOrdered(int fk, String preveri) {
         String sql;
         if (preveri != null && preveri.endsWith ("Po datumu")){
-            sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=? ORDER BY dogodek.datum_zacetka;";
+            sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=? ORDER BY dogodek.datum_zacetka;";
 
         } else {
             sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=? ORDER BY objekt.naziv;";
@@ -113,6 +116,7 @@ public class DogodekDao {
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
                 new Object[]{fk});
         for (Map row : rows) {
+            int id_dogodek = (int) row.get("id_dogodek");
             String naziv_dogodka = (String) row.get("naziv_dogodka");
             String naziv_objekta = (String) row.get("naziv_objekta");
             double vstopnina = (double) row.get("vstopnina");
@@ -121,7 +125,7 @@ public class DogodekDao {
             String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             String konecc = DATE_FORMAT.format(konec);
-            ret.add(new Dogodek(naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
