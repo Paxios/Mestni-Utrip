@@ -8,9 +8,18 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import javax.sql.DataSource;
+
 @Configuration
 @EnableWebSecurity
 public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter {
+	@Autowired
+	DataSource dataSource;
+	//Enable jdbc authentication
+	@Autowired
+	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+		auth.jdbcAuthentication().dataSource(dataSource);
+	}
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
@@ -43,11 +52,11 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
 		http.csrf().disable();
 	}
-
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-		authenticationMgr.inMemoryAuthentication().withUser("admin").password("admin").authorities("ROLE_USER").and()
-				.withUser("javainuse").password("javainuse").authorities("ROLE_USER", "ROLE_ADMIN");
-	}
+//
+//	@Autowired
+//	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
+//		authenticationMgr.inMemoryAuthentication().withUser("admin").password("admin").authorities("ROLE_USER").and()
+//				.withUser("javainuse").password("javainuse").authorities("ROLE_USER", "ROLE_ADMIN");
+//	}
 
 }

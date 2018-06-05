@@ -57,21 +57,22 @@ public class SikosekController {
     }
 
     @RequestMapping(value = {"/prijava"}, method = RequestMethod.POST)
-    public String Prijava(Model model, @RequestParam(value="uporabniskoime") String uporabniskoime, @RequestParam(value="geslo") String geslo){
+    public String Prijava(Model model , @RequestParam(value="uporabniskoime") String uporabniskoime, @RequestParam(value="geslo") String geslo){
 
-        Oseba o = OsebaDao.getOsebaByUsername(uporabniskoime);
-
-        if(o == null){
-            return "redirect:/index";
-        }
-        else{
-            if(geslo == o.getGeslo()){
-                return "redirect:/index2";
-            }
-            else{
-                return "redirect:/index";
-            }
-        }
+//        Oseba o = OsebaDao.getOsebaByUsername(uporabniskoime);
+//
+//        if(o == null){
+//            return "redirect:/index";
+//        }
+//        else{
+//            if(geslo == o.getGeslo()){
+//                return "redirect:/index2";
+//            }
+//            else{
+//                return "redirect:/index";
+//            }
+//        }
+        return "redirect:/index";
     }
 
     @Autowired
