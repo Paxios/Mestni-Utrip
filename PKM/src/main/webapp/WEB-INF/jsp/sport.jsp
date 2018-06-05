@@ -64,32 +64,20 @@
                     <strong>Seznam &scaron;portnih dogodkov</strong>
                 </h1>
                 <div class="col-lg-8 mx-auto">
-                    <h6>RAZVR&Scaron;&Ccaron;ANJE:</h6>
+                    <h4>RAZVR&Scaron;&Ccaron;ANJE:</h4>
                     <form method="post">
                         <input class="btn btn-primary btn-xl" type="submit" value="Po datumu" name="preveri">
                         <input class="btn btn-primary btn-xl" type="submit" value="Po objektu" name="preveri">
                     </form>
                     <hr>
-                    <p class="text-faded mb-5">
-                    <table class="table table-hover">
-                        <tr>
-                            <th>DATUM IN URA ZA&Ccaron;ETKA</th>
-                            <th>OBJEKT</th>
-                            <th>NAZIV</th>
-                            <th>VSTOPNINA</th>
-                            <th>DATUM IN URA KONCA </th>
-                        </tr>
-                        <c:forEach items="${spo}" var="a">
-                            <tr class ="vrstica" onclick="document.location='/podrobnosti?id=${a.id_dogodek}'" style="cursor:pointer">
-                                <td>${a.datumZacetka}</td>
-                                <td>${a.objekt.naziv}</td>
-                                <td>${a.naziv}</td>
-                                <td>${a.vstopnina}</td>
-                                <td>${a.datumKonca}</td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                    </p>
+                    <c:forEach items="${spo}" var="a">
+                        <h3 class="text-uppercase" onclick="document.location='/podrobnosti?id=${a.id_dogodek}'" style="cursor:pointer; color: aliceblue;">${a.naziv}</h3>
+                        <p style="color: grey">Lokacija: ${a.objekt.naziv} </p>
+                        <p style="color: grey">Datum za&ccaron;etka: ${a.datumZacetka}</p>
+                        <p style="color: grey">${a.vstopnina} eur</p>
+                        <p>SLIKA</p>
+                        <hr>
+                    </c:forEach>
                 </div>
             </div>
         </div>

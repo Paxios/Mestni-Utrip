@@ -209,20 +209,21 @@
                 <div class="container">
                     <h4>Prijava na dogodek</h4>
                     <div class="box">
-                        <label for="qty"><abbr title="Aktivne prijave">&Scaron;tevilo prijavljenih na dogodek</abbr></label>
+                        <label for="qty"><abbr title="Aktivne prijave">Zanimanje za dogodke</abbr></label>
                         <input id="qty" value="0" />
-                        <button id="up" onclick="modify_qty(1)">Prijava</button>
+                        <button id="up" onclick="modify_qty(1)">Zanima me</button>
                     </div>
                 </div>
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <%--<img src="${a.slika}" style="width:100%">--%>
+                        <%--<img src="${a.datoteka}" style="width:100%">--%>
                     </div>
                 </div>
+            <hr>
             <!-- begin wwww.htmlcommentbox.com -->
-            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Spletna stran</a> nalaga komentarje...</div>
+            <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
             <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16662&num=10&ts=1528132971455");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
             <!-- end www.htmlcommentbox.com -->
                 </p>
             </div>

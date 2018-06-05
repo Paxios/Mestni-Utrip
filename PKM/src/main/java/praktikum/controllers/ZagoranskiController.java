@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import praktikum.db.DogodekDao;
 import praktikum.db.ObjektDao;
+import praktikum.db.SlikaDao;
 
 @Controller
 public class ZagoranskiController {
@@ -16,6 +17,8 @@ public class ZagoranskiController {
     ObjektDao objektDao;
     @Autowired
     DogodekDao dogodekDao;
+    @Autowired
+    SlikaDao slikaDao;
 
     @Value("${welcome.message}")
     private String message = "Mestni utrip";
@@ -87,6 +90,7 @@ public class ZagoranskiController {
     }
     @RequestMapping(value ={ "/podrobnosti"}, method = RequestMethod.GET)
     public String Prijava(Model model, @RequestParam(value="id") int id){
+        //slikaDao.getSlikaByFK(id);
         model.addAttribute("pod", dogodekDao.getDogodekByID(id));
         return "podrobnosti";
     }
