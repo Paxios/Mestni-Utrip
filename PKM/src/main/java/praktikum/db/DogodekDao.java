@@ -51,10 +51,10 @@ public class DogodekDao {
     public List<Dogodek> getAllDogodkiOrdered(String preveri){
         String sql;
         if (preveri != null && preveri.endsWith ("Po datumu")){
-            sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt ORDER BY dogodek.datum_zacetka;";
+            sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt ORDER BY dogodek.datum_zacetka;";
 
         } else {
-            sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt ORDER BY objekt.naziv;";
+            sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt ORDER BY objekt.naziv;";
 
         }
         List<Dogodek> ret = new ArrayList<Dogodek>();
@@ -109,7 +109,7 @@ public class DogodekDao {
             sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=? ORDER BY dogodek.datum_zacetka;";
 
         } else {
-            sql = "SELECT dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=? ORDER BY objekt.naziv;";
+            sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE objekt.Fk_id_tip_objekta=? ORDER BY objekt.naziv;";
 
         }
         List<Dogodek> ret = new ArrayList<Dogodek>();

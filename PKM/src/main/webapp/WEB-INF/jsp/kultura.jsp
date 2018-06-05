@@ -75,9 +75,9 @@
                 <hr>
                 <c:forEach items="${kul}" var="a">
                     <h3 class="text-uppercase" onclick="document.location='/podrobnosti?id=${a.id_dogodek}'" style="cursor:pointer; color: aliceblue;">${a.naziv}</h3>
-                    <p style="color: grey">Lokacija: ${a.objekt.naziv} </p>
-                    <p style="color: grey">Datum za&ccaron;etka: ${a.datumZacetka}</p>
-                    <p style="color: grey">${a.vstopnina} eur</p>
+                    <p style="color: grey">LOKACIJA: ${a.objekt.naziv} </p>
+                    <p style="color: grey">DATUM: ${a.datumZacetka}</p>
+                    <p style="color: grey">VSTOPNINA: ${a.vstopnina}&euro;</p>
                     <p>SLIKA</p>
                     <hr>
                 </c:forEach>

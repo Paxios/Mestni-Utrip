@@ -65,10 +65,10 @@
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5">
               Pobuda za nastanek spletne strani je &zcaron;elja Mariborske mestne ob&ccaron;ine. Od nekdaj smo
-                si prizadevali olaj&scaron;anje pregleda dolo&ccaron;enih zadev in s to mislijo je nastala spletna
+                si prizadevali za olaj&scaron;anje pregleda nad dogajanjem in s to mislijo je nastala spletna
                 stran Mestni utrip. Sicer bi &zcaron;eleli, da bi se v na&scaron;em mestu dogajalo ve&ccaron;, pa
                 vendarle so tukaj zbrane vse pomembnej&scaron;e informacije o ve&ccaron;jih, pa tudi manj&scaron;ih
-                dogodkih v prestolnici &Scaron;tajerske.
+                dogodkih v prestolnici na&scaron;e &Scaron;tajerske.
             </p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Zanima me ve&ccaron;</a>
           </div>
@@ -139,6 +139,10 @@
             </div>
           </div>
         </div>
+      <div class="col-lg-8 mx-auto text-center">
+          <br><br>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#portfolio">Na dogodke</a>
+      </div>
       </div>
     </section>
 
@@ -238,6 +242,10 @@
             </a>
           </div>
         </div>
+          <div class="col-lg-8 mx-auto text-center">
+              <br><br>
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#contact">Na prijavo</a>
+          </div>
       </div>
     </section>
 
@@ -266,7 +274,7 @@
           </div>
           <div class="col-lg-4 mr-auto text-center">
             <h3>Kontakt</h3><br>
-              <a href="mailto:uros.zagoranski@student.um.si"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i></a>
+              <a href="mailto:mestniutripmaribor@gmail.com"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i></a>
           </div>
         </div>
       </div>

@@ -86,6 +86,7 @@ public class ZagoranskiController {
     @RequestMapping(value = { "/aktualno" }, method = RequestMethod.POST)
     public String aktualno(Model model, @RequestParam(value="preveri") String preverjanje) {
         model.addAttribute("akt",dogodekDao.getAllDogodkiOrdered(preverjanje));
+        System.out.println(preverjanje);
         return "aktualno";
     }
     @RequestMapping(value ={ "/podrobnosti"}, method = RequestMethod.GET)
