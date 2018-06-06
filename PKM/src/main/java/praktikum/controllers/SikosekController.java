@@ -3,6 +3,8 @@ package praktikum.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +43,9 @@ public class SikosekController {
     public String Dodaj(Model model){
         List<String> tip_dogodka = Tip_DogodkaDao.getAllTipiDogodka();
         model.addAttribute("tip_dogodka", tip_dogodka);
+        String objekt = ObjektDao.getObjektByLoginedUser();
 
+        model.addAttribute("objekt",objekt);
         return "/dodajanjeDogodka";
     }
 
@@ -112,6 +116,7 @@ public class SikosekController {
             LocalTime uraZac = LocalTime.parse(uraZacetka);
             LocalTime uraKon = LocalTime.parse(uraKonca);
             dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis,datumZacetkaa,uraZac,datumKoncaa,uraKon,tip,imeObjekta);
+
             return "redirect:/index";
         }
 

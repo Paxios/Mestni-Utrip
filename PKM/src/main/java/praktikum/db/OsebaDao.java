@@ -62,4 +62,5 @@ public class OsebaDao {
         String sql= "insert into authorities (username) values (?)";
                 return jdbcTemplate.update(sql, new Object[]{username});
     }
+
 }

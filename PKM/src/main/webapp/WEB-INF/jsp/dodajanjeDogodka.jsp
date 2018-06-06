@@ -58,7 +58,8 @@
             <div class="col-lg-10 mx-auto">
                 <br><br><br>
                 <h1 class="text-uppercase">
-                    <strong>Dodajanje dogodka</strong>
+                    <strong>Dodajanje dogodka</strong><br />
+                    <strong>${objekt}</strong>
                 </h1>
                 <hr>
             </div>
@@ -77,7 +78,7 @@
                                 </c:forEach>
                             </select><br />
                             <p><textarea class="form-control" type="textarea" rows="3" placeholder="Opis" name=opis></textarea></p>
-                            <p><input class="form-control" type="text" placeholder="Ime objekta" name=imeObjekta></p>
+                            <input class="form-control" type="hidden" value="${objekt}"  name=imeObjekta>
                             <p class="text-left">Datum za&ccaron;etka: <input class="form-control" type="date"  name=datumZacetka></p>
                             <p class="text-left">Ura za&ccaron;etka: <input class="form-control" type="time"  name="uraZacetka"></p>
                             <p class="text-left">Datum konca: <input class="form-control" type="date" placeholder="Datum konca (dd/mm//yyyy)" name=datumKonca></p>

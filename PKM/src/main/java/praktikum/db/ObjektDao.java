@@ -3,6 +3,7 @@ package praktikum.db;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import praktikum.Entities.Objekt;
 
@@ -85,5 +86,14 @@ public class ObjektDao {
         Objekt o = (Objekt) jdbcTemplate.queryForList(sql, id);
         new BeanPropertyRowMapper(Objekt.class);
         return o;
+    }
+
+    public String getObjektByLoginedUser(){
+        String username=SecurityContextHolder.getContext().getAuthentication().getName();
+        String sql="select naziv from objekt where id_objekt= (select fk_id_objekt from uporabnik where Uporabnisko_ime =?)";
+        String objekt = String.valueOf(jdbcTemplate.queryForList(sql,username));
+        objekt = objekt.replace("[{naziv=","");
+        objekt = objekt.replace("}]", "");
+        return objekt;
     }
 }
