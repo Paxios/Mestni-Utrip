@@ -52,11 +52,5 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
 		http.csrf().disable();
 	}
-//
-//	@Autowired
-//	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-//		authenticationMgr.inMemoryAuthentication().withUser("admin").password("admin").authorities("ROLE_USER").and()
-//				.withUser("javainuse").password("javainuse").authorities("ROLE_USER", "ROLE_ADMIN");
-//	}
 
 }

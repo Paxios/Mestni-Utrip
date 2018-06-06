@@ -37,17 +37,26 @@ public class ObjektDao {
         return ret;
     }
 
-    public int addObjekt(String naziv,String naslov, String tip_objekta ) {
+    public int addObjekt(String naziv,String naslov, String tip_objekta, double dolzina, double sirina ) {
         int fk_tip_objekta=0;
+        int fk_id_naslov=0;
         String sqlTip_Objekta = "select * from tip_objekta where naziv = ?";
         List<Map<String,Object>> rows  = jdbcTemplate.queryForList(sqlTip_Objekta,
                 new Object[] { tip_objekta});
         for(Map row: rows){
             fk_tip_objekta = (int) row.get("id_tip_objekta");
         }
+        if(naslov.equals("")) {
+            NaslovDao.addNaslov(sirina,dolzina);
+            fk_id_naslov = NaslovDao.getId_NaslovByDolzinaAndSirina(dolzina,sirina) ;
 
-        NaslovDao.addNaslov(naslov);
-        int fk_id_naslov=NaslovDao.getId_NaslovByNaslov(naslov);                                                                                         //TO JE TREBA POPRAVIT
+        }else{
+
+            NaslovDao.addNaslov(naslov);
+            fk_id_naslov = NaslovDao.getId_NaslovByNaslov(naslov);
+        }
+
+
 
 
         String sql = "INSERT into objekt (naziv,fk_id_naslov,fk_id_tip_objekta) values(?,?,?)";

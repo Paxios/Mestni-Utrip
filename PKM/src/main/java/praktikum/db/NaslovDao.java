@@ -17,6 +17,20 @@ public class NaslovDao {
         return jdbcTemplate.update(sql, new Object[]{0,0,opis,1});
 
     }
+    public int addNaslov(double sirina,double dolzina) {
+        String sql = "insert into naslov (Z_sirina, z_dolzina, opis, fk_id_kraj) values (?,?,?,?)";
+        return jdbcTemplate.update(sql, new Object[]{sirina,dolzina,"",1});
+    }
+
+    public int getId_NaslovByDolzinaAndSirina (double dolzina, double sirina){
+        int fk_id_naslov = 0;
+        String sqlNaslov = "select id_naslov from naslov where Z_dolzina = ? AND Z_sirina = ?;";
+        List<Map<String,Object>> vrstica = jdbcTemplate.queryForList(sqlNaslov,  new Object[] { dolzina, sirina});
+        for(Map row : vrstica){
+            fk_id_naslov = (int) row.get("id_naslov");
+        }
+        return fk_id_naslov;
+    }
 
     public int getId_NaslovByNaslov(String opis){
         int fk_id_naslov = 0;

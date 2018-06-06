@@ -83,8 +83,8 @@
 
                             <span><input type="radio" name="izbira" class="radio" id="prviRadio" checked="checked" >&Zcaron;elim dodati naslov</span><br />
                             <span><input type="radio" name="izbira" class="radio" id="drugiRadio">&Zcaron;elim dodati geografsko dol&zcaron;ino in &scaron;irino</span>
-                            <p><input class="form-control" type="number" placeholder="*Geografska do&zcaron;ina" name="dolzina" id="dolzina"></p>
-                            <p><input class="form-control" type="number" placeholder="*Geografska &scaron;irina" name="sirina" id="sirina"> </p>
+                            <p><input class="form-control" type="number" step="any" placeholder="*Geografska do&zcaron;ina" name="dolzina" id="dolzina"></p>
+                            <p><input class="form-control" type="number" step="any" placeholder="*Geografska &scaron;irina" name="sirina" id="sirina"> </p>
                             <p><input class="form-control" type="text" placeholder="*Naslov" name=naslov id="naslov"></p>
                             <p><input class="form-control" type="text" placeholder="*Email" name=mail></p>
                             <p id="napakaE"></p>
@@ -104,8 +104,11 @@
     var prvi = $("#prviRadio");
     var drugi =$("#drugiRadio");
     var dolzina =$("#dolzina");
+    dolzina.val(0);
     var sirina =$("#sirina");
+    sirina.val(0);
     var naslov=$("#naslov");
+
     dolzina.hide();
     sirina.hide();
     $('input:radio').change(function () {
@@ -113,13 +116,15 @@
 
         if(prvi.is(':checked')){
             dolzina.hide();
-            dolzina.val("");
+                dolzina.val(0);
             sirina.hide();
-            sirina.val("");
+            sirina.val(0);
             naslov.show();
         }else{
             dolzina.show();
+            dolzina.val("");
             sirina.show();
+            sirina.val("");
             naslov.hide();
             naslov.val("");
 

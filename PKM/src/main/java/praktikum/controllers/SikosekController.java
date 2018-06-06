@@ -1,6 +1,8 @@
 package praktikum.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,8 @@ import praktikum.Entities.Objekt;
 import praktikum.Entities.Oseba;
 import praktikum.db.*;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -23,6 +27,8 @@ public class SikosekController {
     Tip_ObjektaDao Tip_ObjektaDao;
     @Autowired
     Tip_DogodkaDao Tip_DogodkaDao;
+    @Autowired
+    private JavaMailSender sender;
 
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.GET)
     public String Prijava(Model model){
@@ -48,13 +54,27 @@ public class SikosekController {
     public String Registracija(Model model, @RequestParam(value="imeP", required = true) String imeP, @RequestParam(value="lastnik", required=true) String lastnik,
                                @RequestParam(value="mail", required = true) String mail, @RequestParam(value="geslo", required=true) String geslo, @RequestParam(value="uporabniskoIme", required=false) String uporabniskoIme,
                                @RequestParam(value="naslov", required = true) String naslov, @RequestParam(value="tip_Podjetja") String tip_objekta,
-                               @RequestParam(value="dolzina") long dolzina, @RequestParam(value = "sirina") long sirina) {
+                               @RequestParam(value="dolzina") double dolzina, @RequestParam(value = "sirina") double sirina) {
         Objekt objekt = new Objekt(imeP);
-        ObjektDao.addObjekt(imeP,naslov,tip_objekta);
+        ObjektDao.addObjekt(imeP,naslov,tip_objekta,dolzina,sirina);
         Oseba oseba = new Oseba(lastnik,mail, uporabniskoIme, geslo, ObjektDao.getObjektByNaziv(imeP).getNaziv());
         OsebaDao.addOseba(lastnik,mail,oseba.getUporabniskoIme(), geslo, ObjektDao.getObjektByNaziv(imeP).getId());
         OsebaDao.addUsers(oseba.getUporabniskoIme(),geslo);
         OsebaDao.addAuthority(oseba.getUporabniskoIme());
+
+            MimeMessage message = sender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        try {
+            helper.setTo(mail);
+
+        helper.setText("Uspešno ste se registrirali na strani Mestni Utrip.\n\n\nVaše uporabniško ime je: "+oseba.getUporabniskoIme()+"\nVaše geslo je: "+geslo+"\n\n\n"+"Hvala za zaupanje in upamo da vam bomo v veliko pomoč!");
+            helper.setSubject("Mestni Utrip - Uspešna registracija!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+            sender.send(message);
+
         return "redirect:/index";
 
     }
