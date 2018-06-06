@@ -1,4 +1,3 @@
-<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +20,8 @@
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
 
 <body id="page-top">
@@ -69,7 +70,12 @@
                             <p><input class="form-control" type="text" placeholder="Naziv dogodka" name=naziv></p>
                             <p><input class="form-control" type="number" placeholder="Vstopnina (eur)" name=vstopnina></p>
                             <p><input class="form-control" type="number" placeholder="&Scaron;tevilo mest" name="kapaciteta"></p>
-                            <p><input class="form-control" type="text" placeholder="Tip dogodka" name="tip"></p>
+                            <select class="form-control" name="tip">
+                                <option value="*Izberite tip dogodka">*Izberite tip dogodka</option>
+                                <c:forEach items="${tip_dogodka}" var="tip_dogodka">
+                                    <option value="${tip_dogodka}">${tip_dogodka}</option>
+                                </c:forEach>
+                            </select><br />
                             <p><textarea class="form-control" type="textarea" rows="3" placeholder="Opis" name=opis></textarea></p>
                             <p><input class="form-control" type="text" placeholder="Ime objekta" name=imeObjekta></p>
                             <p class="text-left">Datum za&ccaron;etka: <input class="form-control" type="date"  name=datumZacetka></p>
@@ -80,6 +86,8 @@
                             <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                         </form>
                     </div>
+
+
                 </section>
             </div>
         </div>

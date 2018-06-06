@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import praktikum.Entities.Objekt;
 import praktikum.Entities.Oseba;
-import praktikum.db.DogodekDao;
-import praktikum.db.ObjektDao;
-import praktikum.db.OsebaDao;
-import praktikum.db.Tip_ObjektaDao;
+import praktikum.db.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -24,6 +21,8 @@ public class SikosekController {
 
     @Autowired
     Tip_ObjektaDao Tip_ObjektaDao;
+    @Autowired
+    Tip_DogodkaDao Tip_DogodkaDao;
 
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.GET)
     public String Prijava(Model model){
@@ -34,6 +33,9 @@ public class SikosekController {
 
     @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.GET)
     public String Dodaj(Model model){
+        List<String> tip_dogodka = Tip_DogodkaDao.getAllTipiDogodka();
+        model.addAttribute("tip_dogodka", tip_dogodka);
+
         return "/dodajanjeDogodka";
     }
 
@@ -45,7 +47,8 @@ public class SikosekController {
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.POST)
     public String Registracija(Model model, @RequestParam(value="imeP", required = true) String imeP, @RequestParam(value="lastnik", required=true) String lastnik,
                                @RequestParam(value="mail", required = true) String mail, @RequestParam(value="geslo", required=true) String geslo, @RequestParam(value="uporabniskoIme", required=false) String uporabniskoIme,
-                               @RequestParam(value="naslov", required = true) String naslov, @RequestParam(value="tip_Podjetja") String tip_objekta) {
+                               @RequestParam(value="naslov", required = true) String naslov, @RequestParam(value="tip_Podjetja") String tip_objekta,
+                               @RequestParam(value="dolzina") long dolzina, @RequestParam(value = "sirina") long sirina) {
         Objekt objekt = new Objekt(imeP);
         ObjektDao.addObjekt(imeP,naslov,tip_objekta);
         Oseba oseba = new Oseba(lastnik,mail, uporabniskoIme, geslo, ObjektDao.getObjektByNaziv(imeP).getNaziv());

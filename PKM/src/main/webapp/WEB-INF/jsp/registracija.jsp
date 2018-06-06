@@ -80,7 +80,12 @@
                                     <option value="${tip_objekta}">${tip_objekta}</option>
                                 </c:forEach>
                             </select></p>
-                            <p><input class="form-control" type="text" placeholder="*Naslov" name=naslov></p>
+
+                            <span><input type="radio" name="izbira" class="radio" id="prviRadio" checked="checked" >&Zcaron;elim dodati naslov</span><br />
+                            <span><input type="radio" name="izbira" class="radio" id="drugiRadio">&Zcaron;elim dodati geografsko dol&zcaron;ino in &scaron;irino</span>
+                            <p><input class="form-control" type="number" placeholder="*Geografska do&zcaron;ina" name="dolzina" id="dolzina"></p>
+                            <p><input class="form-control" type="number" placeholder="*Geografska &scaron;irina" name="sirina" id="sirina"> </p>
+                            <p><input class="form-control" type="text" placeholder="*Naslov" name=naslov id="naslov"></p>
                             <p><input class="form-control" type="text" placeholder="*Email" name=mail></p>
                             <p id="napakaE"></p>
                             <p><input class="form-control" type="password" placeholder="*Geslo" name=geslo></p>
@@ -96,6 +101,30 @@
     </div>
 </header>
 <script>
+    var prvi = $("#prviRadio");
+    var drugi =$("#drugiRadio");
+    var dolzina =$("#dolzina");
+    var sirina =$("#sirina");
+    var naslov=$("#naslov");
+    dolzina.hide();
+    sirina.hide();
+    $('input:radio').change(function () {
+
+
+        if(prvi.is(':checked')){
+            dolzina.hide();
+            dolzina.val("");
+            sirina.hide();
+            sirina.val("");
+            naslov.show();
+        }else{
+            dolzina.show();
+            sirina.show();
+            naslov.hide();
+            naslov.val("");
+
+        }
+    })
     function preveriVnos(){
         var naslov = $("[name='naslov']");
         var imeP = $("[name='imeP']");
@@ -113,7 +142,7 @@
         napakaE.html("");
         napakaG.html("");
 
-        if(tip_podjetja.val()=="tipObjekta"||imeP.val()==""||geslo.val()==""||istogeslo.val()==""||email.val()==""||naslov.val()==""){
+        if(tip_podjetja.val()=="tipObjekta"||imeP.val()==""||geslo.val()==""||istogeslo.val()==""||email.val()==""||(naslov.val()==""&&(dolzina.val()==""||sirina.val()==""))){
             manjkajoPodatki.html("Vnesite vse obvezne podatke.");
             manjkajoPodatki.css("color","#ffa8a5");
             return false;
