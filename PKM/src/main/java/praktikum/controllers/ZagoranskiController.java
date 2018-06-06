@@ -7,9 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import praktikum.db.DogodekDao;
 import praktikum.db.ObjektDao;
-import praktikum.db.SlikaDao;
+//import praktikum.db.SlikaDao;
+
+import java.io.IOException;
 
 @Controller
 public class ZagoranskiController {
@@ -17,8 +20,8 @@ public class ZagoranskiController {
     ObjektDao objektDao;
     @Autowired
     DogodekDao dogodekDao;
-    @Autowired
-    SlikaDao slikaDao;
+//    @Autowired
+//    SlikaDao slikaDao;
 
     @Value("${welcome.message}")
     private String message = "Mestni utrip";
@@ -95,4 +98,20 @@ public class ZagoranskiController {
         model.addAttribute("pod", dogodekDao.getDogodekByID(id));
         return "podrobnosti";
     }
+
+//    @RequestMapping(value = "/dodajanjeDogodka", method = RequestMethod.POST)
+//    public String createImage(Model model, @RequestParam("slika") MultipartFile slika){
+//
+//        try {
+//            byte[] datoteka = slika.getBytes();
+//
+//            model.addAttribute("datoteka", datoteka);
+//
+//            System.out.println(datoteka.toString());
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return "redirect:/index";
+//    }
 }

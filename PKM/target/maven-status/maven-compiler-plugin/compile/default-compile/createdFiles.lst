@@ -7,6 +7,7 @@ praktikum\config\EmployeeSecurityConfiguration.class
 praktikum\controllers\EmployeeController.class
 praktikum\dao\impl\EmployeeDaoImpl$2.class
 praktikum\db\Tip_ObjektaDao.class
+praktikum\db\Tip_DogodkaDao.class
 praktikum\Entities\Oseba.class
 praktikum\controllers\SikosekController.class
 praktikum\dao\impl\EmployeeDaoImpl$1.class
@@ -14,11 +15,9 @@ praktikum\Entities\Naslov.class
 praktikum\db\DogodekDao.class
 praktikum\Entities\Uporabnik.class
 praktikum\service\impl\EmployeeServiceImpl.class
-praktikum\db\SlikaDao.class
 praktikum\db\OsebaDao.class
 praktikum\dao\EmployeeDao.class
 praktikum\service\EmployeeService.class
-praktikum\Entities\Slika.class
 praktikum\db\UserDao.class
 praktikum\dao\impl\EmployeeDaoImpl.class
 praktikum\db\NaslovDao.class

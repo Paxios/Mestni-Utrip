@@ -6,13 +6,16 @@ import org.springframework.stereotype.Component;
 import praktikum.Entities.Dogodek;
 
 import java.sql.Timestamp;
+import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 @Component
 public class DogodekDao {
@@ -26,6 +29,17 @@ public class DogodekDao {
     @Autowired
     Tip_ObjektaDao tip_objektaDao;
 
+//    private static final Pattern NONLATIN = Pattern.compile("[^\\w-]");
+//    private static final Pattern WHITESPACE = Pattern.compile("[\\s]");
+//    private static final Pattern EDGESDHASHES = Pattern.compile("(^-|-$)");
+//
+//    public static String toSlug(String input) {
+//        String nowhitespace = WHITESPACE.matcher("text").replaceAll("-");
+//        String normalized = Normalizer.normalize(nowhitespace, Normalizer.Form.NFD);
+//        String slug = NONLATIN.matcher(normalized).replaceAll("");
+//        slug = EDGESDHASHES.matcher(slug).replaceAll("");
+//        return slug.toLowerCase(Locale.ENGLISH);
+//    }
 
     public List<Dogodek> getAllDogodki(){
         String sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt;";

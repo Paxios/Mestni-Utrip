@@ -65,7 +65,7 @@
             <div class="col-lg-8 mx-auto">
                 <section class="p-0" id="portfolio">
                     <div class="container-fluid">
-                        <form method="post" action ="dodajanjeDogodka">
+                        <form method="post" action ="dodajanjeDogodka" enctype="multipart/form-data">
                             <p id="manjkajoPodatki"></p>
                             <p><input class="form-control" type="text" placeholder="Naziv dogodka" name=naziv></p>
                             <p><input class="form-control" type="number" placeholder="Vstopnina (eur)" name=vstopnina></p>
@@ -86,8 +86,6 @@
                             <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                         </form>
                     </div>
-
-
                 </section>
             </div>
         </div>

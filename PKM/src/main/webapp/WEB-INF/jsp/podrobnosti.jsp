@@ -60,34 +60,6 @@
             background-color: rgba(0,0,0,0.8);
         }
 
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-        }
-
-
-        /* The dots/bullets/indicators */
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-
         /* Fading animation */
         .fade {
             -webkit-animation-name: fade;
@@ -228,8 +200,12 @@
                 <div class="slideshow-container">
                     <div class="mySlides fade">
                         <hr>
-                        <h3>FOTOGRAFIJE:</h3>
-                        <%--<img src="${a.datoteka}" style="width:100%">--%>
+                        <h3>GALERIJA SLIK:</h3>
+                        <%--<c:forEach items="${datoteka}" var="a">--%>
+                        <%--<div class="mySlides fade">--%>
+                            <%--<img src="${a.datoteka}" style="width:100%">--%>
+                        <%--</div>--%>
+                    </c:forEach>
                         <hr>
                     </div>
                 </div>
