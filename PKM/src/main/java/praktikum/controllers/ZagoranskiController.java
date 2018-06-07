@@ -2,6 +2,7 @@ package praktikum.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +29,15 @@ public class ZagoranskiController {
 
     @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
     public String index(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("message", this.message);
         return "index";
     }
     @RequestMapping(value = { "/klubi" }, method = RequestMethod.GET)
     public String klubi(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("klu", dogodekDao.getDogodekByFK(1));
         return "klubi";
     }
@@ -43,6 +48,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/restavracije" }, method = RequestMethod.GET)
     public String restavracije(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("res",dogodekDao.getDogodekByFK(2));
         return "restavracije";
     }
@@ -53,6 +60,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/narava" }, method = RequestMethod.GET)
     public String narava(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("nar",dogodekDao.getDogodekByFK(3));
         return "narava";
     }
@@ -63,6 +72,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/kultura" }, method = RequestMethod.GET)
     public String kultura(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("kul",dogodekDao.getDogodekByFK(4));
         return "kultura";
     }
@@ -73,6 +84,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/sport" }, method = RequestMethod.GET)
     public String sport(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("spo",dogodekDao.getDogodekByFK(5));
         return "sport";
     }
@@ -83,6 +96,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/aktualno" }, method = RequestMethod.GET)
     public String aktualno(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("akt",dogodekDao.getAllDogodki());
         return "aktualno";
     }
@@ -95,6 +110,8 @@ public class ZagoranskiController {
     @RequestMapping(value ={ "/podrobnosti"}, method = RequestMethod.GET)
     public String Prijava(Model model, @RequestParam(value="id") int id){
         //slikaDao.getSlikaByFK(id);
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("pod", dogodekDao.getDogodekByID(id));
         return "podrobnosti";
     }

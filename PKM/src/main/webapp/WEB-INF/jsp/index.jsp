@@ -1,8 +1,16 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
     <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -27,6 +35,8 @@
 
   <body id="page-top">
 
+  <c:set var="user" value="${username}"/>
+  <c:set var="Anon" value="anonymousUser"/>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -34,6 +44,9 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <c:choose>
+        <c:when test="${user == 'anonymousUser'}">
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -50,6 +63,31 @@
             </li>
           </ul>
         </div>
+        </c:when>
+          <c:otherwise>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="/dodajanjeDogodka">Dodajanje dogodka</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#services">Maribor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#portfolio">Lokacije</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#contact">Prijava</a>
+                </li>
+              </ul>
+            </div>
+          </c:otherwise>
+        </c:choose>
+
       </div>
     </nav>
 
@@ -264,14 +302,38 @@
                 <h3>Registracija</h3><br>
                 <a href="registracija"><i class="fa fa-sign-in fa-3x mb-3"></i></a>
             </div>
+
+
+          <% System.out.println(pageContext.findAttribute("user") ); %>
+
+          <c:choose>
+          <c:when test="${user == 'anonymousUser'}">
           <div class="col-lg-4 ml-auto text-center">
-            <h3>Prijava v sistem</h3><br>
-            <form method="post" action="prijava">
-              <input class="form-control" type="text" name=uporabniskoime placeholder="Uporabni&scaron;ko ime"><br>
-              <input class="form-control" type="password" name=geslo placeholder="Geslo"> <br>
-                <input class="btn btn-primary btn-xl" type="submit" value="Prijava">
+            <form method="POST" action="${contextPath}/index#log" class="form-signin" id="log">
+              <h3 class="form-heading">Prijava v sistem</h3><br>
+              <div class="form-group ${error != null ? 'has-error' : ''}">
+                <span>${msg}</span>
+                <input name="username" type="text" class="form-control" placeholder="Username"
+                       autofocus="true"/><br>
+                <input name="password" type="password" class="form-control" placeholder="Password"/>
+                <span>${errorMsg}</span><br>
+                <button class="btn btn-primary btn-xl" type="submit">Log In</button>
+              </div>
             </form>
-          </div>
+            </div>
+            </c:when>
+
+
+            <c:otherwise>
+              <div class="col-lg-4 ml-auto text-center">
+                  <a onclick="document.forms['logoutForm'].submit()"><button class="btn btn-primary btn-xl" type="submit" id="logout">Logout</button></a>
+                  </h3></u>
+                  <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                  </form>
+              </div>
+            </c:otherwise>
+          </c:choose>
+
           <div class="col-lg-4 mr-auto text-center">
             <h3>Kontakt</h3><br>
               <a href="mailto:mestniutripmaribor@gmail.com"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i></a>

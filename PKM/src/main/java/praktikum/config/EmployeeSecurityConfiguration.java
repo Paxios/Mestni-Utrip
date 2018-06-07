@@ -40,17 +40,22 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
 				.antMatchers("/welcome").hasAnyRole("USER", "ADMIN")
 				.antMatchers("/aktualno").permitAll()
 				.antMatchers("/index").permitAll()
+				.antMatchers("/index2").hasAnyRole("USER", "ADMIN")
 				.antMatchers("/klubi","/kultura","/narava","/registracija","/restavracije","/sport").permitAll()
 				.antMatchers("/podrobnosti").permitAll()
 				.antMatchers("/dodajanjeDogodka").hasAnyRole("USER","ADMIN")
 
 				.antMatchers("/getEmployees").hasAnyRole("USER", "ADMIN")
 				.antMatchers("/addNewEmployee").hasAnyRole().anyRequest().authenticated()
-				.and().formLogin().loginPage("/login").permitAll()
-//^^^^^^^^^ tu gori nastavis Loginpage
+				.and().formLogin().loginPage("/index").permitAll().defaultSuccessUrl("/dodajanjeDogodka")
 				.and().logout().permitAll();
 
 		http.csrf().disable();
 	}
 
+		@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
+		authenticationMgr.inMemoryAuthentication().withUser("admin").password("admin").authorities("ROLE_USER").and()
+				.withUser("javainuse").password("javainuse").authorities("ROLE_USER", "ROLE_ADMIN");
+	}
 }

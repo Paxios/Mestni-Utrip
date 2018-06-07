@@ -33,19 +33,24 @@ public class SikosekController {
     private JavaMailSender sender;
 
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.GET)
-    public String Prijava(Model model){
+    public String Prijava(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         List<String> tip_objekta = Tip_ObjektaDao.getAllTipObjekti();
-        model.addAttribute("tip_objekta",tip_objekta);
+        model.addAttribute("tip_objekta", tip_objekta);
+        System.out.print(SecurityContextHolder.getContext().getAuthentication().getName());
         return "/registracija";
     }
 
     @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.GET)
-    public String Dodaj(Model model){
+    public String Dodaj(Model model) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         List<String> tip_dogodka = Tip_DogodkaDao.getAllTipiDogodka();
         model.addAttribute("tip_dogodka", tip_dogodka);
         String objekt = ObjektDao.getObjektByLoginedUser();
 
-        model.addAttribute("objekt",objekt);
+        model.addAttribute("objekt", objekt);
         return "/dodajanjeDogodka";
     }
 
@@ -54,71 +59,72 @@ public class SikosekController {
     OsebaDao OsebaDao;
     @Autowired
     ObjektDao ObjektDao;
+
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.POST)
-    public String Registracija(Model model, @RequestParam(value="imeP", required = true) String imeP, @RequestParam(value="lastnik", required=true) String lastnik,
-                               @RequestParam(value="mail", required = true) String mail, @RequestParam(value="geslo", required=true) String geslo, @RequestParam(value="uporabniskoIme", required=false) String uporabniskoIme,
-                               @RequestParam(value="naslov", required = true) String naslov, @RequestParam(value="tip_Podjetja") String tip_objekta,
-                               @RequestParam(value="dolzina") double dolzina, @RequestParam(value = "sirina") double sirina) {
+    public String Registracija(Model model, @RequestParam(value = "imeP", required = true) String imeP, @RequestParam(value = "lastnik", required = true) String lastnik,
+                               @RequestParam(value = "mail", required = true) String mail, @RequestParam(value = "geslo", required = true) String geslo, @RequestParam(value = "uporabniskoIme", required = false) String uporabniskoIme,
+                               @RequestParam(value = "naslov", required = true) String naslov, @RequestParam(value = "tip_Podjetja") String tip_objekta,
+                               @RequestParam(value = "dolzina") double dolzina, @RequestParam(value = "sirina") double sirina) {
         Objekt objekt = new Objekt(imeP);
-        ObjektDao.addObjekt(imeP,naslov,tip_objekta,dolzina,sirina);
-        Oseba oseba = new Oseba(lastnik,mail, uporabniskoIme, geslo, ObjektDao.getObjektByNaziv(imeP).getNaziv());
-        OsebaDao.addOseba(lastnik,mail,oseba.getUporabniskoIme(), geslo, ObjektDao.getObjektByNaziv(imeP).getId());
-        OsebaDao.addUsers(oseba.getUporabniskoIme(),geslo);
+        ObjektDao.addObjekt(imeP, naslov, tip_objekta, dolzina, sirina);
+        Oseba oseba = new Oseba(lastnik, mail, uporabniskoIme, geslo, ObjektDao.getObjektByNaziv(imeP).getNaziv());
+        OsebaDao.addOseba(lastnik, mail, oseba.getUporabniskoIme(), geslo, ObjektDao.getObjektByNaziv(imeP).getId());
+        OsebaDao.addUsers(oseba.getUporabniskoIme(), geslo);
         OsebaDao.addAuthority(oseba.getUporabniskoIme());
 
-            MimeMessage message = sender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(message);
+        MimeMessage message = sender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
 
         try {
             helper.setTo(mail);
 
-        helper.setText("Uspešno ste se registrirali na strani Mestni Utrip.\n\n\nVaše uporabniško ime je: "+oseba.getUporabniskoIme()+"\nVaše geslo je: "+geslo+"\n\n\n"+"Hvala za zaupanje in upamo da vam bomo v veliko pomoč!");
+            helper.setText("Uspešno ste se registrirali na strani Mestni Utrip.\n\n\nVaše uporabniško ime je: " + oseba.getUporabniskoIme() + "\nVaše geslo je: " + geslo + "\n\n\n" + "Hvala za zaupanje in upamo da vam bomo v veliko pomoč!");
             helper.setSubject("Mestni Utrip - Uspešna registracija!");
         } catch (Exception e) {
             e.printStackTrace();
         }
-            sender.send(message);
+        sender.send(message);
 
         return "redirect:/index";
 
     }
 
-    @RequestMapping(value = {"/prijava"}, method = RequestMethod.POST)
-    public String Prijava(Model model , @RequestParam(value="uporabniskoime") String uporabniskoime, @RequestParam(value="geslo") String geslo){
-
-//        Oseba o = OsebaDao.getOsebaByUsername(uporabniskoime);
+//    @RequestMapping(value = {"/prijava"}, method = RequestMethod.POST)
+//    public String Prijava(Model model , @RequestParam(value="uporabniskoime") String uporabniskoime, @RequestParam(value="geslo") String geslo){
 //
-//        if(o == null){
-//            return "redirect:/index";
-//        }
-//        else{
-//            if(geslo == o.getGeslo()){
-//                return "redirect:/index2";
-//            }
-//            else{
-//                return "redirect:/index";
-//            }
-//        }
-        return "redirect:/index";
-    }
+////        Oseba o = OsebaDao.getOsebaByUsername(uporabniskoime);
+////
+////        if(o == null){
+////            return "redirect:/index";
+////        }
+////        else{
+////            if(geslo == o.getGeslo()){
+////                return "redirect:/index2";
+////            }
+////            else{
+////                return "redirect:/index";
+////            }
+////        }
+//        return "redirect:/index";
+//    }
 
     @Autowired
     DogodekDao dogodekDao;
 
     @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
-    public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
-                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="tip") String tip, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta,
-                                   @RequestParam(value="datumZacetka") String datumZacetka, @RequestParam(value="uraZacetka") String uraZacetka, @RequestParam(value="datumKonca") String datumKonca,
-                                   @RequestParam(value="uraKonca") String uraKonca) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            LocalDate datumZacetkaa = LocalDate.parse(datumZacetka,formatter);
-            LocalDate datumKoncaa = LocalDate.parse(datumKonca,formatter);
-            LocalTime uraZac = LocalTime.parse(uraZacetka);
-            LocalTime uraKon = LocalTime.parse(uraKonca);
-            dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis,datumZacetkaa,uraZac,datumKoncaa,uraKon,tip,imeObjekta);
+    public String DodajanjeDogodka(Model model, @RequestParam(value = "naziv") String naziv, @RequestParam(value = "vstopnina") double vstopnina,
+                                   @RequestParam(value = "kapaciteta") int kapaciteta, @RequestParam(value = "tip") String tip, @RequestParam(value = "opis") String opis, @RequestParam(value = "imeObjekta") String imeObjekta,
+                                   @RequestParam(value = "datumZacetka") String datumZacetka, @RequestParam(value = "uraZacetka") String uraZacetka, @RequestParam(value = "datumKonca") String datumKonca,
+                                   @RequestParam(value = "uraKonca") String uraKonca) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate datumZacetkaa = LocalDate.parse(datumZacetka, formatter);
+        LocalDate datumKoncaa = LocalDate.parse(datumKonca, formatter);
+        LocalTime uraZac = LocalTime.parse(uraZacetka);
+        LocalTime uraKon = LocalTime.parse(uraKonca);
+        dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis, datumZacetkaa, uraZac, datumKoncaa, uraKon, tip, imeObjekta);
 
-            return "redirect:/index";
-        }
-
-
+        return "redirect:/index";
     }
+
+
+}

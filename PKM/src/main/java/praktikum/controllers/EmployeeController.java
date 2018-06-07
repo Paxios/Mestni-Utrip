@@ -47,7 +47,7 @@ public class EmployeeController {
 		return model;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/index#log", method = RequestMethod.GET)
 	public String login(Model model, String error, String logout) {
 		if (error != null)
 			model.addAttribute("errorMsg", "Your username and password are invalid.");
@@ -55,7 +55,7 @@ public class EmployeeController {
 		if (logout != null)
 			model.addAttribute("msg", "You have been logged out successfully.");
 
-		return "login";
+		return "index#log";
 	}
 
 }

@@ -135,6 +135,8 @@
 </head>
 
 <body id="page-top">
+<c:set var="user" value="${username}"/>
+<c:set var="Anon" value="anonymousUser"/>
 
 <!-- Navigation -->
 
@@ -144,22 +146,50 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#about">O nas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#services">Maribor</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
-                </li>
-            </ul>
-        </div>
+
+        <c:choose>
+            <c:when test="${user == 'anonymousUser'}">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#services">Maribor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#portfolio">Lokacije</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#contact">Prijava</a>
+                        </li>
+                    </ul>
+                </div>
+            </c:when>
+            <c:otherwise>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="/dodajanjeDogodka">Dodajanje dogodka</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#services">Maribor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#portfolio">Lokacije</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#contact">Prijava</a>
+                        </li>
+                    </ul>
+                </div>
+            </c:otherwise>
+        </c:choose>
+
     </div>
 </nav>
 <header class="masthead text-center text-white d-flex">
@@ -185,6 +215,8 @@
                             <h4>KAPACITETA:</h4> <p style="color:#9c9c9c"> ${a.kapaciteta} ljudi</p>
                             <hr>
                         </div>
+
+
                         <div class="col-sm">
                             <hr>
                             <h4>ZANIMANJE ZA DOGODEK </h4><br>
@@ -197,14 +229,16 @@
                         </div>
                     </div>
                     </c:forEach>
+
+
                 <div class="slideshow-container">
                     <div class="mySlides fade">
                         <hr>
                         <h3>GALERIJA SLIK:</h3>
-                        <%--<c:forEach items="${datoteka}" var="a">--%>
-                        <%--<div class="mySlides fade">--%>
-                            <%--<img src="${a.datoteka}" style="width:100%">--%>
-                        <%--</div>--%>
+                        <c:forEach items="${datoteka}" var="a">
+                        <div class="mySlides fade">
+                            <img src="${a.datoteka}" style="width:100%">
+                        </div>
                     </c:forEach>
                         <hr>
                     </div>
