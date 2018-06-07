@@ -111,7 +111,7 @@
                             <p class="text-left">Ura za&ccaron;etka: <input class="form-control" type="time"  name="uraZacetka"></p>
                             <p class="text-left">Datum konca: <input class="form-control" type="date" placeholder="Datum konca (dd/mm//yyyy)" name=datumKonca></p>
                             <p class="text-left">Ura konca: <input class="form-control" type="time" placeholder="Ura konca" name=uraKonca></p>
-                            <p class="text-left">Dodaj fotografije: <input type="file" class="form-control" value="Dodaj slike" name=slike" multiple></p>
+                            <p class="text-left">Dodaj fotografije: <input type="file" name="files" accept=".jpg, .jpeg, .png" multiple></p>
                             <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                         </form>
                     </div>
@@ -120,5 +120,49 @@
         </div>
     </div>
 </header>
+<script>
+    var fileTypes = [
+        'image/jpeg',
+        'image/pjpeg',
+        'image/png'
+    ]
+    var input = document.querySelector('#image_uploads');
+    var preview = document.querySelector('#predogled');
+    input.style.visibility = 'hidden';
+    input.addEventListener('change', posodobiPregledSlik);
+    function  posodobiPregledSlik() {
+        while(preview.firstChild) {
+            preview.removeChild(preview.firstChild);
+        }
+        var curFiles = input.files;
+        if(curFiles.length !== 0) {
+            var list = document.createElement('ol');
+            preview.appendChild(list);
+            for(var i = 0; i < curFiles.length; i++) {
+                if(validFileType(curFiles[i])) {
+                    var listItem = document.createElement('li');
+                    listItem.setAttribute("class","list-group-item");
+                    var para = document.createElement('span');
+                    para.textContent = '' + curFiles[i].name+' ';
+                    var image = document.createElement('img');
+                    list.setAttribute("class","slikaZaFotografije");
+                    image.src = window.URL.createObjectURL(curFiles[i]);
+                    listItem.appendChild(para);
+                    listItem.appendChild(image);
+                    list.appendChild(document.createElement('BR'));
+                }
+                list.appendChild(listItem);
+            }
+        }
+    }
+    function validFileType(file) {
+        for(var i = 0; i < fileTypes.length; i++) {
+            if(file.type === fileTypes[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+</script>
 </body>
 </html>

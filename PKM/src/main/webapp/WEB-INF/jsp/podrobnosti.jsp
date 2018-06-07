@@ -167,7 +167,6 @@
                 </div>
             </c:when>
             <c:otherwise>
-
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -189,7 +188,6 @@
                 </div>
             </c:otherwise>
         </c:choose>
-
     </div>
 </nav>
 <header class="masthead text-center text-white d-flex">
@@ -229,17 +227,15 @@
                         </div>
                     </div>
                     </c:forEach>
-
-
                 <div class="slideshow-container">
-                    <div class="mySlides fade">
+                    <div>
                         <hr>
                         <h3>GALERIJA SLIK:</h3>
-                        <c:forEach items="${datoteka}" var="a">
-                        <div class="mySlides fade">
-                            <img src="${a.datoteka}" style="width:100%">
-                        </div>
-                    </c:forEach>
+                        <c:forEach items="${sli}" var="a">
+                            <div>
+                                <img src="data:image/jpeg;base64,${sli.URLSlike}" style="width:100%">
+                            </div>
+                        </c:forEach>
                         <hr>
                     </div>
                 </div>
@@ -345,7 +341,6 @@
         document.getElementById('qty').value = new_qty;
         return new_qty;
     }
-
 </script>
 </body>
 </html>

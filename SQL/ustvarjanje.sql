@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS authorities;
 
 CREATE TABLE Slika (
 Id_slika INTEGER NOT NULL,
-Slika BLOB,
+Datoteka MEDIUMBLOB,
 Fk_id_dogodek INTEGER NOT NULL);
 
 ALTER TABLE Slika
@@ -74,8 +74,7 @@ Opis VARCHAR(500),
 Datum_zacetka DATETIME NOT NULL,
 Datum_konca DATETIME default 0,
 Fk_id_objekt INTEGER NOT NULL,
-Fk_id_tip_dogodka INTEGER NOT NULL,
-fk_id_uporabnik INTEGER NOT NULL);
+Fk_id_tip_dogodka INTEGER NOT NULL);
  
 ALTER TABLE Dogodek
 ADD CONSTRAINT Pk_Dogodek PRIMARY KEY (Id_dogodek);
@@ -182,11 +181,6 @@ primary key (username) );
  username varchar(50) not null,
  authority varchar(50) not null default 'ROLE_ADMIN'
  );
-
- 
- 
- 
- 
  
  
 /* Foreign keys */
@@ -237,10 +231,7 @@ ALTER TABLE odpiralni_cas
 ADD CONSTRAINT fk_odpiralni_cas_veljavnost FOREIGN KEY
 (fk_veljavnost) REFERENCES veljavnost(id_veljavnost);
 
-/*FK_id_uporabnik pri Dogodku*/
-Alter table Dogodek
-add constraint fk_uprabnik_dogodek foreign key
-(fk_id_uporabnik) references uporabnik(id_uporabnik);
+
 
 /*Authories*/
 ALTER TABLE authorities add constraint user_role 

@@ -107,24 +107,4 @@ public class SikosekController {
 ////        }
 //        return "redirect:/index";
 //    }
-
-    @Autowired
-    DogodekDao dogodekDao;
-
-    @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
-    public String DodajanjeDogodka(Model model, @RequestParam(value = "naziv") String naziv, @RequestParam(value = "vstopnina") double vstopnina,
-                                   @RequestParam(value = "kapaciteta") int kapaciteta, @RequestParam(value = "tip") String tip, @RequestParam(value = "opis") String opis, @RequestParam(value = "imeObjekta") String imeObjekta,
-                                   @RequestParam(value = "datumZacetka") String datumZacetka, @RequestParam(value = "uraZacetka") String uraZacetka, @RequestParam(value = "datumKonca") String datumKonca,
-                                   @RequestParam(value = "uraKonca") String uraKonca) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate datumZacetkaa = LocalDate.parse(datumZacetka, formatter);
-        LocalDate datumKoncaa = LocalDate.parse(datumKonca, formatter);
-        LocalTime uraZac = LocalTime.parse(uraZacetka);
-        LocalTime uraKon = LocalTime.parse(uraKonca);
-        dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis, datumZacetkaa, uraZac, datumKoncaa, uraKon, tip, imeObjekta);
-
-        return "redirect:/index";
-    }
-
-
 }

@@ -5,15 +5,21 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import praktikum.Entities.FileUploadForm;
 import praktikum.db.DogodekDao;
 import praktikum.db.ObjektDao;
-//import praktikum.db.SlikaDao;
+import praktikum.db.SlikaDao;
 
-import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ZagoranskiController {
@@ -21,8 +27,8 @@ public class ZagoranskiController {
     ObjektDao objektDao;
     @Autowired
     DogodekDao dogodekDao;
-//    @Autowired
-//    SlikaDao slikaDao;
+    @Autowired
+    SlikaDao slikaDao;
 
     @Value("${welcome.message}")
     private String message = "Mestni utrip";
@@ -109,26 +115,42 @@ public class ZagoranskiController {
     }
     @RequestMapping(value ={ "/podrobnosti"}, method = RequestMethod.GET)
     public String Prijava(Model model, @RequestParam(value="id") int id){
-        //slikaDao.getSlikaByFK(id);
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute("username", username);
         model.addAttribute("pod", dogodekDao.getDogodekByID(id));
+        model.addAttribute("sli", "data:image/jpeg;base64,"+slikaDao.getSlikaByFK(id));
         return "podrobnosti";
     }
 
-//    @RequestMapping(value = "/dodajanjeDogodka", method = RequestMethod.POST)
-//    public String createImage(Model model, @RequestParam("slika") MultipartFile slika){
-//
-//        try {
-//            byte[] datoteka = slika.getBytes();
-//
-//            model.addAttribute("datoteka", datoteka);
-//
-//            System.out.println(datoteka.toString());
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return "redirect:/index";
-//    }
+    @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
+    public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
+                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="tip") String tip, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta,
+                                   @RequestParam(value="datumZacetka") String datumZacetka, @RequestParam(value="uraZacetka") String uraZacetka, @RequestParam(value="datumKonca") String datumKonca,
+                                   @RequestParam(value="uraKonca") String uraKonca, @ModelAttribute("uploadForm") FileUploadForm uploadForm) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate datumZacetkaa = LocalDate.parse(datumZacetka,formatter);
+        LocalDate datumKoncaa = LocalDate.parse(datumKonca,formatter);
+        LocalTime uraZac = LocalTime.parse(uraZacetka);
+        LocalTime uraKon = LocalTime.parse(uraKonca);
+        dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis,datumZacetkaa,uraZac,datumKoncaa,uraKon,tip,imeObjekta);
+
+        try{
+            List<MultipartFile> files = uploadForm.getFiles();
+            List<String> fileNames = new ArrayList<String>();
+            if(null != files && files.size() > 0) {
+                for (MultipartFile multipartFile : files) {
+                    String fileName;
+                    fileName   = multipartFile.getOriginalFilename();
+                    fileNames.add(fileName);
+                    slikaDao.save(multipartFile,dogodekDao.getIdDogodka(naziv));
+                }
+
+            }
+            model.addAttribute("files", fileNames);
+
+        }catch (NullPointerException e){
+            System.out.println("Slika ni bila zaznana");
+        }
+        return "redirect:/index";
+    }
 }
