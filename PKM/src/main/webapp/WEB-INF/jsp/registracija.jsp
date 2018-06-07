@@ -129,7 +129,6 @@
 </header>
 <script>
     var prvi = $("#prviRadio");
-    var drugi =$("#drugiRadio");
     var dolzina =$("#dolzina");
     dolzina.val(0);
     var sirina =$("#sirina");
@@ -143,7 +142,7 @@
 
         if(prvi.is(':checked')){
             dolzina.hide();
-                dolzina.val(0);
+            dolzina.val(0);
             sirina.hide();
             sirina.val(0);
             naslov.show();
@@ -155,6 +154,23 @@
             naslov.hide();
             naslov.val("");
 
+        }
+    })
+    $('input:radio').change(function () {
+
+        if(prvi.is(':checked')){
+            dolzina.hide();
+            dolzina.val(0);
+            sirina.hide();
+            sirina.val(0);
+            naslov.show();
+        }else{
+            dolzina.show();
+            dolzina.val("");
+            sirina.show();
+            sirina.val("");
+            naslov.hide();
+            naslov.val("");
         }
     })
     function preveriVnos(){
@@ -203,6 +219,7 @@
 
         }else return true;
     }
+
 
 </script>
 </body>

@@ -24,4 +24,13 @@ public class Tip_DogodkaDao {
         }
         return tipiDogodkov;
     }
+
+    public String getTipDogodkaById(int id){
+        String sql = "select naziv from tip_dogodka where id_tip_dogodka=?";
+        String nazivDogodka= String.valueOf(jdbcTemplate.queryForList(sql, id));
+        nazivDogodka = nazivDogodka.replace("[{naziv=","");
+        nazivDogodka = nazivDogodka.replace("}]", "");
+        return nazivDogodka;
+    }
+
 }

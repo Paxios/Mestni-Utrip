@@ -121,36 +121,36 @@ public class ZagoranskiController {
         model.addAttribute("sli", "data:image/jpeg;base64,"+slikaDao.getSlikaByFK(id));
         return "podrobnosti";
     }
-
-    @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
-    public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
-                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="tip") String tip, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta,
-                                   @RequestParam(value="datumZacetka") String datumZacetka, @RequestParam(value="uraZacetka") String uraZacetka, @RequestParam(value="datumKonca") String datumKonca,
-                                   @RequestParam(value="uraKonca") String uraKonca, @ModelAttribute("uploadForm") FileUploadForm uploadForm) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate datumZacetkaa = LocalDate.parse(datumZacetka,formatter);
-        LocalDate datumKoncaa = LocalDate.parse(datumKonca,formatter);
-        LocalTime uraZac = LocalTime.parse(uraZacetka);
-        LocalTime uraKon = LocalTime.parse(uraKonca);
-        dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis,datumZacetkaa,uraZac,datumKoncaa,uraKon,tip,imeObjekta);
-
-        try{
-            List<MultipartFile> files = uploadForm.getFiles();
-            List<String> fileNames = new ArrayList<String>();
-            if(null != files && files.size() > 0) {
-                for (MultipartFile multipartFile : files) {
-                    String fileName;
-                    fileName   = multipartFile.getOriginalFilename();
-                    fileNames.add(fileName);
-                    slikaDao.save(multipartFile,dogodekDao.getIdDogodka(naziv));
-                }
-
-            }
-            model.addAttribute("files", fileNames);
-
-        }catch (NullPointerException e){
-            System.out.println("Slika ni bila zaznana");
-        }
-        return "redirect:/index";
-    }
+//
+//    @RequestMapping(value = {"/dodajanjeDogodka"}, method = RequestMethod.POST)
+//    public String DodajanjeDogodka(Model model, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
+//                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="tip") String tip, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta,
+//                                   @RequestParam(value="datumZacetka") String datumZacetka, @RequestParam(value="uraZacetka") String uraZacetka, @RequestParam(value="datumKonca") String datumKonca,
+//                                   @RequestParam(value="uraKonca") String uraKonca, @ModelAttribute("uploadForm") FileUploadForm uploadForm) {
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        LocalDate datumZacetkaa = LocalDate.parse(datumZacetka,formatter);
+//        LocalDate datumKoncaa = LocalDate.parse(datumKonca,formatter);
+//        LocalTime uraZac = LocalTime.parse(uraZacetka);
+//        LocalTime uraKon = LocalTime.parse(uraKonca);
+//        dogodekDao.addDogodek(naziv, vstopnina, kapaciteta, opis,datumZacetkaa,uraZac,datumKoncaa,uraKon,tip,imeObjekta);
+//
+//        try{
+//            List<MultipartFile> files = uploadForm.getFiles();
+//            List<String> fileNames = new ArrayList<String>();
+//            if(null != files && files.size() > 0) {
+//                for (MultipartFile multipartFile : files) {
+//                    String fileName;
+//                    fileName   = multipartFile.getOriginalFilename();
+//                    fileNames.add(fileName);
+//                    slikaDao.save(multipartFile,dogodekDao.getIdDogodka(naziv));
+//                }
+//
+//            }
+//            model.addAttribute("files", fileNames);
+//
+//        }catch (NullPointerException e){
+//            System.out.println("Slika ni bila zaznana");
+//        }
+//        return "redirect:/index";
+//    }
 }
