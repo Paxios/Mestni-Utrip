@@ -63,13 +63,12 @@ public class SlikaDao {
     }
 
     public List<Slika> getSlikaByFK(int id) {
-        String sql = "SELECT * FROM slika WHERE fk_id_dogodek = " + id +" GROUP BY fk_id_dogodek;";
+        String sql = "SELECT * FROM slika WHERE fk_id_dogodek = " + id;
         List<Slika> ret = new ArrayList<Slika>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
         for (Map<String, Object> row : rows) {
             byte[] blob = (byte[]) row.get("datoteka");
             String retrieveBlobAsString = Base64.getEncoder().encodeToString(blob);
-            int fk_id_dogodek=(int)row.get("fk_id_dogodek");
 
             ret.add(new Slika(retrieveBlobAsString));
         }

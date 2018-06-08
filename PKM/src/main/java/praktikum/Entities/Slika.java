@@ -11,11 +11,11 @@ public class Slika {
     }
 
     public Slika(String URLSlike){
-        this.URLSlike=URLSlike;
+        this.URLSlike = URLSlike;
     }
 
     public Slika(String URLSlike, int fk_id_dogodek){
-        this.URLSlike=URLSlike;
+        this.URLSlike = URLSlike;
         this.fk_id_dogodek=fk_id_dogodek;
     }
 

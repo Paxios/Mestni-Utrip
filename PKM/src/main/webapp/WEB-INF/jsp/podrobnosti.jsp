@@ -194,7 +194,7 @@
     <div class="container my-auto">
         <div class="row">
             <p class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">
+            <p class="text-faded mb-5">
                 <div class="container">
                     <c:forEach items="${pod}" var="a"><br>
                     <h1 class="text-uppercase"> ${a.naziv}</h1>
@@ -202,52 +202,85 @@
                         <div class="col-sm">
                             <hr>
                             <h4>OPIS:</h4>
-                            <p style="color:#9c9c9c"> ${a.opis}</p>
-                            <hr>
-                        </div>
-                        <div class="col-sm">
-                            <hr>
-                            <h4>LOKACIJA:</h4>  <p style="color:#9c9c9c" class="text-uppercase"> ${a.objekt.naziv}</p>
-                            <h4>DATUM:</h4> <p style="color:#9c9c9c"> ${a.datumZacetka} - ${a.datumKonca}</p>
-                            <h4>VSTOPNINA:</h4> <p style="color:#9c9c9c"> ${a.vstopnina}&euro;</p>
-                            <h4>KAPACITETA:</h4> <p style="color:#9c9c9c"> ${a.kapaciteta} ljudi</p>
-                            <hr>
-                        </div>
+            <p style="color:#9c9c9c"> ${a.opis}</p>
+            <hr>
+        </div>
+        <div class="col-sm">
+            <hr>
+            <h4>LOKACIJA:</h4>  <p style="color:#9c9c9c" class="text-uppercase"> ${a.objekt.naziv}</p>
+            <h4>DATUM:</h4> <p style="color:#9c9c9c"> ${a.datumZacetka} - ${a.datumKonca}</p>
+            <h4>VSTOPNINA:</h4> <p style="color:#9c9c9c"> ${a.vstopnina}&euro;</p>
+            <h4>KAPACITETA:</h4> <p style="color:#9c9c9c"> ${a.kapaciteta} ljudi</p>
+            <hr>
+        </div>
 
 
-                        <div class="col-sm">
-                            <hr>
-                            <h4>ZANIMANJE ZA DOGODEK </h4><br>
-                            <div class="box">
-                                <label for="qty"><abbr title="Aktivne prijave">&Scaron;tevilo ljudi, ki jih dogodek zanima:</abbr></label>
-                                <input id="qty" value="0" />
-                                <button id="up" onclick="modify_qty(1)">Zanima me</button>
-                            </div>
-                            <hr>
-                        </div>
+        <div class="col-sm">
+            <hr>
+            <h4>ZANIMANJE ZA DOGODEK </h4><br>
+            <div class="box">
+                <label for="qty"><abbr title="Aktivne prijave">&Scaron;tevilo ljudi, ki jih dogodek zanima:</abbr></label>
+                <input id="qty" value="0" />
+                <button id="up" onclick="modify_qty(1)">Zanima me</button>
+            </div>
+            <hr>
+        </div>
+    </div>
+    </c:forEach>
+
+    <c:if test="${!(empty sli)}">
+        <div class="slider-pro" id="my-slider" style="margin-top: 30px">
+            <div class="sp-slides">
+                <c:forEach  items="${sli}" var ="slika">
+                    <div class="sp-slide">
+                        <img src="data:image/jpeg;base64,${slika.URLSlike}" style=" width: 100%" />
                     </div>
-                    </c:forEach>
-                <div class="slideshow-container">
-                    <div>
-                        <hr>
-                        <h3>GALERIJA SLIK:</h3>
-                        <c:forEach items="${sli}" var="a">
-                            <div>
-                                <img src="data:image/jpeg;base64,${sli.URLSlike}" style="width:100%">
-                            </div>
-                        </c:forEach>
-                        <hr>
-                    </div>
-                </div>
-                <hr>
-                <!-- begin wwww.htmlcommentbox.com -->
-                <div class="container-fluid" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
-                <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-                <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-                <!-- end www.htmlcommentbox.com -->
-                <hr>
+                </c:forEach>
+            </div>
+            <div class="sp-thumbnails">
+                <c:forEach  items="${sli}" var ="slika">
+                    <img class="sp-thumbnail" src="data:image/jpeg;base64,${slika.URLSlike}" />
+                </c:forEach>
             </div>
         </div>
+    </c:if>
+    <c:if test="${empty sli}">
+        <div class="col-12">
+            <div class="search-field">
+                <div class="row">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-6 text-center">
+                        <p style="margin-bottom:0px; font-weight:bold;">Ni slik za prikaz.</p>
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div>
+    </c:if>
+    <%--<div class="slideshow-container">--%>
+    <%--<div>--%>
+    <%--<hr>--%>
+    <%--<h3>GALERIJA SLIK:</h3>--%>
+    <%--<c:forEach items="${sli}" var="a">--%>
+    <%--<div>--%>
+    <%--<img src="data:image/jpeg;base64,${sli.URLSlike}" style="width:100%">--%>
+    <%--</div>--%>
+    <%--</c:forEach>--%>
+    <%--<hr>--%>
+    <%--</div>--%>
+    <%--</div>--%>
+    <hr>
+    <!-- begin wwww.htmlcommentbox.com -->
+    <div class="container-fluid" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+    <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+    <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+    <!-- end www.htmlcommentbox.com -->
+    <hr>
+    </div>
+    </div>
     </div>
 </header>
 <%--javascript za galerijo slik--%>
@@ -341,6 +374,22 @@
         document.getElementById('qty').value = new_qty;
         return new_qty;
     }
+</script>
+
+
+<script>
+    $(document).ready(function (){
+        $("#my-slider").sliderPro({
+            width: 800,
+            height:400,
+            orientation: 'vertical',
+            thumbnailsPosition: 'right',
+            buttons: false,
+            thumbnailArrows: true,
+            thumbnailPointer: true,
+            autoplay: false
+        });
+    });
 </script>
 </body>
 </html>
