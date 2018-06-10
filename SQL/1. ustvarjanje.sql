@@ -3,16 +3,16 @@
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS uporabnik;
 DROP TABLE IF EXISTS Objekt;
-DROP TABLE IF EXISTS Objekt_oc;
-DROP TABLE IF EXISTS Veljavnost;
+-- DROP TABLE IF EXISTS Objekt_oc;
+-- DROP TABLE IF EXISTS Veljavnost;
 DROP TABLE IF EXISTS Dogodek;
 DROP TABLE IF EXISTS Tip_objekta;
 DROP TABLE IF EXISTS Tip_dogodka;
 DROP TABLE IF EXISTS Tip_uporabnika;
 DROP TABLE IF EXISTS Naslov;
 DROP TABLE IF EXISTS Kraj;
-DROP TABLE IF EXISTS Odpiralni_cas;
-DROP TABLE IF EXISTS Tip_odpiralnega_casa;
+-- DROP TABLE IF EXISTS Odpiralni_cas;
+-- DROP TABLE IF EXISTS Tip_odpiralnega_casa;
 DROP TABLE IF EXISTS Slika;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS authorities;
@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS authorities;
 
 CREATE TABLE Slika (
 Id_slika INTEGER NOT NULL,
-Datoteka MEDIUMBLOB,
+Slika BLOB,
 Fk_id_dogodek INTEGER NOT NULL);
 
 ALTER TABLE Slika
@@ -43,15 +43,15 @@ ADD CONSTRAINT Pk_Uporabnik PRIMARY KEY (Id_uporabnik);
 ALTER TABLE Uporabnik
 MODIFY COLUMN Id_uporabnik INTEGER AUTO_INCREMENT;
  
-CREATE TABLE Tip_uporabnika(
-Id_tip_uporabnika INTEGER NOT NULL,
-Naziv VARCHAR(45) NOT NULL);
- 
-ALTER TABLE Tip_uporabnika
-ADD CONSTRAINT Pk_tip_uporabnika PRIMARY KEY (Id_tip_uporabnika);
- 
-ALTER TABLE Tip_uporabnika
-MODIFY COLUMN Id_tip_uporabnika INTEGER AUTO_INCREMENT;
+-- CREATE TABLE Tip_uporabnika(
+-- Id_tip_uporabnika INTEGER NOT NULL,
+-- Naziv VARCHAR(45) NOT NULL);
+--  
+-- ALTER TABLE Tip_uporabnika
+-- ADD CONSTRAINT Pk_tip_uporabnika PRIMARY KEY (Id_tip_uporabnika);
+--  
+-- ALTER TABLE Tip_uporabnika
+-- MODIFY COLUMN Id_tip_uporabnika INTEGER AUTO_INCREMENT;
  
 CREATE TABLE Objekt(
 Id_objekt INTEGER NOT NULL,
@@ -70,11 +70,12 @@ Id_dogodek INTEGER NOT NULL,
 Naziv VARCHAR(45) NOT NULL,
 vstopnina DOUBLE,
 Kapaciteta INTEGER NOT NULL,
-Opis VARCHAR(500),
+Opis VARCHAR(500) not null,
 Datum_zacetka DATETIME NOT NULL,
 Datum_konca DATETIME default 0,
 Fk_id_objekt INTEGER NOT NULL,
-Fk_id_tip_dogodka INTEGER NOT NULL);
+Fk_id_tip_dogodka INTEGER NOT NULL,
+fk_id_uporabnik INTEGER NOT NULL);
  
 ALTER TABLE Dogodek
 ADD CONSTRAINT Pk_Dogodek PRIMARY KEY (Id_dogodek);
@@ -105,9 +106,9 @@ MODIFY COLUMN Id_tip_dogodka INTEGER AUTO_INCREMENT;
  
 CREATE TABLE Naslov(
 Id_naslov INTEGER NOT NULL,
-Z_sirina DOUBLE NOT NULL,
-Z_dolzina DOUBLE NOT NULL,
-Opis VARCHAR (100) NOT NULL,
+Z_sirina DOUBLE default 0,
+Z_dolzina DOUBLE default 0,
+Opis VARCHAR (100) default '',
 Fk_id_kraj INTEGER NOT NULL);
  
 ALTER TABLE Naslov
@@ -127,48 +128,48 @@ ADD CONSTRAINT Pk_Kraj PRIMARY KEY (Id_kraj);
 ALTER TABLE Kraj
 MODIFY COLUMN Id_kraj INTEGER AUTO_INCREMENT;
  
-/* Odpiralni cas */
-
-CREATE TABLE Odpiralni_cas(
-Id_odpiralniCas INTEGER NOT NULL,
-Odpiralni_cas TIME NOT NULL,
-Zapiralni_cas TIME NOT NULL,
-Fk_tip_odpiralnega_casa INTEGER NOT NULL,
-fk_veljavnost integer not null
-);
-ALTER TABLE Odpiralni_cas
-ADD CONSTRAINT Pk_Odpiralni_cas PRIMARY KEY (Id_odpiralnicas);
-
-ALTER TABLE Odpiralni_cas
-MODIFY COLUMN Id_odpiralniCas INTEGER AUTO_INCREMENT;
-
-
-/* Tip odpiralnega casa */
- 
-CREATE TABLE Tip_odpiralnega_casa(
-Id_tip_oc INTEGER NOT NULL,
-Tip VARCHAR(45) NOT NULL
-);
-ALTER TABLE Tip_odpiralnega_casa
-ADD CONSTRAINT Pk_odpiralni_cas PRIMARY KEY (Id_tip_oc);
- 
-ALTER TABLE Tip_odpiralnega_casa
-MODIFY COLUMN Id_tip_oc INTEGER auto_increment;
-
-/* Veljavnost */
-
-create table veljavnost (
-id_veljavnost INTEGER NOT NULL,
-VeljavnostOd date,
-VeljavnostDo date 
-);
-alter table veljavnost
-add constraint pk_veljavnost primary key (id_veljavnost);
-
-alter table veljavnost
-modify column id_veljavnost integer auto_increment;
- 
- 
+-- /* Odpiralni cas */
+-- 
+-- CREATE TABLE Odpiralni_cas(
+-- Id_odpiralniCas INTEGER NOT NULL,
+-- Odpiralni_cas TIME NOT NULL,
+-- Zapiralni_cas TIME NOT NULL,
+-- Fk_tip_odpiralnega_casa INTEGER NOT NULL,
+-- fk_veljavnost integer not null
+-- );
+-- ALTER TABLE Odpiralni_cas
+-- ADD CONSTRAINT Pk_Odpiralni_cas PRIMARY KEY (Id_odpiralnicas);
+-- 
+-- ALTER TABLE Odpiralni_cas
+-- MODIFY COLUMN Id_odpiralniCas INTEGER AUTO_INCREMENT;
+-- 
+-- 
+-- /* Tip odpiralnega casa */
+--  
+-- CREATE TABLE Tip_odpiralnega_casa(
+-- Id_tip_oc INTEGER NOT NULL,
+-- Tip VARCHAR(45) NOT NULL
+-- );
+-- ALTER TABLE Tip_odpiralnega_casa
+-- ADD CONSTRAINT Pk_odpiralni_cas PRIMARY KEY (Id_tip_oc);
+--  
+-- ALTER TABLE Tip_odpiralnega_casa
+-- MODIFY COLUMN Id_tip_oc INTEGER auto_increment;
+-- 
+-- /* Veljavnost */
+-- 
+-- create table veljavnost (
+-- id_veljavnost INTEGER NOT NULL,
+-- VeljavnostOd date,
+-- VeljavnostDo date 
+-- );
+-- alter table veljavnost
+-- add constraint pk_veljavnost primary key (id_veljavnost);
+-- 
+-- alter table veljavnost
+-- modify column id_veljavnost integer auto_increment;
+--  
+--  
  /* Users*/
 create table users (
 username varchar(50) not null,
@@ -181,6 +182,11 @@ primary key (username) );
  username varchar(50) not null,
  authority varchar(50) not null default 'ROLE_ADMIN'
  );
+
+ 
+ 
+ 
+ 
  
  
 /* Foreign keys */
@@ -220,18 +226,21 @@ ADD CONSTRAINT Fk_dogodek_id_tip_dogodka FOREIGN KEY
  ALTER TABLE Slika
  ADD CONSTRAINT Fk_slika_id_dogodek FOREIGN KEY
  (Fk_id_dogodek) REFERENCES Dogodek(Id_dogodek);
- 
-/* Odpiralni cas */
-
-ALTER TABLE Odpiralni_cas
-ADD CONSTRAINT Fk_odpiralni_cas_tip FOREIGN KEY
-(Fk_tip_odpiralnega_casa) REFERENCES Tip_OdpiralnegaCasa(Id_tip_oc);
-
-ALTER TABLE odpiralni_cas
-ADD CONSTRAINT fk_odpiralni_cas_veljavnost FOREIGN KEY
-(fk_veljavnost) REFERENCES veljavnost(id_veljavnost);
-
-
+ -- 
+-- /* Odpiralni cas */
+-- 
+-- ALTER TABLE Odpiralni_cas
+-- ADD CONSTRAINT Fk_odpiralni_cas_tip FOREIGN KEY
+-- (Fk_tip_odpiralnega_casa) REFERENCES Tip_OdpiralnegaCasa(Id_tip_oc);
+-- 
+-- ALTER TABLE odpiralni_cas
+-- ADD CONSTRAINT fk_odpiralni_cas_veljavnost FOREIGN KEY
+-- (fk_veljavnost) REFERENCES veljavnost(id_veljavnost);
+-- 
+/*FK_id_uporabnik pri Dogodku*/
+Alter table Dogodek
+add constraint fk_uprabnik_dogodek foreign key
+(fk_id_uporabnik) references uporabnik(id_uporabnik);
 
 /*Authories*/
 ALTER TABLE authorities add constraint user_role 
