@@ -35,10 +35,9 @@
 <c:set var="user" value="${username}"/>
 <c:set var="Anon" value="anonymousUser"/>
 <!-- Navigation -->
-
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index">Mestni utrip</a>
+        <a class="navbar-brand js-scroll-trigger" href="index#page-top">Mestni utrip</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,16 +47,16 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
+                            <a class="nav-link js-scroll-trigger" href="index#about">O nas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#services">Maribor</a>
+                            <a class="nav-link js-scroll-trigger" href="index#services">Maribor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#portfolio">Lokacije</a>
+                            <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#contact">Prijava</a>
+                            <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
                         </li>
                     </ul>
                 </div>
@@ -70,21 +69,28 @@
                             <a class="nav-link js-scroll-trigger" href="/dodajanjeDogodka">Dodajanje dogodka</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
+                            <a class="nav-link js-scroll-trigger" href="index#about">O nas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#services">Maribor</a>
+                            <a class="nav-link js-scroll-trigger" href="index#services">Maribor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#portfolio">Lokacije</a>
+                            <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#contact">Prijava</a>
+                            <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
+                        </li>
+                        <li>
+                            <a onclick="document.forms['logoutForm'].submit()"><button class="btn btn-primary btn-m" type="submit" id="logout2">Logout</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <p>Prijavljeni ste kot ${username}</p>
                         </li>
                     </ul>
                 </div>
             </c:otherwise>
         </c:choose>
+
     </div>
 </nav>
 <header class="masthead text-center text-white d-flex">

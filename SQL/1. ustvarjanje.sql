@@ -73,6 +73,7 @@ Kapaciteta INTEGER NOT NULL,
 Opis VARCHAR(500) not null,
 Datum_zacetka DATETIME NOT NULL,
 Datum_konca DATETIME default 0,
+Lajk Integer Not NULL,
 Fk_id_objekt INTEGER NOT NULL,
 Fk_id_tip_dogodka INTEGER NOT NULL,
 fk_id_uporabnik INTEGER NOT NULL);
