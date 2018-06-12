@@ -11,5 +11,5 @@ values ('Narava');
 insert into Tip_objekta (naziv)
 values ('Kultura');
 /*5*/
-insert into tip_dogodka (naziv)
+insert into Tip_objekta (naziv)
 values('Sport');

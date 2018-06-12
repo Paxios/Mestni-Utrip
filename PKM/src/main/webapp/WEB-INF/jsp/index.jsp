@@ -302,6 +302,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4 ml-auto text-center">
+                <hr>
                 <h3>Registracija</h3><br>
                 <a href="registracija"><i class="fa fa-sign-in fa-3x mb-3"></i></a>
             </div>
@@ -312,6 +313,7 @@
           <c:choose>
           <c:when test="${user == 'anonymousUser'}">
           <div class="col-lg-4 ml-auto text-center">
+              <hr>
             <form method="POST" action="${contextPath}/index#log" class="form-signin" id="log">
               <h3 class="form-heading">Prijava v sistem</h3><br>
               <div class="form-group ${error != null ? 'has-error' : ''}">
@@ -328,6 +330,7 @@
 
             <c:otherwise>
               <div class="col-lg-4 ml-auto text-center">
+                  <hr>
                   <a onclick="document.forms['logoutForm'].submit()"><button class="btn btn-primary btn-xl" type="submit" id="logout">Logout</button></a>
                   </h3></u>
                   <form id="logoutForm" method="POST" action="${contextPath}/logout">
@@ -337,6 +340,7 @@
           </c:choose>
 
           <div class="col-lg-4 mr-auto text-center">
+            <hr>
             <h3>Kontakt</h3><br>
               <a href="mailto:mestniutripmaribor@gmail.com"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i></a>
           </div>
