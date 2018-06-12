@@ -12,6 +12,7 @@ import praktikum.db.DogodekDao;
 import praktikum.db.ObjektDao;
 import praktikum.db.SlikaDao;
 
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -152,6 +153,15 @@ public class ZagoranskiController {
             System.out.println("Nobena slika ni bila dodana.");
         }
         return "redirect:/index";
+    }
+
+
+    @RequestMapping(value={"/posodobiLajk"}, method = RequestMethod.GET)
+    public String a (Model model, @RequestParam(value="objekt") String objekt,HttpServletRequest request){
+        dogodekDao.updateLajk(objekt);
+//        List<Dogodek> abc= dogodekDao.getDogodekByNaziv(objekt);
+        String referer = request.getHeader("Referer");
+        return "redirect:"+referer;
     }
 
 }

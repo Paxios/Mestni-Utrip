@@ -20,9 +20,8 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
-    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--%>
-    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
-    <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <style>
         * {box-sizing:border-box}
@@ -212,10 +211,14 @@
         <div class="col-sm">
             <hr>
             <h4>ZANIMANJE ZA DOGODEK </h4><br>
+            <form method="GET" action="posodobiLajk">
             <div class="box">
-                <p style="color:#9c9c9c" class="text-uppercase" id="like">${a.lajk}</p><br>
+                <p style="color:#9c9c9c" class="text-uppercase" name="like" id="like">${a.lajk}</p><br>
+                <input class="btn btn-primary btn-xl js-scroll-trigger" type="hidden" value="${a.naziv}" id="objekt" name="objekt"/>
+
+                <p><input type="submit" class="btn btn-primary btn-xl js-scroll-trigger" value="Like" id="gumb"/></p>
             </div>
-            <button class="btn btn.primary btn-m" onclick="lajk()">Like</button>
+            </form>
             <hr>
         </div>
         </c:forEach>
@@ -227,7 +230,7 @@
         <div id="map" style="width:100%;height:400px;"></div>
         <c:forEach items="${opis}" var="opis">
             <input type="hidden" id="naslov" name="lokacija"  value="${opis}">
-        </c:forEach>
+
         <%--</c:forEach>
         <c:forEach items="${z_sirina}" var="l">
             <input type="hidden" id="lat" value="${l.Z_sirina}">
@@ -239,6 +242,7 @@
         <%--<c:forEach items="${Z_sirina}" var="l">
         <<input type="hidden" id="latitude" value="${l.lat}">
         </c:forEach>--%>
+        </c:forEach>
     </div>
     <%-- konec zemljevidov --%>
     <hr>
@@ -364,13 +368,20 @@
         document.getElementById('qty').value = new_qty;
         return new_qty;
     }
+
 </script>
 <script>
-    function lajk() {
-
-        var like = document.getElementById("like").value;
-        like.innerHTML = like++;
-    }
+    $(document).ready(function () {
+        var loaded = parseInt(localStorage.getItem('loaded'), 10),
+            loaded_numb = loaded?loaded+1:1;
+        localStorage.setItem('loaded', loaded_numb);
+        if(loaded_numb % 2 == 0){
+            $('#gumb').show();
+        }
+        else{
+            $('#gumb').hide();
+        }
+    });
 
 </script>
 <script>

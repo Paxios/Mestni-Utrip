@@ -29,6 +29,8 @@ public class DogodekDao {
     NaslovDao NaslovDao;
     @Autowired
     Tip_ObjektaDao tip_objektaDao;
+    @Autowired
+    DogodekDao dogodekDao;
 
 //    private static final Pattern NONLATIN = Pattern.compile("[^\\w-]");
 //    private static final Pattern WHITESPACE = Pattern.compile("[\\s]");
@@ -303,5 +305,38 @@ public class DogodekDao {
         }
         return lng;
 
+    }
+
+
+    public int updateLajk(String objekt){
+        List<Dogodek> lajk = dogodekDao.getDogodekByNaziv(objekt);
+        System.out.println(lajk.get(0));
+        int stLajkov = lajk.get(0).getLajk()+1;
+
+        String sqlUpdate = "update dogodek set Lajk=? where naziv = ?";
+        return jdbcTemplate.update(sqlUpdate, new Object[]{stLajkov, objekt});
+    }
+
+    public List<Dogodek> getDogodekByNaziv(String naziv) {
+        String sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina, kapaciteta, opis,lajk FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE dogodek.naziv=?;";
+        List<Dogodek> ret = new ArrayList<Dogodek>();
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
+                new Object[]{naziv});
+        for (Map row : rows) {
+            int id_dogodek =(int) row.get("id_dogodek");
+            String naziv_dogodka = (String) row.get("naziv_dogodka");
+            String naziv_objekta = (String) row.get("naziv_objekta");
+            double vstopnina = (double) row.get("vstopnina");
+            int kapaciteta = (int) row.get("kapaciteta");
+            String opis = (String) row.get("opis");
+            Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
+            SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+            String zacetekk= DATE_FORMAT.format(zacetek);
+            Timestamp konec =(Timestamp)row.get("datum_Konca");
+            String konecc= DATE_FORMAT.format(konec);
+            int lajk = (int) row.get("Lajk");
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, kapaciteta, opis, zacetekk, konecc, naziv_objekta,lajk));
+        }
+        return ret;
     }
 }

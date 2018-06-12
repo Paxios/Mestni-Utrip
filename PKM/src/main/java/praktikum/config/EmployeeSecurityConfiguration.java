@@ -41,7 +41,7 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
 				.antMatchers("/aktualno").permitAll()
 				.antMatchers("/index").permitAll()
 				.antMatchers("/index2").hasAnyRole("USER", "ADMIN")
-				.antMatchers("/klubi","/kultura","/narava","/registracija","/restavracije","/sport").permitAll()
+				.antMatchers("/klubi","/kultura","/narava","/registracija","/restavracije","/sport","/posodobiLajk").permitAll()
 				.antMatchers("/podrobnosti").permitAll()
 				.antMatchers("/dodajanjeDogodka").hasAnyRole("USER","ADMIN")
 
