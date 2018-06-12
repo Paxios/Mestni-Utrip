@@ -20,12 +20,12 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--%>
+    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
+    <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
 
     <style>
-        * {box-sizing: border-box}
-        body {font-family: Verdana, sans-serif; margin:0}
-        .mySlides {display: none}
-        img {vertical-align: middle;}
+        * {box-sizing:border-box}
 
         /* Slideshow container */
         .slideshow-container {
@@ -34,14 +34,19 @@
             margin: auto;
         }
 
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
         /* Next & previous buttons */
         .prev, .next {
             cursor: pointer;
             position: absolute;
-            top: 50%;
+            top: 250px;
             width: auto;
-            padding: 16px;
             margin-top: -22px;
+            padding: 16px;
             color: white;
             font-weight: bold;
             font-size: 18px;
@@ -55,27 +60,14 @@
             border-radius: 3px 0 0 3px;
         }
 
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
         /* On hover, add a black background color with a little bit see-through */
         .prev:hover, .next:hover {
             background-color: rgba(0,0,0,0.8);
-        }
-
-        /* Fading animation */
-        .fade {
-            -webkit-animation-name: fade;
-            -webkit-animation-duration: 1.5s;
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @-webkit-keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
-        }
-
-        @keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
         }
 
         /* On smaller screens, decrease text size */
@@ -217,8 +209,6 @@
             <h4>KAPACITETA:</h4> <p style="color:#9c9c9c"> ${a.kapaciteta} ljudi</p>
             <hr>
         </div>
-
-
         <div class="col-sm">
             <hr>
             <h4>ZANIMANJE ZA DOGODEK </h4><br>
@@ -229,73 +219,47 @@
             </div>
             <hr>
         </div>
+        </c:forEach>
     </div>
-    </c:forEach>
 
-    <c:if test="${!(empty sli)}">
-        <div class="slider-pro" id="my-slider" style="margin-top: 30px">
-            <div class="sp-slides">
-                <c:forEach  items="${sli}" var ="slika">
-                    <div class="sp-slide">
-                        <img src="data:image/jpeg;base64,${slika.URLSlike}" style=" width: 100%" />
-                    </div>
-                </c:forEach>
-            </div>
-            <div class="sp-thumbnails">
-                <c:forEach  items="${sli}" var ="slika">
-                    <img class="sp-thumbnail" src="data:image/jpeg;base64,${slika.URLSlike}" />
-                </c:forEach>
-            </div>
-        </div>
-    </c:if>
-    <c:if test="${empty sli}">
-        <div class="col-12">
-            <div class="search-field">
-                <div class="row">
-                    <div class="col-3">
-                    </div>
-                    <div class="col-6 text-center">
-                        <p style="margin-bottom:0px; font-weight:bold;">Ni slik za prikaz.</p>
-                    </div>
-                    <div class="col-3">
-                    </div>
+    <div>
+        <h4> GALERIJA SLIK:</h4>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <c:forEach  items="${sli}" var ="slika">
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides">
+                    <img src="data:image/jpeg;base64,${slika.URLSlike}" style=" width: 100%" />
                 </div>
-            </div>
-            <br/>
+            </c:forEach>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-    </c:if>
-    <%--<div class="slideshow-container">--%>
-    <%--<div>--%>
-    <%--<hr>--%>
-    <%--<h3>GALERIJA SLIK:</h3>--%>
-    <%--<c:forEach items="${sli}" var="a">--%>
-    <%--<div>--%>
-    <%--<img src="data:image/jpeg;base64,${sli.URLSlike}" style="width:100%">--%>
-    <%--</div>--%>
-    <%--</c:forEach>--%>
-    <%--<hr>--%>
-    <%--</div>--%>
-    <%--</div>--%>
-    <hr>
-    <!-- begin wwww.htmlcommentbox.com -->
-    <div class="container-fluid" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
-    <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-    <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-    <!-- end www.htmlcommentbox.com -->
-    <hr>
-    </div>
-    </div>
-    </div>
+        <br>
+
+        <div>
+            <hr>
+            <!-- begin wwww.htmlcommentbox.com -->
+            <div class="container-fluid" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+            <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+            <!-- end www.htmlcommentbox.com -->
+            <hr>
+        </div>
 </header>
 <%--javascript za galerijo slik--%>
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
 
+    // Next/previous controls
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
 
+    // Thumbnail image controls
     function currentSlide(n) {
         showSlides(slideIndex = n);
     }
@@ -320,7 +284,7 @@
 <script>
     hcb_user = {
         /* L10N */
-        comments_header : 'Komentarji',
+        comments_header : 'KOMENTARJI',
         name_label : 'Ime',
         content_label: 'Vnesite svoj komentar',
         submit : 'Komentiraj',
@@ -379,21 +343,19 @@
         return new_qty;
     }
 </script>
-
-
-<script>
-    $(document).ready(function (){
-        $("#my-slider").sliderPro({
-            width: 800,
-            height:400,
-            orientation: 'vertical',
-            thumbnailsPosition: 'right',
-            buttons: false,
-            thumbnailArrows: true,
-            thumbnailPointer: true,
-            autoplay: false
-        });
-    });
-</script>
+<%--<script>--%>
+<%--$(document).ready(function (){--%>
+<%--$("#my-slider").sliderPro({--%>
+<%--width: 800,--%>
+<%--height:400,--%>
+<%--orientation: 'vertical',--%>
+<%--thumbnailsPosition: 'right',--%>
+<%--buttons: false,--%>
+<%--thumbnailArrows: true,--%>
+<%--thumbnailPointer: true,--%>
+<%--autoplay: false--%>
+<%--});--%>
+<%--});--%>
+<%--</script>--%>
 </body>
 </html>

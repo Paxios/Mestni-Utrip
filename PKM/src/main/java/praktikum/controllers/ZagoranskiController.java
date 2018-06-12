@@ -111,11 +111,11 @@ public class ZagoranskiController {
         return "aktualno";
     }
     @RequestMapping(value ={ "/podrobnosti"}, method = RequestMethod.GET)
-    public String Prijava(Model model, @RequestParam("id") int id_dogodek){
+    public String Prijava(Model model, @RequestParam(value="id") int id){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute("username", username);
-        model.addAttribute("pod", dogodekDao.getDogodekByID(id_dogodek));
-//       model.addAttribute("sli", "data:image/jpeg;base64,"+slikaDao.getSlikaByFK(id_dogodek));
+        model.addAttribute("pod", dogodekDao.getDogodekByID(id));
+        model.addAttribute("sli", slikaDao.getSlikaByFK(id));
         return "podrobnosti";
     }
 
@@ -146,7 +146,7 @@ public class ZagoranskiController {
             model.addAttribute("files", fileNames);
 
         }catch (NullPointerException e){
-            System.out.println("Nobena slika ni bila dodana");
+            System.out.println("Nobena slika ni bila dodana.");
         }
         return "redirect:/index";
     }

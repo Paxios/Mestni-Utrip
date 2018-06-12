@@ -75,6 +75,21 @@ public class SlikaDao {
         return ret;
     }
 
+    public List<Slika> getEnaSlikaByFK(int id) {
+        String sql = "SELECT * FROM slika WHERE fk_id_dogodek = " + id +"LIMIT 1";
+        List<Slika> ret = new ArrayList<Slika>();
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
+        for (Map<String, Object> row : rows) {
+            byte[] blob = (byte[]) row.get("datoteka");
+            String retrieveBlobAsString = Base64.getEncoder().encodeToString(blob);
+
+            ret.add(new Slika(retrieveBlobAsString));
+        }
+        return ret;
+    }
+
+
+
     public List<Slika> vrniSlikoDogodka() {
         String sql = "SELECT fk_id_dogodek, datoteka from slika where fk_id_dogodek in (select id_dogodek from dogodek) group by fk_id_dogodek;";
         List<Slika> ret = new ArrayList<Slika>();
