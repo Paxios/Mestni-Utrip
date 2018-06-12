@@ -59,7 +59,7 @@
                 <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
+                <a class="nav-link js-scroll-trigger" href="index#contact"><button class="btn btn-primary btn-m" type="submit">Prijava</button></a>
               </li>
             </ul>
           </div>
@@ -81,13 +81,10 @@
                 <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
+                <a class="nav-link js-scroll-trigger" href="/mojiDogodki">Moji dogodki</a>
               </li>
               <li>
                 <a onclick="document.forms['logoutForm'].submit()"><button class="btn btn-primary btn-m" type="submit" id="logout2">Logout</button></a>
-              </li>
-              <li class="nav-item">
-                <p>Prijavljeni ste kot ${username}</p>
               </li>
             </ul>
           </div>
@@ -319,8 +316,7 @@
               <h3 class="form-heading">Prijava v sistem</h3><br>
               <div class="form-group ${error != null ? 'has-error' : ''}">
                 <span>${msg}</span>
-                <input name="username" type="text" class="form-control" placeholder="Username"
-                       autofocus="true"/><br>
+                <input name="username" type="text" class="form-control" placeholder="Username"/><br>
                 <input name="password" type="password" class="form-control" placeholder="Password"/>
                 <span>${errorMsg}</span><br>
                 <button class="btn btn-primary btn-xl" type="submit">Log In</button>

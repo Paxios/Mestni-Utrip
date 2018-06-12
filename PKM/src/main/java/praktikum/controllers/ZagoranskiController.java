@@ -110,12 +110,12 @@ public class ZagoranskiController {
         System.out.println(preverjanje);
         return "aktualno";
     }
-    @RequestMapping(value ={ "/podrobnosti/{id_dogodek}"}, method = RequestMethod.GET)
-    public String Prijava(Model model, @PathVariable("id_dogodek") int id_dogodek){
+    @RequestMapping(value ={ "/podrobnosti"}, method = RequestMethod.GET)
+    public String Prijava(Model model, @RequestParam("id") int id_dogodek){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute("username", username);
         model.addAttribute("pod", dogodekDao.getDogodekByID(id_dogodek));
-        model.addAttribute("sli", "data:image/jpeg;base64,"+slikaDao.getSlikaByFK(id_dogodek));
+//       model.addAttribute("sli", "data:image/jpeg;base64,"+slikaDao.getSlikaByFK(id_dogodek));
         return "podrobnosti";
     }
 

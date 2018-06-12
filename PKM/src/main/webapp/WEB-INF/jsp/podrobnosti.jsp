@@ -160,7 +160,7 @@
                             <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
+                            <a class="nav-link js-scroll-trigger" href="index#contact"><button class="btn btn-primary btn-m" type="submit">Prijava</button></a>
                         </li>
                     </ul>
                 </div>
@@ -182,18 +182,16 @@
                             <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="index#contact">Prijava</a>
+                            <a class="nav-link js-scroll-trigger" href="/mojiDogodki">Moji dogodki</a>
                         </li>
                         <li>
                             <a onclick="document.forms['logoutForm'].submit()"><button class="btn btn-primary btn-m" type="submit" id="logout2">Logout</button></a>
-                        </li>
-                        <li class="nav-item">
-                            <p>Prijavljeni ste kot ${username}</p>
                         </li>
                     </ul>
                 </div>
             </c:otherwise>
         </c:choose>
+
     </div>
 </nav>
 <header class="masthead text-center text-white d-flex">
