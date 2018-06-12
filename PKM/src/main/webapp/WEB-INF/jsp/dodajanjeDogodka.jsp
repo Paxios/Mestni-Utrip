@@ -169,5 +169,8 @@
         return false;
     }
 </script>
+
+<form id="logoutForm" method="POST" action="${contextPath}/logout">
+</form>
 </body>
 </html>

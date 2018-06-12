@@ -345,6 +345,8 @@
 <script>
     function lajk() {
 
+        var like = document.getElementById("like").value;
+        like.innerHTML = like++;
     }
 
 </script>
@@ -362,5 +364,7 @@
 <%--});--%>
 <%--});--%>
 <%--</script>--%>
+<form id="logoutForm" method="POST" action="${contextPath}/logout">
+</form>
 </body>
 </html>
