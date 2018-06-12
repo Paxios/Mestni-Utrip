@@ -116,6 +116,9 @@ public class ZagoranskiController {
         model.addAttribute("username", username);
         model.addAttribute("pod", dogodekDao.getDogodekByID(id));
         model.addAttribute("sli", slikaDao.getSlikaByFK(id));
+        model.addAttribute("opis", dogodekDao.get_dogodek_by_naziv(id));
+        model.addAttribute("lat", dogodekDao.get_lat(id));
+        model.addAttribute("lng", dogodekDao.get_lng(id));
         return "podrobnosti";
     }
 
@@ -150,4 +153,5 @@ public class ZagoranskiController {
         }
         return "redirect:/index";
     }
+
 }

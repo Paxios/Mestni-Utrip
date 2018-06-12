@@ -203,7 +203,7 @@
         </div>
         <div class="col-sm">
             <hr>
-            <h4>LOKACIJA:</h4>  <p style="color:#9c9c9c" class="text-uppercase"> ${a.objekt.naziv}</p>
+            <h4>LOKACIJA:</h4>  <p style="color:#9c9c9c" class="text-uppercase" id="naziv"> ${a.objekt.naziv}</p>
             <h4>DATUM:</h4> <p style="color:#9c9c9c"> ${a.datumZacetka} - ${a.datumKonca}</p>
             <h4>VSTOPNINA:</h4> <p style="color:#9c9c9c"> ${a.vstopnina}&euro;</p>
             <h4>KAPACITETA:</h4> <p style="color:#9c9c9c"> ${a.kapaciteta} ljudi</p>
@@ -220,6 +220,28 @@
         </div>
         </c:forEach>
     </div>
+    <%-- Google maps --%>
+    <div class="col-lg-12 mx-auto text-dark">
+        <h2 class="text-white">ZEMLJEVIDI</h2>
+        <hr>
+        <div id="map" style="width:100%;height:400px;"></div>
+        <c:forEach items="${opis}" var="opis">
+            <input type="hidden" id="naslov" name="lokacija"  value="${opis}">
+        </c:forEach>
+        <%--</c:forEach>
+        <c:forEach items="${z_sirina}" var="l">
+            <input type="hidden" id="lat" value="${l.Z_sirina}">
+        </c:forEach>
+        <c:forEach items="${z_dolzina}" var="l">
+            <input type="hidden" id="lat" value="${l.Z_dolzina}">
+        </c:forEach> --%>
+
+        <%--<c:forEach items="${Z_sirina}" var="l">
+        <<input type="hidden" id="latitude" value="${l.lat}">
+        </c:forEach>--%>
+    </div>
+    <%-- konec zemljevidov --%>
+    <hr>
 
     <div>
         <h4> GALERIJA SLIK:</h4>
@@ -247,6 +269,7 @@
             <!-- end www.htmlcommentbox.com -->
             <hr>
         </div>
+    </div>
 </header>
 <%--javascript za galerijo slik--%>
 <script>
@@ -350,6 +373,43 @@
     }
 
 </script>
+<script>
+    function myMap() {
+        //var lat = document.getElementById("latitude").value;
+        //alert (lat);
+        var lokacija= document.getElementById("naslov").value;
+        var naslov = document.getElementById("naziv").innerHTML;
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: new google.maps.LatLng(46.5541067, 15.6456613),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var marker;
+        var geocoder = new google.maps.Geocoder();
+        var infowindow = new google.maps.InfoWindow({
+            content:  naslov + "<br>" + lokacija
+        });
+        geocoder.geocode({'address': lokacija}, function (results, status) {
+            if (status === 'OK') {
+                center: results[0].geometry.location,
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                    map.setZoom(15);
+                    map.setCenter(marker.getPosition());
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1SQXaPVqPhXb-QL0via91d49xtzrql0o
+&callback=myMap"></script>
 <%--<script>--%>
 <%--$(document).ready(function (){--%>
 <%--$("#my-slider").sliderPro({--%>

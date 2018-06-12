@@ -266,4 +266,42 @@ public class DogodekDao {
                 " where naziv=?";
         return jdbcTemplate.update(sqlUpdate, new Object[]{novNaziv,vstopnina, kapaciteta, opis, zacetek, konec, fk_id_tip_dogodka, fk_id_username, naziv});
     }
+    public String get_dogodek_by_naziv (int id){
+        String opis = new String();
+        String sql = "SELECT opis FROM naslov WHERE id_naslov = (SELECT fk_id_naslov FROM objekt WHERE id_objekt = (SELECT fk_id_objekt From Dogodek Where id_dogodek = ?));";
+
+        List<Map<String, Object>> abc = jdbcTemplate.queryForList(sql,
+                new Object[]{id});
+        for (Map vrstice : abc) {
+            opis = (String) vrstice.get("opis");
+        }
+
+
+        return opis;
+    }
+
+    public double get_lat (int id){
+        double lat= 0;
+        String sql = " SELECT Z_sirina FROM naslov WHERE id_naslov = (SELECT fk_id_naslov FROM objekt WHERE id_objekt = (SELECT fk_id_objekt From Dogodek Where id_dogodek = ?));";
+
+        List<Map<String, Object>> abc = jdbcTemplate.queryForList(sql,
+                new Object[]{id});
+        for (Map vrstice : abc) {
+            lat = (double) vrstice.get("Z_sirina");
+        }
+        return lat;
+
+    }
+    public double get_lng (int id){
+        double lng= 0;
+        String sql = "SELECT Z_dolzina FROM naslov WHERE id_naslov = (SELECT fk_id_naslov FROM objekt WHERE id_objekt = (SELECT fk_id_objekt From Dogodek Where id_dogodek = ?));";
+
+        List<Map<String, Object>> abc = jdbcTemplate.queryForList(sql,
+                new Object[]{id});
+        for (Map vrstice : abc) {
+            lng = (double) vrstice.get("Z_dolzina");
+        }
+        return lng;
+
+    }
 }
