@@ -30,6 +30,8 @@ public class DogodekDao {
     @Autowired
     Tip_ObjektaDao tip_objektaDao;
     @Autowired
+    SlikaDao slikaDao;
+    @Autowired
     DogodekDao dogodekDao;
 
 //    private static final Pattern NONLATIN = Pattern.compile("[^\\w-]");
@@ -57,11 +59,13 @@ public class DogodekDao {
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
             String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
-
             String konecc = DATE_FORMAT.format(konec);
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
-            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            String predogled = slikaDao.getIDSlike(id_dogodek);
+
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, predogled, vstopnina, zacetekk, konecc, naziv_objekta));
+
         }
         return ret;
     }
@@ -89,17 +93,19 @@ public class DogodekDao {
             String konecc = DATE_FORMAT.format(konec);
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
-            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            String predogled = slikaDao.getIDSlike(id_dogodek);
+
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, predogled, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
 
-    public int addDogodek(String naziv, double vstopnina, int kapaciteta, String opis) {
-
-        String sql = "INSERT INTO Dogodek(naziv,vstopnina,kapaciteta,opis) VALUES (?,?,?,?)";
-
-        return jdbcTemplate.update(sql, new Object[]{naziv, vstopnina, kapaciteta, opis});
-    }
+//    public int addDogodek(String naziv, double vstopnina, int kapaciteta, String opis) {
+//
+//        String sql = "INSERT INTO Dogodek(naziv,vstopnina,kapaciteta,opis) VALUES (?,?,?,?)";
+//
+//        return jdbcTemplate.update(sql, new Object[]{naziv, vstopnina, kapaciteta, opis});
+//    }
 
 
     public List<Dogodek> getDogodekByFK(int fk) {
@@ -117,7 +123,9 @@ public class DogodekDao {
             String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             String konecc = DATE_FORMAT.format(konec);
-            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            String predogled = slikaDao.getIDSlike(id_dogodek);
+
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, predogled, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -144,7 +152,9 @@ public class DogodekDao {
             String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             String konecc = DATE_FORMAT.format(konec);
-            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            String predogled = slikaDao.getIDSlike(id_dogodek);
+
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, predogled, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -167,6 +177,7 @@ public class DogodekDao {
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             String konecc= DATE_FORMAT.format(konec);
             int lajk = (int) row.get("Lajk");
+            String predogled = slikaDao.getIDSlike(id_dogodek);
             ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, kapaciteta, opis, zacetekk, konecc, naziv_objekta,lajk));
         }
         return ret;
@@ -236,7 +247,9 @@ public class DogodekDao {
             String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             String konecc = DATE_FORMAT.format(konec);
-            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, zacetekk, konecc, naziv_objekta));
+            String predogled = slikaDao.getIDSlike(id_dogodek);
+
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, predogled, vstopnina, zacetekk, konecc, naziv_objekta));
         }
         return ret;
     }
@@ -268,6 +281,7 @@ public class DogodekDao {
                 " where naziv=?";
         return jdbcTemplate.update(sqlUpdate, new Object[]{novNaziv,vstopnina, kapaciteta, opis, zacetek, konec, fk_id_tip_dogodka, fk_id_username, naziv});
     }
+
     public String get_dogodek_by_naziv (int id){
         String opis = new String();
         String sql = "SELECT opis FROM naslov WHERE id_naslov = (SELECT fk_id_naslov FROM objekt WHERE id_objekt = (SELECT fk_id_objekt From Dogodek Where id_dogodek = ?));";
@@ -306,7 +320,6 @@ public class DogodekDao {
         return lng;
 
     }
-
 
     public int updateLajk(String objekt){
         List<Dogodek> lajk = dogodekDao.getDogodekByNaziv(objekt);

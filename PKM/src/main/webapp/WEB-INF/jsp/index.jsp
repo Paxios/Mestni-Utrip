@@ -59,7 +59,7 @@
               <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index#contact"><button class="btn btn-primary btn-m" type="submit">Prijava</button></a>
+              <a class="nav-link js-scroll-trigger" href="index#contact" style="color:#f05f40;">Prijava</a>
             </li>
           </ul>
         </div>
@@ -100,13 +100,13 @@
       <div class="col-lg-10 mx-auto">
         <h1 class="text-uppercase">
           <strong>Mestni utrip</strong><br>
-            DOGODKI V MARIBORU
-        </h1>
+              DOGODKI V MESTU MARIBOR
+          </h1>
         <hr>
       </div>
       <div class="col-lg-8 mx-auto">
         <p class="text-faded mb-5">
-          Pobuda za nastanek spletne strani je &zcaron;elja Mariborske mestne ob&ccaron;ine. Od nekdaj smo
+          Pobuda za nastanek spletne strani je pro&scaron;nja Mestne Ob&ccaron;ine Maribor. Od nekdaj smo
           si prizadevali za olaj&scaron;anje pregleda nad dogajanjem in s to mislijo je nastala spletna
           stran Mestni utrip. Sicer bi &zcaron;eleli, da bi se v na&scaron;em mestu dogajalo ve&ccaron;, pa
           vendarle so tukaj zbrane vse pomembnej&scaron;e informacije o ve&ccaron;jih, pa tudi manj&scaron;ih
@@ -285,7 +285,7 @@
       </div>
     </div>
     <div class="col-lg-8 mx-auto text-center">
-      <br><br>
+      <br>
       <a class="btn btn-primary btn-xl js-scroll-trigger" href="#contact">Na prijavo</a>
     </div>
   </div>
@@ -316,10 +316,10 @@
           <h3 class="form-heading">Prijava v sistem</h3><br>
           <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${msg}</span>
-            <input name="username" type="text" class="form-control" placeholder="Username"/><br>
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
+            <input name="username" type="text" class="form-control" placeholder="Uporabni&scaron;ko ime"/><br>
+            <input name="password" type="password" class="form-control" placeholder="Geslo"/>
             <span>${errorMsg}</span><br>
-            <button class="btn btn-primary btn-xl" type="submit">Log In</button>
+            <button class="btn btn-primary btn-xl" type="submit">Prijava</button>
           </div>
         </form>
       </div>
@@ -358,7 +358,6 @@
           </div>
         </div>
       </section>
-
 
       <!-- Bootstrap core JavaScript -->
       <script src="vendor/jquery/jquery.min.js"></script>

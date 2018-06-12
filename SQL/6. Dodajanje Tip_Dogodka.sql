@@ -39,7 +39,4 @@ value ('Nogometna tekma');
 insert into tip_dogodka (naziv)
 value ('Smučanje');
 
-/*13*/
-insert into tip_dogodka (naziv)
-value ('Nogometna tekma');
 

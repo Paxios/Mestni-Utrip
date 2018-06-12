@@ -48,7 +48,7 @@
                             <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="index#contact"><button class="btn btn-primary btn-m" type="submit">Prijava</button></a>
+                            <a class="nav-link js-scroll-trigger" href="index#contact" style="color:#f05f40;">Prijava</a>
                         </li>
                     </ul>
                 </div>
@@ -142,5 +142,16 @@
 </header>
 <form id="logoutForm" method="POST" action="${contextPath}/logout">
 </form>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
 </body>
 </html>

@@ -151,7 +151,7 @@
                             <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="index#contact"><button class="btn btn-primary btn-m" type="submit">Prijava</button></a>
+                            <a class="nav-link js-scroll-trigger" href="index#contact" style="color:#f05f40;">Prijava</a>
                         </li>
                     </ul>
                 </div>
@@ -196,24 +196,24 @@
                     <div class="row">
                         <div class="col-sm">
                             <hr>
-                            <h4>OPIS:</h4>
-            <p style="color:#9c9c9c"> ${a.opis}</p>
+                            <h4 style="color:#f05f40">OPIS</h4>
+            <p> ${a.opis}</p>
             <hr>
         </div>
         <div class="col-sm">
             <hr>
-            <h4>LOKACIJA:</h4>  <p style="color:#9c9c9c" class="text-uppercase" id="naziv"> ${a.objekt.naziv}</p>
-            <h4>DATUM:</h4> <p style="color:#9c9c9c"> ${a.datumZacetka} - ${a.datumKonca}</p>
-            <h4>VSTOPNINA:</h4> <p style="color:#9c9c9c"> ${a.vstopnina}&euro;</p>
-            <h4>KAPACITETA:</h4> <p style="color:#9c9c9c"> ${a.kapaciteta} ljudi</p>
+            <h4 style="color:#f05f40">LOKACIJA</h4>  <p class="text-uppercase" id="naziv"> ${a.objekt.naziv}</p>
+            <h4 style="color:#f05f40">DATUM</h4> <p> ${a.datumZacetka} - ${a.datumKonca}</p>
+            <h4 style="color:#f05f40">VSTOPNINA</h4> <p> ${a.vstopnina}&euro;</p>
+            <h4 style="color:#f05f40">KAPACITETA</h4> <p> ${a.kapaciteta} ljudi</p>
             <hr>
         </div>
         <div class="col-sm">
             <hr>
-            <h4>ZANIMANJE ZA DOGODEK </h4><br>
+            <h4 style="color:#f05f40">ZANIMANJE ZA DOGODEK </h4><br>
             <form method="GET" action="posodobiLajk">
             <div class="box">
-                <p style="color:#9c9c9c" class="text-uppercase" name="like" id="like">${a.lajk}</p><br>
+                <h1 style="color:#f05f40" class="text-uppercase" name="like" id="like">${a.lajk}</h1><br>
                 <input class="btn btn-primary btn-xl js-scroll-trigger" type="hidden" value="${a.naziv}" id="objekt" name="objekt"/>
 
                 <p><input type="submit" class="btn btn-primary btn-xl js-scroll-trigger" value="Like" id="gumb"/></p>
@@ -223,10 +223,27 @@
         </div>
         </c:forEach>
     </div>
+    <br>
+    <div>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <c:forEach  items="${sli}" var ="slika">
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides">
+                    <img src="data:image/jpeg;base64,${slika.URLSlike}" style=" width: 100%" />
+                </div>
+            </c:forEach>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
     <%-- Google maps --%>
     <div class="col-lg-12 mx-auto text-dark">
-        <h2 class="text-white">ZEMLJEVIDI</h2>
-        <hr>
         <div id="map" style="width:100%;height:400px;"></div>
         <c:forEach items="${opis}" var="opis">
             <input type="hidden" id="naslov" name="lokacija"  value="${opis}">
@@ -245,34 +262,16 @@
         </c:forEach>
     </div>
     <%-- konec zemljevidov --%>
+    <br>
     <hr>
-
+    <br>
     <div>
-        <h4> GALERIJA SLIK:</h4>
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-            <c:forEach  items="${sli}" var ="slika">
-                <!-- Full-width images with number and caption text -->
-                <div class="mySlides">
-                    <img src="data:image/jpeg;base64,${slika.URLSlike}" style=" width: 100%" />
-                </div>
-            </c:forEach>
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <div>
-            <hr>
-            <!-- begin wwww.htmlcommentbox.com -->
-            <div class="container-fluid" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
-            <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-            <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-            <!-- end www.htmlcommentbox.com -->
-            <hr>
-        </div>
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div class="container-fluid" id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Nalaganje komentarjev</a></div>
+        <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24eYnUNqb5W8RlX.n%2F0pBwi0"+"&opts=16862&num=10&ts=1528193098550");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+        <hr>
     </div>
 </header>
 <%--javascript za galerijo slik--%>
@@ -328,9 +327,9 @@
         subscribe:'Prijavljam se na obvestila',
         are_you_sure:'Je ta komentar neprimeren?',
 
-        reply:'<img src="//www.htmlcommentbox.com/static/images/reply.png"/> odgovor',
-        flag:'<img src="//www.htmlcommentbox.com/static/images/flag.png"/> zastavica',
-        like:'<img src="//www.htmlcommentbox.com/static/images/like.png"/> v&scaron;e&ccaron;ek',
+        reply:'<img src="//www.htmlcommentbox.com/static/images/reply.png"/> Odgovori',
+        flag:'<img src="//www.htmlcommentbox.com/static/images/flag.png"/> Prijavi',
+        like:'<img src="//www.htmlcommentbox.com/static/images/like.png"/> V&scaron;e&ccaron;kaj',
 
         /* dates */
         days_ago:'dni nazaj',
@@ -352,7 +351,7 @@
         MAX_CHARS: 8192,
         PAGE:'', /* ID of the webpage to show comments for. defaults to the webpage the user is currently visiting. */
         ON_COMMENT: function(){}, /* Function to call after commenting. */
-        RELATIVE_DATES:true /* show dates in the form "X hours ago." etc. */
+        RELATIVE_DATES:false /* show dates in the form "X hours ago." etc. */
     };
 </script>
 <%--javascript za pregled zanimanja za dogodek--%>
@@ -375,7 +374,7 @@
         var loaded = parseInt(localStorage.getItem('loaded'), 10),
             loaded_numb = loaded?loaded+1:1;
         localStorage.setItem('loaded', loaded_numb);
-        if(loaded_numb % 2 == 0){
+        if(loaded_numb % 2 != 0){
             $('#gumb').show();
         }
         else{
@@ -437,5 +436,16 @@
 <%--</script>--%>
 <form id="logoutForm" method="POST" action="${contextPath}/logout">
 </form>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
 </body>
 </html>

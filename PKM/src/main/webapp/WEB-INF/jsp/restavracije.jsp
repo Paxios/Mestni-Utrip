@@ -54,7 +54,7 @@
                             <a class="nav-link js-scroll-trigger" href="index#portfolio">Lokacije</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="index#contact"><button class="btn btn-primary btn-m" type="submit">Prijava</button></a>
+                            <a class="nav-link js-scroll-trigger" href="index#contact" style="color:#f05f40;">Prijava</a>
                         </li>
                     </ul>
                 </div>
@@ -106,11 +106,11 @@
                 </form>
                 <hr>
                 <c:forEach items="${res}" var="a">
-                    <h3 class="text-uppercase" onclick="document.location='/podrobnosti?id=${a.id_dogodek}'" style="cursor:pointer; color: aliceblue;">${a.naziv}</h3>
-                    <p style="color: grey">LOKACIJA: ${a.objekt.naziv} </p>
-                    <p style="color: grey">DATUM: ${a.datumZacetka}</p>
-                    <p style="color: grey">VSTOPNINA: ${a.vstopnina}&euro;</p>
-                    <p>SLIKA</p>
+                    <h3 class="text-uppercase" onclick="document.location='/podrobnosti?id=${a.id_dogodek}'" style="cursor:pointer; color:#f05f40;">${a.naziv}</h3>
+                    <p>LOKACIJA: ${a.objekt.naziv} </p>
+                    <p>DATUM: ${a.datumZacetka}</p>
+                    <p>VSTOPNINA: ${a.vstopnina}&euro;</p>
+                    <img src="data:image/jpeg;base64,${a.predogled}" style=" width: 100%" />
                     <hr>
                 </c:forEach>
             </div>
@@ -119,5 +119,16 @@
 </header>
 <form id="logoutForm" method="POST" action="${contextPath}/logout">
 </form>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
 </body>
 </html>

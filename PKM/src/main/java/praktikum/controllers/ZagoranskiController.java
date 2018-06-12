@@ -91,7 +91,6 @@ public class ZagoranskiController {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute("username", username);
         model.addAttribute("spo",dogodekDao.getDogodekByFK(5));
-        model.addAttribute("spo",dogodekDao.getDogodekByFK(5));
         return "sport";
     }
     @RequestMapping(value = { "/sport" }, method = RequestMethod.POST)
@@ -111,6 +110,8 @@ public class ZagoranskiController {
         model.addAttribute("akt",dogodekDao.getAllDogodkiOrdered(preverjanje));
         return "aktualno";
     }
+
+
     @RequestMapping(value ={ "/podrobnosti"}, method = RequestMethod.GET)
     public String Prijava(Model model, @RequestParam(value="id") int id){
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -155,7 +156,6 @@ public class ZagoranskiController {
         return "redirect:/index";
     }
 
-
     @RequestMapping(value={"/posodobiLajk"}, method = RequestMethod.GET)
     public String a (Model model, @RequestParam(value="objekt") String objekt,HttpServletRequest request){
         dogodekDao.updateLajk(objekt);
@@ -163,5 +163,4 @@ public class ZagoranskiController {
         String referer = request.getHeader("Referer");
         return "redirect:"+referer;
     }
-
 }

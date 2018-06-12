@@ -11,6 +11,7 @@ public class Dogodek {
     private String opis;
     private int lajk;
     private Objekt objekt;
+    private String predogled;
 
     public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, String datumZacetka, String datumKonca){
         this.naziv = naziv;
@@ -36,6 +37,16 @@ public class Dogodek {
         this.datumKonca =datumKonca;
         objekt = new Objekt(imeObjekta);
         this.lajk= lajk;
+    }
+
+    public Dogodek(int id_dogodek, String naziv, String predogled, double vstopnina, String datumZacetka, String datumKonca, String imeObjekta){
+        this.id_dogodek=id_dogodek;
+        this.naziv = naziv;
+        this.predogled=predogled;
+        this.vstopnina = vstopnina;
+        this.datumZacetka=datumZacetka;
+        this.datumKonca =datumKonca;
+        objekt = new Objekt(imeObjekta);
     }
     public Dogodek(int id_dogodek, String naziv, double vstopnina, String datumZacetka, String datumKonca, String imeObjekta){
         this.id_dogodek=id_dogodek;
@@ -142,4 +153,8 @@ public class Dogodek {
     public void setLajk(int lajk) {
         this.lajk = lajk;
     }
+
+    public String getPredogled() { return predogled; }
+
+    public void setPredogled(String predogled) { this.predogled = predogled; }
 }
