@@ -44,7 +44,7 @@ public class Dogodek {
         this.datumZacetka=datumZacetka;
         this.datumKonca =datumKonca;
         objekt = new Objekt(imeObjekta);
-        }
+    }
 
     public Dogodek(String naziv, double vstopnina, int kapaciteta, String opis, String datumZacetka, String datumKonca, String imeObjekta){
         this.naziv = naziv;
@@ -134,4 +134,12 @@ public class Dogodek {
     public int getId_dogodek() { return id_dogodek; }
 
     public void setId_dogodek(int id_dogodek) { this.id_dogodek = id_dogodek; }
+
+    public int getLajk() {
+        return lajk;
+    }
+
+    public void setLajk(int lajk) {
+        this.lajk = lajk;
+    }
 }

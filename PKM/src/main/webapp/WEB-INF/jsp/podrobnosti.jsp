@@ -213,10 +213,9 @@
             <hr>
             <h4>ZANIMANJE ZA DOGODEK </h4><br>
             <div class="box">
-                <label for="qty"><abbr title="Aktivne prijave">&Scaron;tevilo ljudi, ki jih dogodek zanima:</abbr></label>
-                <input id="qty" value="0" />
-                <button id="up" onclick="modify_qty(1)">Zanima me</button>
+                <p style="color:#9c9c9c" class="text-uppercase" id="like">${a.lajk}</p><br>
             </div>
+            <button class="btn btn.primary btn-m" onclick="lajk()">Like</button>
             <hr>
         </div>
         </c:forEach>
@@ -342,6 +341,12 @@
         document.getElementById('qty').value = new_qty;
         return new_qty;
     }
+</script>
+<script>
+    function lajk() {
+
+    }
+
 </script>
 <%--<script>--%>
 <%--$(document).ready(function (){--%>

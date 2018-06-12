@@ -148,7 +148,7 @@ public class DogodekDao {
     }
 
     public List<Dogodek> getDogodekByID(int id) {
-        String sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina, kapaciteta, opis FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE dogodek.id_dogodek=?;";
+        String sql = "SELECT dogodek.id_dogodek, dogodek.Naziv AS naziv_dogodka, objekt.naziv AS naziv_objekta, datum_zacetka, datum_konca, vstopnina, kapaciteta, opis,lajk FROM dogodek LEFT JOIN objekt ON objekt.Id_objekt = dogodek.Fk_id_objekt WHERE dogodek.id_dogodek=?;";
         List<Dogodek> ret = new ArrayList<Dogodek>();
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql,
                 new Object[]{id});
@@ -164,7 +164,8 @@ public class DogodekDao {
             String zacetekk= DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
             String konecc= DATE_FORMAT.format(konec);
-            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, kapaciteta, opis, zacetekk, konecc, naziv_objekta));
+            int lajk = (int) row.get("Lajk");
+            ret.add(new Dogodek(id_dogodek, naziv_dogodka, vstopnina, kapaciteta, opis, zacetekk, konecc, naziv_objekta,lajk));
         }
         return ret;
     }
