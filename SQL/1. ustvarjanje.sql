@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS authorities;
 
 CREATE TABLE Slika (
 Id_slika INTEGER NOT NULL,
-Slika BLOB,
+Datoteka longblob,
 Fk_id_dogodek INTEGER NOT NULL);
 
 ALTER TABLE Slika
@@ -73,7 +73,7 @@ Kapaciteta INTEGER NOT NULL,
 Opis VARCHAR(500) not null,
 Datum_zacetka DATETIME NOT NULL,
 Datum_konca DATETIME default 0,
-Lajk Integer Not NULL,
+Lajk Integer Not NULL default 0,
 Fk_id_objekt INTEGER NOT NULL,
 Fk_id_tip_dogodka INTEGER NOT NULL,
 fk_id_uporabnik INTEGER NOT NULL);

@@ -55,6 +55,7 @@ public class DogodekDao {
             Timestamp zacetek = (Timestamp) row.get("datum_Zacetka");
             String zacetekk = DATE_FORMAT.format(zacetek);
             Timestamp konec =(Timestamp)row.get("datum_Konca");
+
             String konecc = DATE_FORMAT.format(konec);
             LocalDateTime datumZacetka = zacetek.toLocalDateTime();
             LocalDateTime datumKonca = konec.toLocalDateTime();
@@ -168,16 +169,19 @@ public class DogodekDao {
         return ret;
     }
 
+
     public int addDogodek(String naziv, double vstopnina, int kapaciteta, String opis, LocalDate datum_zac, LocalTime ura_zac, LocalDate datum_konc, LocalTime ura_konc, String tip_objetka, String objekt) {
         int fk_id_objekt = 0;
         int fk_id_tip_dogodka = 0;
         int fk_id_username = 0;
+        int lajk = 0;
         String username=SecurityContextHolder.getContext().getAuthentication().getName();
         String sql_Uporabnik = "select * from uporabnik where uporabnisko_ime= ?";
         List<Map<String, Object>> abc = jdbcTemplate.queryForList(sql_Uporabnik,
                 new Object[]{username});
         for (Map vrstice : abc) {
             fk_id_username = (int) vrstice.get("id_uporabnik");
+
         }
 
         String sqlTip_Objekta = "select * from tip_dogodka where naziv = ?";
@@ -191,8 +195,9 @@ public class DogodekDao {
         zacetek.replace('/', '-');
         String konec = datum_konc + " " + ura_konc + ":00";
         konec.replace('/', '-');
-        String sql = "insert into dogodek values (NULL, ?,?,?,?,?,?,?,?,?)";
-        return jdbcTemplate.update(sql, new Object[]{naziv, vstopnina, kapaciteta, opis, zacetek, konec, fk_id_objekt, fk_id_tip_dogodka, fk_id_username});
+
+        String sql = "insert into dogodek values (NULL, ?,?,?,?,?,?,?,?,?,?)";
+        return jdbcTemplate.update(sql, new Object[]{naziv, vstopnina, kapaciteta, opis, zacetek, konec,lajk, fk_id_objekt, fk_id_tip_dogodka, fk_id_username});
     }
 
 
