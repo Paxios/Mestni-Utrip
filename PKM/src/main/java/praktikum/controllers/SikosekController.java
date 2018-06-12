@@ -7,10 +7,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import praktikum.Entities.Dogodek;
+import praktikum.Entities.FileUploadForm;
 import praktikum.Entities.Objekt;
 import praktikum.Entities.Oseba;
 import praktikum.db.*;
@@ -22,6 +25,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,6 +41,8 @@ public class SikosekController {
     private JavaMailSender sender;
     @Autowired
     DogodekDao dogodekDao;
+    @Autowired
+    SlikaDao slikaDao;
 
     @RequestMapping(value = {"/registracija"}, method = RequestMethod.GET)
     public String Prijava(Model model) {
@@ -142,13 +148,32 @@ public class SikosekController {
     public String urejanjeDogodka(Model model,@RequestParam(value="novNaziv") String novNaziv, @RequestParam(value="naziv") String naziv, @RequestParam(value="vstopnina") double vstopnina,
                                   @RequestParam(value="kapaciteta") int kapaciteta, @RequestParam(value="tip") String tip, @RequestParam(value="opis") String opis, @RequestParam(value="imeObjekta") String imeObjekta,
                                   @RequestParam(value="datumZacetka") String datumZacetka, @RequestParam(value="uraZacetka") String uraZacetka, @RequestParam(value="datumKonca") String datumKonca,
-                                  @RequestParam(value="uraKonca") String uraKonca) {
+                                  @RequestParam(value="uraKonca") String uraKonca, @ModelAttribute("uploadForm") FileUploadForm uploadForm) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate datumZacetkaa = LocalDate.parse(datumZacetka,formatter);
         LocalDate datumKoncaa = LocalDate.parse(datumKonca,formatter);
         LocalTime uraZac = LocalTime.parse(uraZacetka);
         LocalTime uraKon = LocalTime.parse(uraKonca);
         dogodekDao.updateDogodek(novNaziv, naziv, vstopnina, kapaciteta, opis,datumZacetkaa,uraZac,datumKoncaa,uraKon,tip,imeObjekta);
+
+        try{
+            List<MultipartFile> files = uploadForm.getFiles();
+            List<String> fileNames = new ArrayList<String>();
+            if(null != files && files.size() > 0) {
+                for (MultipartFile multipartFile : files) {
+                    String fileName;
+                    fileName   = multipartFile.getOriginalFilename();
+                    fileNames.add(fileName);
+                    slikaDao.save(multipartFile,dogodekDao.getIdDogodka(naziv));
+                }
+
+            }
+            model.addAttribute("files", fileNames);
+
+        }catch (NullPointerException e){
+            System.out.println("Nobena slika ni bila dodana.");
+        }
+
         return "redirect:/mojiDogodki";
     }
 

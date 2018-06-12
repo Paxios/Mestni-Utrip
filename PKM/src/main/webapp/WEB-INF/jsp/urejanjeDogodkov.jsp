@@ -130,7 +130,7 @@
                             <p class="text-left">Ura za&ccaron;etka: <input class="form-control" type="time"  value="${uraZacetka}" name="uraZacetka"></p>
                             <p class="text-left">Datum konca: <input class="form-control" type="date" value="${datumKonca}"  name=datumKonca></p>
                             <p class="text-left">Ura konca: <input class="form-control" type="time"  value="${uraKonca}" name=uraKonca></p>
-                            <p class="text-left">Dodaj fotografije: <input type="file" class="form-control" value="Dodaj slike" name=slike" multiple></p>
+                            <p class="text-left">Dodaj fotografije: <input type="file" name="files" accept=".jpg, .jpeg, .png" multiple></p>
                             <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
                             </c:forEach>
                         </form>
