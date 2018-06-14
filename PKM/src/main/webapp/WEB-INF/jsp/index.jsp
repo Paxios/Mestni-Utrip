@@ -291,9 +291,6 @@
   </div>
 </section>
 
-
-<% System.out.println("prijavljen: " + pageContext.findAttribute("user") ); %>
-
 <c:choose>
 <c:when test="${user == 'anonymousUser'}">
 <section id="contact">

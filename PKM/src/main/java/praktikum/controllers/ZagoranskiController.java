@@ -163,4 +163,10 @@ public class ZagoranskiController {
         String referer = request.getHeader("Referer");
         return "redirect:"+referer;
     }
+    @RequestMapping (value={"/izbrisiDogodek"}, method = RequestMethod.POST)
+    public String izbrisiDogodek(Model model, @RequestParam(value="naziv", required = true) String naziv,HttpServletRequest request){
+        String referer = request.getHeader("Referer");
+        dogodekDao.removeDogodek(naziv);
+        return "redirect:/mojiDogodki";
+    }
 }

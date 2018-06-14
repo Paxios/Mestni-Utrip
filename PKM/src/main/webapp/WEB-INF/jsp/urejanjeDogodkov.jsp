@@ -101,7 +101,7 @@
                             <c:forEach items="${dogodek}" var='a'>
 
                             <p id="manjkajoPodatki"></p>
-                                <input type="text" value="${a.naziv}" name=naziv hidden />
+                                <input type="text" value="${a.naziv}" name="naziv" hidden />
                             <p><input class="form-control" type="text" placeholder="Naziv dogodka" value="${a.naziv}" name=novNaziv></p>
                             <p><input class="form-control" type="number" step="any" placeholder="Vstopnina (eur)" value="${a.vstopnina}" name=vstopnina></p>
                             <p><input class="form-control" type="number" placeholder="&Scaron;tevilo mest" value="${a.kapaciteta}" name="kapaciteta"></p>
@@ -131,7 +131,7 @@
                             <p class="text-left">Datum konca: <input class="form-control" type="date" value="${datumKonca}"  name=datumKonca></p>
                             <p class="text-left">Ura konca: <input class="form-control" type="time"  value="${uraKonca}" name=uraKonca></p>
                             <p class="text-left">Dodaj fotografije: <input type="file" name="files" accept=".jpg, .jpeg, .png" multiple></p>
-                            <p><input type="submit" value="Potrdi" class="btn btn-primary btn-xl js-scroll-trigger"></p>
+                            <p><input type="submit" value="Potrdi" name="potrdi" class="btn btn-primary btn-xl js-scroll-trigger"> <button type="submit" formaction="/izbrisiDogodek" class="btn btn-primary btn-xl js-scroll-trigger">Izbri&scaron;i dogodek </button>
                             </c:forEach>
                         </form>
                     </div>

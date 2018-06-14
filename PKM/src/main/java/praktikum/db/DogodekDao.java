@@ -256,7 +256,6 @@ public class DogodekDao {
 
 
     public int updateDogodek (String novNaziv,String naziv, double vstopnina, int kapaciteta, String opis, LocalDate datum_zac, LocalTime ura_zac, LocalDate datum_konc, LocalTime ura_konc, String tip_objetka, String objekt){
-        int fk_id_objekt;
         int fk_id_tip_dogodka = 0;
         int fk_id_username = 0;
         String username=SecurityContextHolder.getContext().getAuthentication().getName();
@@ -323,7 +322,6 @@ public class DogodekDao {
 
     public int updateLajk(String objekt){
         List<Dogodek> lajk = dogodekDao.getDogodekByNaziv(objekt);
-        System.out.println(lajk.get(0));
         int stLajkov = lajk.get(0).getLajk()+1;
 
         String sqlUpdate = "update dogodek set Lajk=? where naziv = ?";
@@ -352,4 +350,13 @@ public class DogodekDao {
         }
         return ret;
     }
+    public int removeDogodek(String naziv){
+        String prej ="SET foreign_key_checks = 0";
+        String sqlRemove ="delete from dogodek where naziv= ?";
+        String po ="SET foreign_key_checks = 1";
+        jdbcTemplate.update(prej);
+        jdbcTemplate.update(sqlRemove, new Object[]{naziv});
+        return jdbcTemplate.update(po);
+    }
+
 }
