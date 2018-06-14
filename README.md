@@ -1,6 +1,7 @@
-# Mestni Utrip
-
-Mestni utrip, je spletna stran, na kateri se nahajajo vsi dogodki, v mestu Maribor.
+<p align="center">
+  <img  src="https://i.imgur.com/v9hLADh.png">
+</p>
+          <dd>Spletna stran, na kateri se nahajajo vsi dogodki, v mestu Maribor.</dd>
 
 ## Getting Started
 
