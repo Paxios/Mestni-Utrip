@@ -1,11 +1,8 @@
 <p align="center">
   <img  src="https://i.imgur.com/v9hLADh.png">
 </p>
-          <dd>Spletna stran, na kateri se nahajajo vsi dogodki, v mestu Maribor.</dd>
+          Spletna stran, na kateri se nahajajo vsi dogodki, v mestu Maribor.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Predpogoji
 
@@ -22,31 +19,30 @@ Maven 4.0.0,
 Springboot 1.5.2
 ```
 
-### Navodila
+### Navodila projekta
 
-S temi navodili, boste lahko prenesli ta projekt in ga zagnali.
+Načrtujte in izdelajte sistem namenjen spletni skupnosti, ki jo zanima aktualno dogajanje v mestu.
+Vaš sistem naj torej cilja na turiste, ki obiščejo mesto, kot tudi lokalnim prebivalcem.
 
-A step by step series of examples that tell you how to get a development env running
+Uporabnikom spletne skupnosti omogočite dodajanje restavracij, klubov, znamenitosti ter drugih
+prizorišč dogajanja v mestu. Uporabniki se morajo deliti v dve skupini. V prvo skupino sodijo
+uporabniki, ki objavljajo in soustvarjajo dogodke v mestu, na drugi strani pa uporabniki, ki želijo biti
+obveščeni o dogajanju v mestu.
 
-Say what the step will be
+Da bi lahko uporabniki portala lažje našli za jih najprimernejše dogodke, implementirajte tudi
+napredno iskanje po aktualnih dogodkih.
 
-```
-Give the example
-```
+Dogodki naj bodo uporabnikom prikazani na dva načina:
+- glede na datum,
+- glede na prizorišče.
 
-And repeat
+Uporabniki spletnega portala naj imajo možnost preklapljanja med tema dvema pogledoma. 
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Deployment
+## Navodila za implementacijo
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
+## Izdelano s pomočjo
 
 * [Intellij](https://www.jetbrains.com/idea/) - Razvojno okolje
 * [Maven](https://maven.apache.org/) - Dependency Management
@@ -65,10 +61,9 @@ To je naša zadnja uradna različica, ki smo jo objavili.
 
 ## Avtorji
 
+[<img alt="PrimozStopar" src="https://avatars1.githubusercontent.com/u/22565865?s=460&v=4" width="117">](https://github.com/Evixiss) |[<img alt="AljosaSikosek" src="https://avatars2.githubusercontent.com/u/33753351?s=460&v=4" width="117">](https://github.com/aljosasikosek) |[<img alt="NejcVnuk" src="https://avatars3.githubusercontent.com/u/33753135?s=460&v=4" width="117">](https://github.com/VnukNejc) |[<img alt="UrosZagoranski" src="https://avatars1.githubusercontent.com/u/33725933?s=460&v=4" width="117">](https://github.com/uzagoranski) |
+:---: |:---: |:---: |:---: |
+[Primož Stopar](https://github.com/Evixiss) |[Aljoša Sikošek](https://github.com/aljosasikosek) |[Nejc Vnuk](https://github.com/VnukNejc) |[Uroš Zagoranski](https://github.com/uzagoranski) |
 
-* **Primož Stopar** - *član začetne ekipe* - https://github.com/Evixiss
-* **Aljoša Sikošek** - *član začetne ekipe* - https://github.com/aljosasikosek
-* **Nejc Vnuk** - *član začetne ekipe* - https://github.com/VnukNejc
-* **Uroš Zagoranski** - *član začetne ekipe* - https://github.com/uzagoranski
 
 Seznam [ostalih pomočnikov](https://github.com/Evixiss/Mestni-Utrip/graphs/contributors), ki so pomagali prispevali k tem projektu.
