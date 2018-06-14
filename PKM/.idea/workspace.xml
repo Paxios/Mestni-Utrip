@@ -3,11 +3,108 @@
   <component name="ChangeListManager">
     <list default="true" id="094ff57a-a062-484a-87fc-ac93897d76b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/Entities/Slika.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/Entities/Slika.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/controllers/SikosekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/controllers/SikosekController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/db/SlikaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/db/SlikaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/podrobnosti.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/podrobnosti.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14b.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16a.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16g.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/2a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/2b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/2c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/2d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/3a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/3b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/3c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/3d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8g.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9e.jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,54 +119,47 @@
       <file leaf-file-name="ZagoranskiController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="152" column="1" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
+            <state relative-caret-position="119">
+              <caret line="128" column="165" selection-start-line="128" selection-start-column="165" selection-end-line="128" selection-end-column="165" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#886#906#1" expanded="true" />
-                <element signature="e#7014#7022#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SikosekController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/SikosekController.java">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+            <state relative-caret-position="1208">
+              <caret line="361" column="22" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DogodekDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/DogodekDao.java">
+      <file leaf-file-name="registracija.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/registracija.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3162">
-              <caret line="188" selection-start-line="188" selection-end-line="188" />
+            <state relative-caret-position="-1949">
+              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MestniUtrip.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MestniUtrip.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Slika.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Slika.java">
+      <file leaf-file-name="Naslov.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Naslov.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObjektDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/ObjektDao.java">
+      <file leaf-file-name="aktualno.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aktualno.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+            <state relative-caret-position="119">
+              <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -115,17 +205,26 @@
         <option value="$PROJECT_DIR$/src/main/java/com/javainuse/config/EmployeeSecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/praktikum/Entities/Objekt.java" />
         <option value="$PROJECT_DIR$/src/main/java/praktikum/config/EmployeeSecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/registracija.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/praktikum/Entities/Dogodek.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/praktikum/db/DogodekDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dodajanjeDogodka.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/praktikum/Entities/FileUploadForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/praktikum/db/SlikaDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/podrobnosti.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/praktikum/Entities/Slika.java" />
-        <option value="$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java" />
         <option value="$PROJECT_DIR$/src/main/java/praktikum/controllers/SikosekController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/praktikum/Entities/Dogodek.java" />
+        <option value="$PROJECT_DIR$/src/main/java/praktikum/db/SlikaDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/praktikum/db/DogodekDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sport.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/urejanjeDogodkov.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dodajanjeDogodka.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/klubi.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/kultura.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mojiDogodki.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/narava.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/podrobnosti.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/registracija.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/restavracije.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aktualno.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
       </list>
     </option>
   </component>
@@ -154,6 +253,12 @@
           <item name="boot-form-handling" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="boot-form-handling" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="spring-boot" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
       </expand>
       <select />
     </treeState>
@@ -175,6 +280,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,9 +378,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,7 +416,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MestniUtripApplication">
+  <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -331,17 +436,15 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="MestniUtripApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="MestniUtripApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="MestniUtrip" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="praktikum.MestniUtripApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration name="MestniUtripApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="MestniUtrip" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="praktikum.MestniUtrip.MestniUtripApplication" />
-    </configuration>
-    <configuration name="SpringBootFormHandingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="MestniUtrip" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.javainuse.SpringBootFormHandingApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="praktikum.MestniUtripApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -365,11 +468,6 @@
       <properties />
       <listeners />
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.MestniUtripApplication" />
-      <item itemvalue="Spring Boot.SpringBootFormHandingApplication" />
-      <item itemvalue="Spring Boot.MestniUtripApplication (1)" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -384,74 +482,53 @@
       <workItem from="1528023126133" duration="2893000" />
       <workItem from="1528026078812" duration="4918000" />
       <workItem from="1528034051513" duration="250000" />
+      <workItem from="1528826688017" duration="367000" />
+      <workItem from="1528880395824" duration="117000" />
+      <workItem from="1528924835437" duration="2189000" />
+      <workItem from="1528968893836" duration="3351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10058000" />
+    <option name="totallyTimeSpent" value="41133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.12811127" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Palette" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.1420205" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Designer" order="8" />
+      <window_info anchor="right" id="Database" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
+      <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23279649" />
-      <window_info anchor="right" id="Bean Validation" order="3" />
-      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32750398" />
+      <window_info anchor="bottom" id="Spring" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23206443" />
+      <window_info anchor="right" id="Bean Validation" order="7" />
+      <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Learn" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23333333" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.12864584" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Bean Validation" order="3" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="8" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info id="Learn" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,111 +538,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Objekt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/kultura.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/restavracije.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="72" column="41" lean-forward="true" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="92" column="10" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/DogodekDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/NaslovDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dodajanjeDogodka.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/SikosekController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvnw.cmd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1970" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/praktikum/MestniUtrip/MestniUtripApplicationTests.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/home.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LoginController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/menu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="59" selection-start-column="59" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/getEmployees.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/MestniUtrip/MestniUtripApplication.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/EmployeeService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/EmployeeServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Employee.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/impl/EmployeeDaoImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/EmployeeDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/EmployeeController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addEmployee.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/addEmployee.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/config/EmployeeSecurityConfiguration.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/welcome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/welcome.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/EmployeeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -583,13 +559,6 @@
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.707/Mestni-Utrip/PKM/src/main/webapp/WEB-INF/views/jsp/registracija.jsp" />
     <entry file="file://$PROJECT_DIR$/../delujoca/PKM/src/main/webapp/WEB-INF/jsp/registracija.jsp" />
     <entry file="file://$PROJECT_DIR$/../delujoca/PKM/src/main/webapp/WEB-INF/jsp/dodajanjeDogodka.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/registracija.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="86" column="120" selection-start-line="86" selection-start-column="120" selection-end-line="86" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/jsp/dodajanjeDogodka.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/NaslovDao.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -612,82 +581,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sport.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/klubi.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Dogodek.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aktualno.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="79" column="64" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/narava.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="75" column="50" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/DogodekDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3162">
-          <caret line="188" selection-start-line="188" selection-end-line="188" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dodajanjeDogodka.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="165" column="9" selection-start-line="165" selection-start-column="9" selection-end-line="165" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/FileUploadForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5811" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/SlikaDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2389#2396#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,45 +595,225 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/SlikaDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/creative.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1989" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/creative.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scss/_masthead.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-grid.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26364" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scss/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scss/_services.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scss/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scss/_bootstrap-overrides.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scss/creative.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scss/_navbar.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1224" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/creative.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/SikosekController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1179">
+          <caret line="175" selection-start-line="175" selection-end-line="175" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/urejanjeDogodkov.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dodajanjeDogodka.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/klubi.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/kultura.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mojiDogodki.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/narava.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/restavracije.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/db/DogodekDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="221" column="24" lean-forward="true" selection-start-line="221" selection-start-column="24" selection-end-line="221" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aktualno.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/podrobnosti.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3403">
-          <caret line="394" column="7" selection-start-line="394" selection-start-column="7" selection-end-line="394" selection-end-column="7" />
+        <state relative-caret-position="731">
+          <caret line="234" column="24" lean-forward="true" selection-start-line="234" selection-start-column="24" selection-end-line="234" selection-end-column="24" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#src#0;n#img#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#src#0;n#img#0;n#div#1;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#2;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#62#70#1" expanded="true" />
             <element signature="e#71#79#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Objekt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/FileUploadForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Tip_Objekta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Uporabnik.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Slika.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Oseba.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Dogodek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/registracija.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1949">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/Entities/Naslov.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="152" column="1" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
+        <state relative-caret-position="119">
+          <caret line="128" column="165" selection-start-line="128" selection-start-column="165" selection-end-line="128" selection-end-column="165" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#886#906#1" expanded="true" />
-            <element signature="e#7014#7022#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/SikosekController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        <state relative-caret-position="1208">
+          <caret line="361" column="22" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
         </state>
       </provider>
     </entry>

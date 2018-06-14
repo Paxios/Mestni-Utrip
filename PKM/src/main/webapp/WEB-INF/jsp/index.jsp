@@ -294,68 +294,72 @@
 <c:choose>
 <c:when test="${user == 'anonymousUser'}">
 <section id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2 class="section-heading">Prijava in registracija</h2>
-        <hr class="my-4">
-        <p class="mb-5">Za urejanje dogodkov in lokacij se morate v sistem prijaviti.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 ml-auto text-center">
-        <h3>Registracija</h3><br>
-        <a href="registracija"><i class="fa fa-sign-in fa-3x mb-3"></i></a>
-      </div>
-      <div class="col-lg-4 ml-auto text-center">
-        <form method="POST" action="${contextPath}/index#log" class="form-signin" id="log">
-          <h3 class="form-heading">Prijava v sistem</h3><br>
-          <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span>${msg}</span>
-            <input name="username" type="text" class="form-control" placeholder="Uporabni&scaron;ko ime"/><br>
-            <input name="password" type="password" class="form-control" placeholder="Geslo"/>
-            <span>${errorMsg}</span><br>
-            <button class="btn btn-primary btn-xl" type="submit">Prijava</button>
-          </div>
-        </form>
-      </div>
-      </c:when>
-
-
-      <c:otherwise>
-      <section id="contact">
-        <div class="container">
-          <div class="row">
+    <div class="container">
+        <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-              <h2 class="section-heading">Odjava</h2>
-              <hr class="my-4">
-              <p class="mb-5">Prijavljeni ste kot ${username}.
-              </p>
+                <h2 class="section-heading">Prijava in registracija</h2>
+                <hr class="my-4">
+                <p class="mb-5">Za urejanje dogodkov in lokacij se morate v sistem prijaviti.
+                </p>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 ml-auto text-center">
-              <h3>Registracija</h3><br>
-              <a href="registracija"><i class="fa fa-sign-in fa-3x mb-3"></i></a>
-            </div>
-            <div class="col-lg-4 ml-auto text-center">
-              <a onclick="document.forms['logoutForm'].submit()"><button class="btn btn-primary btn-xl" type="submit" id="logout">Logout</button></a>
-              </h3></u>
-              <form id="logoutForm" method="POST" action="${contextPath}/logout">
-              </form>
-            </div>
-            </c:otherwise>
-            </c:choose>
-
-            <div class="col-lg-4 mr-auto text-center">
-              <h3>Kontakt</h3><br>
-              <a href="mailto:mestniutripmaribor@gmail.com"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i></a>
-            </div>
-          </div>
         </div>
-      </section>
+        <div class="row">
+            <div class="col-lg-4 ml-auto text-center">
+                <hr>
+                <h3>Registracija</h3><br>
+                <a href="registracija"><i class="fa fa-sign-in fa-3x mb-3"></i></a>
+            </div>
+            <div class="col-lg-4 ml-auto text-center">
+                <form method="POST" action="${contextPath}/index#log" class="form-signin" id="log">
+                    <hr>
+                    <h3 class="form-heading">Prijava v sistem</h3><br>
+                    <div class="form-group ${error != null ? 'has-error' : ''}">
+                        <span>${msg}</span>
+                        <input name="username" type="text" class="form-control" placeholder="Uporabni&scaron;ko ime"/><br>
+                        <input name="password" type="password" class="form-control" placeholder="Geslo"/>
+                        <span>${errorMsg}</span><br>
+                        <button class="btn btn-primary btn-xl" type="submit">Prijava</button>
+                    </div>
+                </form>
+            </div>
+            </c:when>
 
+
+            <c:otherwise>
+            <section id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto text-center">
+                            <hr>
+                            <h2 class="section-heading">Odjava</h2>
+                            <hr class="my-4">
+                            <p class="mb-5">Prijavljeni ste kot ${username}.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 ml-auto text-center">
+                            <hr>
+                            <h3>Registracija</h3><br>
+                            <a href="registracija"><i class="fa fa-sign-in fa-3x mb-3"></i></a>
+                        </div>
+                        <div class="col-lg-4 ml-auto text-center">
+                            <a onclick="document.forms['logoutForm'].submit()"><button class="btn btn-primary btn-xl" type="submit" id="logout">Logout</button></a>
+                            </h3></u>
+                            <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                            </form>
+                        </div>
+                        </c:otherwise>
+                        </c:choose>
+
+                        <div class="col-lg-4 mr-auto text-center">
+                            <hr>
+                            <h3>Kontakt</h3><br>
+                            <a href="mailto:mestniutripmaribor@gmail.com"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
       <!-- Bootstrap core JavaScript -->
       <script src="vendor/jquery/jquery.min.js"></script>
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
