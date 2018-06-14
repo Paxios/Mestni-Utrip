@@ -40,7 +40,15 @@ Uporabniki spletnega portala naj imajo možnost preklapljanja med tema dvema pog
 
 ## Navodila za implementacijo
 
-Add additional notes about how to deploy this on a live system
+1.	Prenesite in namestite: IntelliJ, MySQL, Java
+2.	Prenesite naš projekt, s klikom na »Clone or download« in »Download ZIP« prenesite projekt v vašo željeno mapo in ga razširite. 
+3.	Odprite MySQL WorkBench in ustvarite novo povezavo z Host name : 127.0.0.1, Port 3306, Username root in Password 1234.
+4.	Odprite MySQL WorkBench in zaženite vse SQL stavke po vrsti od 1 do 7.
+5.	Odprite IntelliJ, stisnite na »Open«, in odprite Datoteko »pom.xml«, ki se nahaja v: /PKM/pom.xml. Stisnite »Open as Project« in »Open Existing Project«.
+6.	Stisnite na Reload gumb in počakajte dokler ne izginejo vse napake.
+7.	Stisnite na boot-form-handling -> Plugins -> Spring-boot -> in dvakrat kliknite na Spring-boot:run. Počakajte da se naloži.
+8.	Pojdite na localhost:8080.
+
 
 ## Izdelano s pomočjo
 
