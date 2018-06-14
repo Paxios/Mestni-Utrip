@@ -2,109 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="094ff57a-a062-484a-87fc-ac93897d76b8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/10f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/11e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/12e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/13f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14b.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/14f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/15f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16a.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/16g.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/17f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/18f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/1f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/2a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/2b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/2c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/2d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/3a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/3b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/3c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/3d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/4e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/5f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/6e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/7f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/8g.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SQL/Slike_dogodkov_SQL/9e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ZagoranskiController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ZagoranskiController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="128" column="165" selection-start-line="128" selection-start-column="165" selection-end-line="128" selection-end-column="165" />
+            <state relative-caret-position="170">
+              <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1208">
@@ -158,8 +56,8 @@
       <file leaf-file-name="aktualno.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aktualno.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+            <state relative-caret-position="68">
+              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -222,9 +120,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/podrobnosti.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/registracija.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/restavracije.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aktualno.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
       </list>
     </option>
   </component>
@@ -485,12 +383,12 @@
       <workItem from="1528826688017" duration="367000" />
       <workItem from="1528880395824" duration="117000" />
       <workItem from="1528924835437" duration="2189000" />
-      <workItem from="1528968893836" duration="3351000" />
+      <workItem from="1528968893836" duration="4126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41133000" />
+    <option name="totallyTimeSpent" value="41908000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -717,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aktualno.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/podrobnosti.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -800,20 +691,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="128" column="165" selection-start-line="128" selection-start-column="165" selection-end-line="128" selection-end-column="165" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1208">
           <caret line="361" column="22" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aktualno.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/praktikum/controllers/ZagoranskiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

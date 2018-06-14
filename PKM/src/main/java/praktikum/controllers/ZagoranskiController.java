@@ -47,6 +47,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/klubi" }, method = RequestMethod.POST)
     public String klubi(Model model, @RequestParam(value="preveri") String preverjanje) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("klu",dogodekDao.getDogodekByFKOrdered(1, preverjanje));
         return "klubi";
     }
@@ -59,6 +61,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/restavracije" }, method = RequestMethod.POST)
     public String restavracije(Model model, @RequestParam(value="preveri") String preverjanje) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("res",dogodekDao.getDogodekByFKOrdered(2, preverjanje));
         return "restavracije";
     }
@@ -71,6 +75,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/narava" }, method = RequestMethod.POST)
     public String narava(Model model, @RequestParam(value="preveri") String preverjanje) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("nar",dogodekDao.getDogodekByFKOrdered(3, preverjanje));
         return "narava";
     }
@@ -83,6 +89,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/kultura" }, method = RequestMethod.POST)
     public String kultura(Model model, @RequestParam(value="preveri") String preverjanje) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("kul",dogodekDao.getDogodekByFKOrdered(4, preverjanje));
         return "kultura";
     }
@@ -95,6 +103,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/sport" }, method = RequestMethod.POST)
     public String sport(Model model, @RequestParam(value="preveri") String preverjanje) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("spo",dogodekDao.getDogodekByFKOrdered(5, preverjanje));
         return "sport";
     }
@@ -107,6 +117,8 @@ public class ZagoranskiController {
     }
     @RequestMapping(value = { "/aktualno" }, method = RequestMethod.POST)
     public String aktualno(Model model, @RequestParam(value="preveri") String preverjanje) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        model.addAttribute("username", username);
         model.addAttribute("akt",dogodekDao.getAllDogodkiOrdered(preverjanje));
         return "aktualno";
     }
