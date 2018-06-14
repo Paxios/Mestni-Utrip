@@ -10,7 +10,7 @@ insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
 values (46.533066, 15.599367, 'Pohorska ulica 60' , 1);
 /* Peka */
 insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
-values (46.5517617,15.6417263, 'Ob železnici 16', 1);
+values (46.5517617,15.6417263, 'Jezdarska ulica 8b', 1);
 /* KMŠ*/
 insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
 values (46.5576019,15.6401274, 'Pristaniška ulica 2', 1); 
@@ -112,7 +112,7 @@ insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
 values (46.5279839,15.6375684, 'Streliška ulica 150a', 1);
 /* Stara trta */
 insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
-values (46.5573689,15.6405986, 'Vojašniški trg 8', 1);
+values (46.5573689,15.6405986, 'Lent Maribor', 1);
 /* Akvarij */
 insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
 values (46.5647525,15.6474197, 'Ulica heroja Staneta 19', 1);
@@ -133,7 +133,7 @@ insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
 values (46.558651,15.6397688, 'Strossmayerjeva ulica 6', 1);
 /* Lent */
 insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
-values (46.5565407,15.6392643, 'Lent', 1);
+values (46.5565407,15.6392643, 'Lent Maribor', 1);
 /* Pokrajinski muzej */
 insert into Naslov ( Z_sirina, Z_dolzina, Opis, Fk_id_kraj)
 values(46.5609057,15.6462417, 'Grajska ulica 2', 1);
